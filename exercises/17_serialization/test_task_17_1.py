@@ -46,7 +46,7 @@ def test_return_value(tmpdir):
 
     assert (
         None == return_value
-    ), f"По заданию функция должна возвращать None, а возвращает {type(return_value).__name__}"
+    ), f"За завданням функція має повертати None, а повертає {type(return_value).__name__}"
     assert correct_return_value == sorted(
         csv_content
     ), "Функція повертає неправильне значення"
@@ -80,7 +80,7 @@ def test_function_return_value_different_args(tmpdir):
 
     assert (
         None == return_value
-    ), f"По заданию функция должна возвращать None, а возвращает {type(return_value).__name__}"
+    ), f"За завданням функція має повертати None, а повертає {type(return_value).__name__}"
     assert correct_return_value == sorted(
         csv_content
     ), "Функція повертає неправильне значення"

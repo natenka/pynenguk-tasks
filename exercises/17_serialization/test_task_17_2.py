@@ -83,7 +83,7 @@ def test_write_to_csv_return_value(tmpdir):
 
     assert (
         None == return_value
-    ), f"По заданию функция должна возвращать None, а возвращает {type(return_value).__name__}"
+    ), f"За завданням функція має повертати None, а повертає {type(return_value).__name__}"
     assert correct_return_value == sorted(
         csv_content
     ), "Функція повертає неправильне значення"
