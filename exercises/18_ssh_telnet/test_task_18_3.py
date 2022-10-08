@@ -58,7 +58,7 @@ def test_function_return_value(r1_test_connection, first_router_from_devices_yam
     return_value_cfg = strip_empty_lines(
         task_18_3.send_commands(first_router_from_devices_yaml, config=cfg_commands)
     )
-    assert return_value_show != None, "Функция ничего не возвращает"
+    assert return_value_show != None, "Функція нічого не повертає"
     assert (
         type(return_value_show) == str
     ), f"За завданням функція має повертати рядок, а повертає {type(return_value).__name__}"

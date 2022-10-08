@@ -35,7 +35,7 @@ def test_parse_sh_version_return_value():
     )
 
     return_value_r1 = task_17_2.parse_sh_version(sh_version_r1)
-    assert return_value_r1 != None, "Функция ничего не возвращает"
+    assert return_value_r1 != None, "Функція нічого не повертає"
     assert (
         type(return_value_r1) == tuple
     ), f"По заданию функция должна возвращать кортеж, а возвращает {type(return_value_r1).__name__}"

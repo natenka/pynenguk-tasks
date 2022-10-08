@@ -26,7 +26,7 @@ def test_function_return_value(r1_test_connection, first_router_from_devices_yam
     return_value = strip_empty_lines(
         task_18_1.send_show_command(first_router_from_devices_yaml, "sh ip int br")
     )
-    assert return_value != None, "Функция ничего не возвращает"
+    assert return_value != None, "Функція нічого не повертає"
     assert (
         type(return_value) == str
     ), f"За завданням функція має повертати рядок, а повертає {type(return_value).__name__}"
@@ -49,7 +49,7 @@ def test_function_return_value_different_args(
             first_router_from_devices_yaml, "sh int description"
         )
     )
-    assert return_value != None, "Функция ничего не возвращает"
+    assert return_value != None, "Функція нічого не повертає"
     assert (
         type(return_value) == str
     ), f"За завданням функція має повертати рядок, а повертає {type(return_value).__name__}"

@@ -45,7 +45,7 @@ def test_function_return_value():
         ],
     }
     return_value = task_20_1.generate_config(template, data)
-    assert return_value != None, "Функция ничего не возвращает"
+    assert return_value != None, "Функція нічого не повертає"
     assert (
         type(return_value) == str
     ), f"За завданням функція має повертати рядок, а повертає {type(return_value).__name__}"

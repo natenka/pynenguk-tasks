@@ -43,7 +43,7 @@ def test_function_return_value():
     )
 
     return_value = task_9_6.get_int_vlan_map("config_sw1.txt")
-    assert return_value != None, "Функция ничего не возвращает"
+    assert return_value != None, "Функція нічого не повертає"
     assert (
         type(return_value) == tuple
     ), f"По заданию функция должна возвращать кортеж, а возвращает {type(return_value).__name__}"

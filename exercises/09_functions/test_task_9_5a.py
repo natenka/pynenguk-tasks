@@ -59,7 +59,7 @@ def test_function_return_value():
     return_value = task_9_5a.generate_trunk_config(
         trunk_vlans_mapping, template_trunk_mode
     )
-    assert return_value != None, "Функция ничего не возвращает"
+    assert return_value != None, "Функція нічого не повертає"
     assert (
         type(return_value) == dict
     ), f"За завданням функція має повертати словник, а повертає {type(return_value).__name__}"

@@ -39,7 +39,7 @@ def test_function_return_value_correct_mac(mac, correct_converted_mac):
     """
 
     return_value = task_11_1.convert_mac(mac)
-    assert return_value != None, "Функция ничего не возвращает"
+    assert return_value != None, "Функція нічого не повертає"
     assert (
         type(return_value) == str
     ), f"За завданням функція має повертати рядок, а повертає {type(return_value).__name__}"

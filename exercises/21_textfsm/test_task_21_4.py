@@ -30,7 +30,7 @@ def test_function_return_value(r1_test_connection, first_router_from_devices_yam
         first_router_from_devices_yaml, "sh ip int br", templates_path=full_pth
     )
 
-    assert return_value != None, "Функция ничего не возвращает"
+    assert return_value != None, "Функція нічого не повертає"
     assert (
         type(return_value) == list
     ), f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"
@@ -56,7 +56,7 @@ def test_function_return_value_different_args(
         first_router_from_devices_yaml, "sh version", templates_path=full_pth
     )
 
-    assert return_value != None, "Функция ничего не возвращает"
+    assert return_value != None, "Функція нічого не повертає"
     assert (
         type(return_value) == list
     ), f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"

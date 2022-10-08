@@ -37,7 +37,7 @@ def test_function_return_value(monkeypatch):
     monkeypatch.setattr("builtins.input", lambda x=None: "10.1.1.1")
     correct_return_value = "10.1.1.1"
     return_value = task_11_2.prompt_user_ip(max_retry=5, ensure_unicast=False)
-    assert return_value != None, "Функция ничего не возвращает"
+    assert return_value != None, "Функція нічого не повертає"
     assert (
         type(return_value) == str
     ), f"За завданням функція має повертати рядок, а повертає {type(return_value).__name__}"

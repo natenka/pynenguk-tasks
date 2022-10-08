@@ -39,7 +39,7 @@ def test_function_return_value_correct_mac(mac_list, correct_converted_mac_list)
     """
 
     return_value = task_11_1a.convert_mac_list(mac_list)
-    assert return_value != None, "Функция ничего не возвращает"
+    assert return_value != None, "Функція нічого не повертає"
     assert (
         type(return_value) == list
     ), f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"

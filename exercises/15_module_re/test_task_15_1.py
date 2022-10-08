@@ -24,7 +24,7 @@ def test_function_return_value():
     ]
 
     return_value = task_15_1.get_ip_from_cfg("config_r1.txt")
-    assert return_value != None, "Функция ничего не возвращает"
+    assert return_value != None, "Функція нічого не повертає"
     assert (
         type(return_value) == list
     ), f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"
@@ -45,7 +45,7 @@ def test_function_return_value_different_args():
     ]
 
     return_value = task_15_1.get_ip_from_cfg("config_r3.txt")
-    assert return_value != None, "Функция ничего не возвращает"
+    assert return_value != None, "Функція нічого не повертає"
     assert (
         type(return_value) == list
     ), f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"

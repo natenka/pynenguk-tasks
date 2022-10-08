@@ -25,7 +25,7 @@ def test_function_return_value():
     )
 
     return_value = task_19_1.ping_ip_addresses(list_of_ips)
-    assert return_value != None, "Функция ничего не возвращает"
+    assert return_value != None, "Функція нічого не повертає"
     assert (
         type(return_value) == tuple
     ), f"По заданию функция должна возвращать кортеж, а возвращает {type(return_value).__name__}"

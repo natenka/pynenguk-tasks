@@ -61,7 +61,7 @@ def test_function_return_value_ignore_list():
         ignore_lines=ignore_list,
         ignore_exclamation=False,
     )
-    assert return_value != None, "Функция ничего не возвращает"
+    assert return_value != None, "Функція нічого не повертає"
     assert (
         type(return_value) == list
     ), f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"
@@ -91,7 +91,7 @@ def test_function_return_value_different_args_1():
     return_value = task_9_3a.clean_config(
         "config_r3_short.txt", strip_lines=True, ignore_lines=ignore_list
     )
-    assert return_value != None, "Функция ничего не возвращает"
+    assert return_value != None, "Функція нічого не повертає"
     assert (
         type(return_value) == list
     ), f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"
@@ -125,7 +125,7 @@ def test_function_return_value_different_args_2():
     return_value = task_9_3a.clean_config(
         "config_r3_short.txt", strip_lines=True, delete_empty_lines=False
     )
-    assert return_value != None, "Функция ничего не возвращает"
+    assert return_value != None, "Функція нічого не повертає"
     assert (
         type(return_value) == list
     ), f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"

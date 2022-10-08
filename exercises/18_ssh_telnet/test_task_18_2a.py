@@ -28,7 +28,7 @@ def test_function_return_value(
         first_router_from_devices_yaml, test_commands
     )
     # проверяем возвращаемое значение
-    assert return_value != None, "Функция ничего не возвращает"
+    assert return_value != None, "Функція нічого не повертає"
     assert (
         type(return_value) == str
     ), f"За завданням функція має повертати рядок, а повертає {type(return_value).__name__}"

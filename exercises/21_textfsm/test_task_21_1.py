@@ -31,7 +31,7 @@ def test_function_return_value():
     template = "templates/sh_ip_int_br.template"
 
     return_value = task_21_1.parse_command_output(template, sh_ip_int_br)
-    assert return_value != None, "Функция ничего не возвращает"
+    assert return_value != None, "Функція нічого не повертає"
     assert (
         type(return_value) == list
     ), f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"
@@ -59,7 +59,7 @@ def test_function_return_value_different_args():
     template = "templates/sh_ip_route_ospf.template"
 
     return_value = task_21_1.parse_command_output(template, sh_ip_int_br)
-    assert return_value != None, "Функция ничего не возвращает"
+    assert return_value != None, "Функція нічого не повертає"
     assert (
         type(return_value) == list
     ), f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"

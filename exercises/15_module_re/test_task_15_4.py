@@ -25,7 +25,7 @@ def test_function_return_value():
         "Ethernet1/0",
     ]
     return_value = task_15_4.get_ints_without_description("config_r1.txt")
-    assert return_value != None, "Функция ничего не возвращает"
+    assert return_value != None, "Функція нічого не повертає"
     assert (
         type(return_value) == list
     ), f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"

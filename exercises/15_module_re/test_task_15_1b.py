@@ -28,7 +28,7 @@ def test_function_return_value():
     }
 
     return_value = task_15_1b.get_ip_from_cfg("config_r2.txt")
-    assert return_value != None, "Функция ничего не возвращает"
+    assert return_value != None, "Функція нічого не повертає"
     assert (
         type(return_value) == dict
     ), f"За завданням функція має повертати словник, а повертає {type(return_value).__name__}"
