@@ -33,7 +33,7 @@ def test_topology_normalization(topology_with_dupl_links, normalized_topology_ex
     ), f"За завданням у змінній topology должен быть словарь, а не {type(top_with_data.topology).__name__}"
     assert len(correct_topology) == len(
         return_value.topology
-    ), "После создания экземпляра, в переменной topology должна находиться топология без дублей"
+    ), "Після створення екземпляра, у змінній topology повинна бути топологія без дублів"
 
 
 def test_method_delete_link_created(

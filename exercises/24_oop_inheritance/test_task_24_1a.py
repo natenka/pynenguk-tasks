@@ -4,7 +4,7 @@ try:
     import task_24_1a
 except OSError:
     pytest.fail(
-        "Для этого задания функцию надо ОБЯЗАТЕЛЬНО вызывать в блоке if __name__ == '__main__':"
+        "Для цього завдання функцію треба ОБОВ'ЯЗКОВО викликати у блоці if __name__ == '__main__':"
     )
 
 from base_connect_class import BaseSSH
@@ -37,4 +37,4 @@ def test_params_without_password(first_router_from_devices_yaml, monkeypatch):
         ssh = task_24_1a.CiscoSSH(**params)
         ssh.ssh.disconnect()
     except SSHException:
-        pytest.fail("Ошибка при подключении")
+        pytest.fail("Помилка при підключенні")

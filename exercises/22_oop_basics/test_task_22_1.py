@@ -54,7 +54,7 @@ def test_topology_normalization():
     ), f"За завданням у змінній topology должен быть словарь, а не {type(return_value.topology).__name__}"
     assert len(correct_topology) == len(
         return_value.topology
-    ), "После создания экземпляра, в переменной topology должна находиться топология без дублей"
+    ), "Після створення екземпляра, у змінній topology повинна бути топологія без дублів"
     assert (
         correct_topology == return_topology
-    ), "После создания экземпляра, в переменной topology должна находиться топология без дублей"
+    ), "Після створення екземпляра, у змінній topology повинна бути топологія без дублів"
