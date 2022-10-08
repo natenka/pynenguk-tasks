@@ -27,7 +27,7 @@ def unified_columns_output(output):
 )
 def test_task_stdout(capsys, monkeypatch, vlan, result):
     """
-    Проверка работы задания
+    Перевірка роботи завдання
     """
     monkeypatch.setattr("builtins.input", lambda x=None: vlan)
     if sys.modules.get("task_7_3b"):
@@ -38,4 +38,4 @@ def test_task_stdout(capsys, monkeypatch, vlan, result):
     correct_stdout = unified_columns_output(result)
     assert correct_stdout == unified_columns_output(
         out.strip()
-    ), "На стандартный поток вывода выводится неправильная строка"
+    ), "На стандартний потік виведення виводиться неправильний рядок"

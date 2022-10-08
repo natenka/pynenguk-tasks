@@ -4,7 +4,7 @@ import sys
 
 def test_task_cfg_trunk_sw2(monkeypatch, tmpdir):
     """
-    Проверка работы задания на файле config_trunk_sw2.txt
+    Перевірка роботи завдання на файле config_trunk_sw2.txt
     """
     monkeypatch.setattr("sys.argv", ["task_7_4.py", "config_trunk_sw2.txt"])
     import task_7_4
@@ -31,7 +31,7 @@ def test_task_cfg_trunk_sw2(monkeypatch, tmpdir):
 
 def test_task_cfg_trunk_sw3(monkeypatch, tmpdir):
     """
-    Проверка работы задания на файле config_trunk_sw3.txt
+    Перевірка роботи завдання на файле config_trunk_sw3.txt
     """
     monkeypatch.setattr("sys.argv", ["task_7_4.py", "config_trunk_sw3.txt"])
     if sys.modules.get("task_7_4"):

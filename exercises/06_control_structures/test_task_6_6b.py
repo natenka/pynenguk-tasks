@@ -16,7 +16,7 @@ import pytest
 )
 def test_task_correct_ip(capsys, monkeypatch, ip_add, ip_type):
     """
-    Проверка работы задания при вводе multicast адреса
+    Перевірка роботи завдання при вводе multicast адреса
     """
     monkeypatch.setattr("builtins.input", lambda x=None: ip_add)
     if sys.modules.get("task_6_6b"):
@@ -27,7 +27,7 @@ def test_task_correct_ip(capsys, monkeypatch, ip_add, ip_type):
     correct_stdout = ip_type
     assert (
         out
-    ), "Ничего не выведено на стандартный поток вывода. Надо не только получить нужный результат, но и вывести его на стандартный поток вывода с помощью print"
+    ), "Нічого не виведено стандартний потік виведення. Потрібно не лише отримати потрібний результат, але й вивести його на стандартний потік виведення за допомогою print"
     assert (
         correct_stdout == out.strip()
     ), "На стандартный поток вывода выводится неправильный вывод"
@@ -77,7 +77,7 @@ def monkey_input_ip(ip_add):
 )
 def test_task_wrong_first_ip_correct_second(capsys, monkeypatch, ip_add, ip_type):
     """
-    Проверка работы задания при вводе multicast адреса
+    Перевірка роботи завдання при вводе multicast адреса
     """
     monkeypatch.setattr("builtins.input", monkey_input_ip(ip_add))
     if sys.modules.get("task_6_6b"):
@@ -88,7 +88,7 @@ def test_task_wrong_first_ip_correct_second(capsys, monkeypatch, ip_add, ip_type
     correct_stdout = f"{ip_type}\nunicast"
     assert (
         out
-    ), "Ничего не выведено на стандартный поток вывода. Надо не только получить нужный результат, но и вывести его на стандартный поток вывода с помощью print"
+    ), "Нічого не виведено стандартний потік виведення. Потрібно не лише отримати потрібний результат, але й вивести його на стандартний потік виведення за допомогою print"
     assert (
         correct_stdout == out.strip().lower()
     ), "На стандартный поток вывода выводится неправильный вывод"

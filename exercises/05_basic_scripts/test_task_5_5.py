@@ -30,7 +30,7 @@ def monkey_input_trunk(prompt):
 
 def test_task_access(capsys, monkeypatch):
     """
-    Проверка работы задания при вводе access
+    Перевірка роботи завдання при вводе access
     """
     monkeypatch.setattr("builtins.input", monkey_input_access)
     import task_5_5
@@ -47,7 +47,7 @@ def test_task_access(capsys, monkeypatch):
 
     assert (
         out
-    ), "Ничего не выведено на стандартный поток вывода. Надо не только получить нужный результат, но и вывести его на стандартный поток вывода с помощью print"
+    ), "Нічого не виведено стандартний потік виведення. Потрібно не лише отримати потрібний результат, але й вивести його на стандартний потік виведення за допомогою print"
     assert (
         correct_stdout == out.strip()
     ), "На стандартный поток вывода выводится неправильный вывод"
@@ -55,7 +55,7 @@ def test_task_access(capsys, monkeypatch):
 
 def test_task_trunk(capsys, monkeypatch):
     """
-    Проверка работы задания при вводе trunk
+    Перевірка роботи завдання при вводе trunk
     """
     monkeypatch.setattr("builtins.input", monkey_input_trunk)
     if sys.modules.get("task_5_5"):
@@ -71,7 +71,7 @@ def test_task_trunk(capsys, monkeypatch):
     )
     assert (
         out
-    ), "Ничего не выведено на стандартный поток вывода. Надо не только получить нужный результат, но и вывести его на стандартный поток вывода с помощью print"
+    ), "Нічого не виведено стандартний потік виведення. Потрібно не лише отримати потрібний результат, але й вивести його на стандартний потік виведення за допомогою print"
     assert (
         correct_stdout == out.strip()
     ), "На стандартный поток вывода выводится неправильный вывод"

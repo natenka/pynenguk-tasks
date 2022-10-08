@@ -2,7 +2,7 @@
 
 def test_task(monkeypatch, tmpdir):
     """
-    Проверка работы задания при вводе access
+    Перевірка роботи завдання при вводе access
     """
     dest_filename = tmpdir.mkdir("test_tasks").join("task_7_2b.txt")
 

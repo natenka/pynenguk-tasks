@@ -20,7 +20,7 @@ def test_function_created():
 )
 def test_task_correct_ip(ip_address):
     """
-    Проверка работы задания
+    Перевірка роботи завдання
     """
     return_value = task_9_2.check_ip(ip_address)
     assert return_value != None, "Функция ничего не возвращает"

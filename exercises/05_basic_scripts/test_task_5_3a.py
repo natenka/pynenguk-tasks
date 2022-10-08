@@ -26,7 +26,7 @@ def monkey_input_sw1(prompt):
 
 def test_task_r2(capsys, monkeypatch):
     """
-    Проверка работы задания при вводе r2
+    Перевірка роботи завдання при вводе r2
     """
     monkeypatch.setattr("builtins.input", monkey_input_r2)
     import task_5_3a
@@ -36,7 +36,7 @@ def test_task_r2(capsys, monkeypatch):
 
     assert (
         out
-    ), "Ничего не выведено на стандартный поток вывода. Надо не только получить нужный результат, но и вывести его на стандартный поток вывода с помощью print"
+    ), "Нічого не виведено стандартний потік виведення. Потрібно не лише отримати потрібний результат, але й вивести його на стандартний потік виведення за допомогою print"
     assert (
         correct_stdout in out.strip()
     ), "На стандартный поток вывода выводится неправильный вывод"
@@ -44,7 +44,7 @@ def test_task_r2(capsys, monkeypatch):
 
 def test_task_sw1(capsys, monkeypatch):
     """
-    Проверка работы задания при вводе sw1
+    Перевірка роботи завдання при вводе sw1
     """
     monkeypatch.setattr("builtins.input", monkey_input_sw1)
     if sys.modules.get("task_5_3a"):
@@ -55,7 +55,7 @@ def test_task_sw1(capsys, monkeypatch):
     correct_stdout = "3.6.XE"
     assert (
         out
-    ), "Ничего не выведено на стандартный поток вывода. Надо не только получить нужный результат, но и вывести его на стандартный поток вывода с помощью print"
+    ), "Нічого не виведено стандартний потік виведення. Потрібно не лише отримати потрібний результат, але й вивести його на стандартний потік виведення за допомогою print"
     assert (
         correct_stdout in out.strip()
     ), "На стандартный поток вывода выводится неправильный вывод"
