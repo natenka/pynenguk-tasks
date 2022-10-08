@@ -35,10 +35,10 @@ def test_task_variables():
 
     assert (
         "result" in task_vars
-    ), "Итоговый список должен быть записан в переменную result"
+    ), "Список має бути записаний у змінну result"
     assert (
         type(task_6_4.result) == list
-    ), f"По заданию в переменной result должен быть список, а в ней {type(task_6_4.result).__name__}"
+    ), f"За завданням у змінній result має бути список, а в ній {type(task_6_4.result).__name__}"
     assert (
         correct_result == task_6_4.result
-    ), f"В переменной result должен быть список {correct_result}"
+    ), f"У змінній result має бути список {correct_result}"

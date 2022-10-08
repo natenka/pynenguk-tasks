@@ -33,7 +33,7 @@ def test_task_variables():
     ), "Итоговая строка должна быть записана в переменную result"
     assert (
         type(task_6_2.result) == str
-    ), f"По заданию в переменной result должна быть строка, а в ней {type(task_6_2.result).__name__}"
+    ), f"За завданням у змінній result має бути рядок, а ній {type(task_6_2.result).__name__}"
     assert (
         correct_result == task_6_2.result
     ), f"В переменной result должна быть строка '{correct_result}'"
