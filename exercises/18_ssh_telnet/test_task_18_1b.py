@@ -21,7 +21,7 @@ def test_function_return_value(capsys, first_router_wrong_ip):
     correct_stdout1 = "Connection to device timed-out"
     correct_stdout2 = "connection to device failed"
     out, err = capsys.readouterr()
-    assert out != "", "Сообщение об ошибке не выведено на stdout"
+    assert out != "", "Повідомлення про помилку не виведено на stdout"
     assert (
         correct_stdout1 in out or correct_stdout2 in out
-    ), "Выведено неправильное сообщение об ошибке"
+    ), "Виведено неправильне повідомлення про помилку"
