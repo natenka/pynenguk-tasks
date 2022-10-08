@@ -66,7 +66,7 @@ def test_function_return_value(capsys, first_router_from_devices_yaml):
     assert type(return_value) == tuple, "Функция должна возвращать кортеж"
     assert 2 == len(return_value) and all(
         type(item) == dict for item in return_value
-    ), "Функция должна возвращать кортеж с двумя словарями"
+    ), "Функція має повертати кортеж із двома словниками"
     correct_good, correct_bad = correct_return_value
     return_good, return_bad = return_value
     assert (

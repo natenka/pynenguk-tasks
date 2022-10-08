@@ -46,10 +46,10 @@ def test_function_return_value():
     assert return_value != None, "Функція нічого не повертає"
     assert (
         type(return_value) == tuple
-    ), f"По заданию функция должна возвращать кортеж, а возвращает {type(return_value).__name__}"
+    ), f"За завданням функція має повертати кортеж, а повертає {type(return_value).__name__}"
     assert len(return_value) == 2 and all(
         type(item) == dict for item in return_value
-    ), "Функция должна возвращать кортеж с двумя словарями"
+    ), "Функція має повертати кортеж із двома словниками"
 
     access, trunk = return_value
     assert (

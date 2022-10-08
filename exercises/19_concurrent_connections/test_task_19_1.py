@@ -28,8 +28,8 @@ def test_function_return_value():
     assert return_value != None, "Функція нічого не повертає"
     assert (
         type(return_value) == tuple
-    ), f"По заданию функция должна возвращать кортеж, а возвращает {type(return_value).__name__}"
-    assert 2 == len(return_value), "Функция должна возвращать кортеж с двумя списками"
+    ), f"За завданням функція має повертати кортеж, а повертає {type(return_value).__name__}"
+    assert 2 == len(return_value), "Функція має повертати кортеж із двома списками"
     assert all(
         type(item) == list for item in return_value
     ), "Функция должна возвращать кортеж со списками внутри"

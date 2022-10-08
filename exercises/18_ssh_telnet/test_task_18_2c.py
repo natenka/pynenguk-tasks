@@ -106,7 +106,7 @@ def test_function_return_value_continue_yes(
     assert type(return_value) == tuple, "Функция должна возвращать кортеж"
     assert 2 == len(return_value) and all(
         type(item) == dict for item in return_value
-    ), "Функция должна возвращать кортеж с двумя словарями"
+    ), "Функція має повертати кортеж із двома словниками"
     correct_good, correct_bad = correct_return_value
     return_good, return_bad = return_value
     assert (
@@ -141,7 +141,7 @@ def test_function_return_value_continue_no(
     assert type(return_value) == tuple, "Функция должна возвращать кортеж"
     assert 2 == len(return_value) and all(
         type(item) == dict for item in return_value
-    ), "Функция должна возвращать кортеж с двумя словарями"
+    ), "Функція має повертати кортеж із двома словниками"
     return_good, return_bad = return_value
     if c_map[0] == "bad":
         commands_with_errors, correct_commands = commands_1, commands_2

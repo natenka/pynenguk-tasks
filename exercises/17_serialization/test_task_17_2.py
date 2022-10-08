@@ -38,7 +38,7 @@ def test_parse_sh_version_return_value():
     assert return_value_r1 != None, "Функція нічого не повертає"
     assert (
         type(return_value_r1) == tuple
-    ), f"По заданию функция должна возвращать кортеж, а возвращает {type(return_value_r1).__name__}"
+    ), f"За завданням функція має повертати кортеж, а повертає {type(return_value_r1).__name__}"
     assert (
         correct_return_value_r1 == return_value_r1
     ), "Функція повертає неправильне значення для вывода r1"
