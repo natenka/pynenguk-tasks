@@ -8,14 +8,14 @@ from pyneng_common_functions import check_function_exists
 
 def test_function_created():
     """
-    Проверка, что функция создана
+    Тестуємо, що функцію створено
     """
     check_function_exists(task_15_2, "parse_sh_ip_int_br")
 
 
 def test_function_return_value():
     """
-    Проверка работы функции
+    Перевірка роботи функції
     """
     correct_return_value = [
         ("FastEthernet0/0", "15.0.15.1", "up", "up"),
@@ -30,17 +30,17 @@ def test_function_return_value():
     assert return_value != None, "Функция ничего не возвращает"
     assert (
         type(return_value) == list
-    ), f"По заданию функция должна возвращать список, а возвращает {type(return_value).__name__}"
+    ), f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"
     # Списки сортируются чтобы не было ошибки, если строки записаны в списке в другом порядке
     # В этом задании порядок кортежей в списке не важен
     assert sorted(correct_return_value) == sorted(
         return_value
-    ), "Функция возвращает неправильное значение"
+    ), "Функція повертає неправильне значення"
 
 
 def test_function_return_value_different_args():
     """
-    Проверка работы функции с другими аргументами
+    Перевірка роботи функції с другими аргументами
     """
     correct_return_value = [
         ("FastEthernet0/0", "15.0.15.2", "up", "up"),
@@ -54,9 +54,9 @@ def test_function_return_value_different_args():
     assert return_value != None, "Функция ничего не возвращает"
     assert (
         type(return_value) == list
-    ), f"По заданию функция должна возвращать список, а возвращает {type(return_value).__name__}"
+    ), f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"
     # Списки сортируются чтобы не было ошибки, если строки записаны в списке в другом порядке
     # В этом задании порядок кортежей в списке не важен
     assert sorted(correct_return_value) == sorted(
         return_value
-    ), "Функция возвращает неправильное значение"
+    ), "Функція повертає неправильне значення"

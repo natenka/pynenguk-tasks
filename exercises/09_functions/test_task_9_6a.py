@@ -8,7 +8,7 @@ from pyneng_common_functions import check_function_exists, check_function_params
 
 def test_function_created():
     """
-    Проверка, что функция создана
+    Тестуємо, що функцію створено
     """
     check_function_exists(task_9_6a, "get_int_vlan_map")
 
@@ -26,7 +26,7 @@ def test_function_params():
 
 def test_function_return_value():
     """
-    Проверка работы функции
+    Перевірка роботи функції
     """
     correct_return_value = (
         {
@@ -55,4 +55,4 @@ def test_function_return_value():
     ), "Функция должна возвращать кортеж с двумя словарями"
     assert (
         correct_return_value == return_value
-    ), "Функция возвращает неправильное значение"
+    ), "Функція повертає неправильне значення"

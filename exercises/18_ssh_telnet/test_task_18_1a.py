@@ -8,14 +8,14 @@ from pyneng_common_functions import check_function_exists
 
 def test_functions_created():
     """
-    Проверка, что функция создана
+    Тестуємо, що функцію створено
     """
     check_function_exists(task_18_1a, "send_show_command")
 
 
 def test_function_return_value(capsys, first_router_wrong_pass):
     """
-    Проверка работы функции
+    Перевірка роботи функції
     """
     return_value = task_18_1a.send_show_command(first_router_wrong_pass, "sh ip int br")
     correct_stdout = "authentication"

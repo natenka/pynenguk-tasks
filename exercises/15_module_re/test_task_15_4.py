@@ -8,14 +8,14 @@ from pyneng_common_functions import check_function_exists
 
 def test_function_created():
     """
-    Проверка, что функция создана
+    Тестуємо, що функцію створено
     """
     check_function_exists(task_15_4, "get_ints_without_description")
 
 
 def test_function_return_value():
     """
-    Проверка работы функции
+    Перевірка роботи функції
     """
     correct_return_value = [
         "Loopback0",
@@ -28,7 +28,7 @@ def test_function_return_value():
     assert return_value != None, "Функция ничего не возвращает"
     assert (
         type(return_value) == list
-    ), f"По заданию функция должна возвращать список, а возвращает {type(return_value).__name__}"
+    ), f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"
     assert sorted(correct_return_value) == sorted(
         return_value
-    ), "Функция возвращает неправильное значение"
+    ), "Функція повертає неправильне значення"

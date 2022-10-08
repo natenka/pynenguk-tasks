@@ -8,7 +8,7 @@ from pyneng_common_functions import check_function_exists, check_function_params
 
 def test_function_created():
     """
-    Проверка, что функция создана
+    Тестуємо, що функцію створено
     """
     check_function_exists(task_9_3a, "clean_config")
 
@@ -32,7 +32,7 @@ def test_function_params():
 
 def test_function_return_value_ignore_list():
     """
-    Проверка работы функции
+    Перевірка роботи функції
     """
     correct_return_value = [
         "hostname PE_r3",
@@ -64,15 +64,15 @@ def test_function_return_value_ignore_list():
     assert return_value != None, "Функция ничего не возвращает"
     assert (
         type(return_value) == list
-    ), f"По заданию функция должна возвращать список, а возвращает {type(return_value).__name__}"
+    ), f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"
     assert (
         correct_return_value == return_value
-    ), "Функция возвращает неправильное значение"
+    ), "Функція повертає неправильне значення"
 
 
 def test_function_return_value_different_args_1():
     """
-    Проверка работы функции
+    Перевірка роботи функції
     """
     correct_return_value = [
         "hostname PE_r3",
@@ -94,15 +94,15 @@ def test_function_return_value_different_args_1():
     assert return_value != None, "Функция ничего не возвращает"
     assert (
         type(return_value) == list
-    ), f"По заданию функция должна возвращать список, а возвращает {type(return_value).__name__}"
+    ), f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"
     assert (
         correct_return_value == return_value
-    ), "Функция возвращает неправильное значение"
+    ), "Функція повертає неправильне значення"
 
 
 def test_function_return_value_different_args_2():
     """
-    Проверка работы функции
+    Перевірка роботи функції
     """
     correct_return_value = [
         "hostname PE_r3",
@@ -128,7 +128,7 @@ def test_function_return_value_different_args_2():
     assert return_value != None, "Функция ничего не возвращает"
     assert (
         type(return_value) == list
-    ), f"По заданию функция должна возвращать список, а возвращает {type(return_value).__name__}"
+    ), f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"
     assert (
         correct_return_value == return_value
-    ), "Функция возвращает неправильное значение"
+    ), "Функція повертає неправильне значення"

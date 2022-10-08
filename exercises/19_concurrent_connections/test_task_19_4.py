@@ -9,7 +9,7 @@ from pyneng_common_functions import check_function_exists
 
 def test_functions_created():
     """
-    Проверка, что функция создана
+    Тестуємо, що функцію створено
     """
     check_function_exists(task_19_4, "send_commands_to_devices")
 
@@ -43,7 +43,7 @@ def test_function_return_value_show(
     three_routers_from_devices_yaml, r1_r2_r3_test_connection, tmpdir
 ):
     """
-    Проверка работы функции
+    Перевірка роботи функції
     """
     routers_ip = [router["host"] for router in three_routers_from_devices_yaml]
     command = "sh ip int br"

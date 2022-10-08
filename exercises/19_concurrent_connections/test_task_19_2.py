@@ -21,7 +21,7 @@ with open("devices.yaml") as f:
 
 def test_functions_created():
     """
-    Проверка, что функция создана
+    Тестуємо, що функцію створено
     """
     check_function_exists(task_19_2, "send_show_command_to_devices")
 
@@ -34,7 +34,7 @@ def test_function_return_value_from_single_device(
     three_routers_from_devices_yaml, r1_r2_r3_test_connection, tmpdir, device, command
 ):
     """
-    Проверка работы функции
+    Перевірка роботи функції
     """
     ssh = create_ssh_connect(device)
     correct_output = strip_empty_lines(

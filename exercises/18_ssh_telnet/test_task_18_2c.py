@@ -55,7 +55,7 @@ test_commands = commands_with_errors + correct_commands
 
 def test_functions_created():
     """
-    Проверка, что функция создана
+    Тестуємо, що функцію створено
     """
     check_function_exists(task_18_2c, "send_config_commands")
 
@@ -111,10 +111,10 @@ def test_function_return_value_continue_yes(
     return_good, return_bad = return_value
     assert (
         correct_good.keys() == return_good.keys()
-    ), "Функция возвращает неправильное значение для словаря с командами без ошибок"
+    ), "Функція повертає неправильне значення для словаря с командами без ошибок"
     assert (
         correct_bad.keys() == return_bad.keys()
-    ), "Функция возвращает неправильное значение для словаря с командами с ошибками"
+    ), "Функція повертає неправильне значення для словаря с командами с ошибками"
 
 
 @pytest.mark.parametrize(
@@ -147,9 +147,9 @@ def test_function_return_value_continue_no(
         commands_with_errors, correct_commands = commands_1, commands_2
         assert [] == list(return_good) and commands_with_errors[:1] == sorted(
             return_bad
-        ), "Функция возвращает неправильное значение"
+        ), "Функція повертає неправильне значення"
     else:
         commands_with_errors, correct_commands = commands_2, commands_1
         assert correct_commands == list(return_good) and commands_with_errors[
             :1
-        ] == list(return_bad), "Функция возвращает неправильное значение"
+        ] == list(return_bad), "Функція повертає неправильне значення"

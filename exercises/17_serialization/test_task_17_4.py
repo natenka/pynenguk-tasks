@@ -8,14 +8,14 @@ from pyneng_common_functions import check_function_exists, read_all_csv_content_
 
 def test_function_created():
     """
-    Проверка, что функция создана
+    Тестуємо, що функцію створено
     """
     check_function_exists(task_17_4, "write_last_log_to_csv")
 
 
 def test_return_value(tmpdir):
     """
-    Проверка работы функции
+    Перевірка роботи функції
     """
     correct_return_value = sorted(
         [
@@ -41,4 +41,4 @@ def test_return_value(tmpdir):
     ), f"По заданию функция должна возвращать None, а возвращает {type(return_value).__name__}"
     assert correct_return_value == sorted(
         csv_content
-    ), "Функция возвращает неправильное значение"
+    ), "Функція повертає неправильне значення"

@@ -36,10 +36,10 @@ def test_task_cfg_trunk_sw2(monkeypatch, tmpdir):
 
     assert (
         "interface_dict" in task_vars
-    ), "Итоговый словарь должен быть записан в переменную interface_dict"
+    ), "Словник має бути записаний у змінну interface_dict"
     assert (
         type(task_7_5.interface_dict) == dict
-    ), f"По заданию в переменной interface_dict должен быть словарь, а в ней {type(task_7_5.result).__name__}"
+    ), f"За завданням у змінній interface_dict має бути словник, а в ній {type(task_7_5.result).__name__}"
     assert (
         correct_result == task_7_5.interface_dict
     ), f"В переменной interface_dict должен быть словарь \n{pformat(correct_result)}"
@@ -82,10 +82,10 @@ def test_task_cfg_trunk_sw3(monkeypatch, tmpdir):
 
     assert (
         "interface_dict" in task_vars
-    ), "Итоговый словарь должен быть записан в переменную interface_dict"
+    ), "Словник має бути записаний у змінну interface_dict"
     assert (
         type(task_7_5.interface_dict) == dict
-    ), f"По заданию в переменной interface_dict должен быть словарь, а в ней {type(task_7_5.result).__name__}"
+    ), f"За завданням у змінній interface_dict має бути словник, а в ній {type(task_7_5.result).__name__}"
     assert (
         correct_result == task_7_5.interface_dict
     ), f"В переменной interface_dict должен быть словарь \n{pformat(correct_result)}"

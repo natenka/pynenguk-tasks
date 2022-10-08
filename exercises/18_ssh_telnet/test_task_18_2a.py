@@ -8,7 +8,7 @@ from pyneng_common_functions import check_function_exists, strip_empty_lines
 
 def test_functions_created():
     """
-    Проверка, что функция создана
+    Тестуємо, що функцію створено
     """
     check_function_exists(task_18_2a, "send_config_commands")
 
@@ -17,7 +17,7 @@ def test_function_return_value(
     capsys, r1_test_connection, first_router_from_devices_yaml
 ):
     """
-    Проверка работы функции
+    Перевірка роботи функції
     """
     test_commands = [
         "interface Loopback 100",
@@ -31,10 +31,10 @@ def test_function_return_value(
     assert return_value != None, "Функция ничего не возвращает"
     assert (
         type(return_value) == str
-    ), f"По заданию функция должна возвращать строку, а возвращает {type(return_value).__name__}"
+    ), f"За завданням функція має повертати рядок, а повертає {type(return_value).__name__}"
     assert strip_empty_lines(return_value) == strip_empty_lines(
         correct_return_value
-    ), "Функция возвращает неправильное значение"
+    ), "Функція повертає неправильне значення"
 
     # по умолчанию, log должно быть равным True
     # и на stdout должно выводиться сообщение

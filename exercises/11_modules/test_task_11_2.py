@@ -28,7 +28,7 @@ def monkey_input_retry_3(prompt):
 
 def test_function_created():
     """
-    Проверка, что функция создана
+    Тестуємо, що функцію створено
     """
     check_function_exists(task_11_2, "prompt_user_ip")
 
@@ -40,10 +40,10 @@ def test_function_return_value(monkeypatch):
     assert return_value != None, "Функция ничего не возвращает"
     assert (
         type(return_value) == str
-    ), f"По заданию функция должна возвращать строку, а возвращает {type(return_value).__name__}"
+    ), f"За завданням функція має повертати рядок, а повертає {type(return_value).__name__}"
     assert (
         correct_return_value == return_value
-    ), "Функция возвращает неправильное значение"
+    ), "Функція повертає неправильне значення"
 
 
 def test_function_return_value_wrong_ip(monkeypatch):

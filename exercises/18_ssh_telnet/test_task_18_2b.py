@@ -44,14 +44,14 @@ correct_return_value = (
 
 def test_functions_created():
     """
-    Проверка, что функция создана
+    Тестуємо, що функцію створено
     """
     check_function_exists(task_18_2b, "send_config_commands")
 
 
 def test_function_return_value(capsys, first_router_from_devices_yaml):
     """
-    Проверка работы функции
+    Перевірка роботи функції
     """
     commands_with_errors = ["logging 0255.255.1", "logging", "a"]
     correct_commands = ["logging buffered 20010", "ip http server"]
@@ -71,10 +71,10 @@ def test_function_return_value(capsys, first_router_from_devices_yaml):
     return_good, return_bad = return_value
     assert (
         correct_good.keys() == return_good.keys()
-    ), "Функция возвращает неправильное значение для словаря с командами без ошибок"
+    ), "Функція повертає неправильне значення для словаря с командами без ошибок"
     assert (
         correct_bad.keys() == return_bad.keys()
-    ), "Функция возвращает неправильное значение для словаря с командами с ошибками"
+    ), "Функція повертає неправильне значення для словаря с командами с ошибками"
 
 
 @pytest.mark.parametrize(

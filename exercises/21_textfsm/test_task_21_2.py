@@ -8,7 +8,7 @@ from pyneng_common_functions import get_textfsm_output
 
 def test_templates_exists():
     """
-    Проверка, что функция создана
+    Тестуємо, що функцію створено
     """
     assert os.path.exists(
         "templates/sh_ip_dhcp_snooping.template"

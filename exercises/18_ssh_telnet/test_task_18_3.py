@@ -12,7 +12,7 @@ from pyneng_common_functions import (
 
 def test_functions_created():
     """
-    Проверка, что функция создана
+    Тестуємо, що функцію створено
     """
     check_function_exists(task_18_3, "send_commands")
 
@@ -38,7 +38,7 @@ def test_function_params(r1_test_connection, first_router_from_devices_yaml):
 
 def test_function_return_value(r1_test_connection, first_router_from_devices_yaml):
     """
-    Проверка работы функции
+    Перевірка роботи функції
     """
     show_command = "sh ip int br"
     cfg_commands = [
@@ -61,10 +61,10 @@ def test_function_return_value(r1_test_connection, first_router_from_devices_yam
     assert return_value_show != None, "Функция ничего не возвращает"
     assert (
         type(return_value_show) == str
-    ), f"По заданию функция должна возвращать строку, а возвращает {type(return_value).__name__}"
+    ), f"За завданням функція має повертати рядок, а повертає {type(return_value).__name__}"
     assert (
         correct_return_value_show == return_value_show
-    ), "Функция возвращает неправильное значение при передаче команды show"
+    ), "Функція повертає неправильне значення при передаче команды show"
     assert (
         correct_return_value_cfg == return_value_cfg
-    ), "Функция возвращает неправильное значение при передаче конфигурационных команд"
+    ), "Функція повертає неправильне значення при передаче конфигурационных команд"

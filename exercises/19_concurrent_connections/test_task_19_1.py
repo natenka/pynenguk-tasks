@@ -8,14 +8,14 @@ from pyneng_common_functions import check_function_exists, get_reach_unreach
 
 def test_functions_created():
     """
-    Проверка, что функция создана
+    Тестуємо, що функцію створено
     """
     check_function_exists(task_19_1, "ping_ip_addresses")
 
 
 def test_function_return_value():
     """
-    Проверка работы функции
+    Перевірка роботи функції
     """
     list_of_ips = ["1.1.1.1", "8.8.8.8", "8.8.4.4", "2.2.2.2"]
     correct_return_value = get_reach_unreach(list_of_ips)
@@ -40,4 +40,4 @@ def test_function_return_value():
     )
     assert correct_return_value == (
         return_value
-    ), "Функция возвращает неправильное значение"
+    ), "Функція повертає неправильне значення"

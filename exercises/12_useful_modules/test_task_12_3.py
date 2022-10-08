@@ -11,7 +11,7 @@ from pyneng_common_functions import (
 
 def test_function_created():
     """
-    Проверка, что функция создана
+    Тестуємо, що функцію створено
     """
     check_function_exists(task_12_3, "print_ip_table")
 
@@ -36,4 +36,4 @@ def test_function_stdout(capsys):
     assert return_value == None, "Функция должна возвращать None"
     assert correct_stdout == unified_columns_output(
         stdout
-    ), "Функция возвращает неправильное значение"
+    ), "Функція повертає неправильне значення"

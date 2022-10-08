@@ -8,7 +8,7 @@ from pyneng_common_functions import check_function_exists, check_function_params
 
 def test_function_created():
     """
-    Проверка, что функция создана
+    Тестуємо, що функцію створено
     """
     check_function_exists(task_11_3, "parse_cdp_neighbors")
 
@@ -26,7 +26,7 @@ def test_function_params():
 
 def test_function_return_value():
     """
-    Проверка работы функции
+    Перевірка роботи функції
     """
     sh_cdp_n_sw1 = (
         "SW1>show cdp neighbors\n\n"
@@ -49,15 +49,15 @@ def test_function_return_value():
     assert return_value != None, "Функция ничего не возвращает"
     assert (
         type(return_value) == dict
-    ), f"По заданию функция должна возвращать словарь, а возвращает {type(return_value).__name__}"
+    ), f"За завданням функція має повертати словник, а повертає {type(return_value).__name__}"
     assert (
         correct_return_value == return_value
-    ), "Функция возвращает неправильное значение"
+    ), "Функція повертає неправильне значення"
 
 
 def test_function_return_value_different_args():
     """
-    Проверка работы функции на другом выводе
+    Перевірка роботи функції на другом выводе
     """
     sh_cdp_n_r3 = (
         "R3>show cdp neighbors\n"
@@ -78,7 +78,7 @@ def test_function_return_value_different_args():
     assert return_value != None, "Функция ничего не возвращает"
     assert (
         type(return_value) == dict
-    ), f"По заданию функция должна возвращать словарь, а возвращает {type(return_value).__name__}"
+    ), f"За завданням функція має повертати словник, а повертає {type(return_value).__name__}"
     assert (
         correct_return_value == return_value
-    ), "Функция возвращает неправильное значение"
+    ), "Функція повертає неправильне значення"

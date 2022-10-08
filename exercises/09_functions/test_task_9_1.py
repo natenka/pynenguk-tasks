@@ -9,7 +9,7 @@ from pyneng_common_functions import check_function_exists
 
 def test_function_created():
     """
-    Проверка, что функция создана
+    Тестуємо, що функцію створено
     """
     check_function_exists(task_9_1, "convert_mac")
 
@@ -24,15 +24,15 @@ def test_function_created():
 )
 def test_function_return_value(mac, correct_converted_mac):
     """
-    Проверка работы функции
+    Перевірка роботи функції
     """
 
     return_value = task_9_1.convert_mac(mac)
     assert return_value != None, "Функция ничего не возвращает"
     assert (
         type(return_value) == str
-    ), f"По заданию функция должна возвращать строку, а возвращает {type(return_value).__name__}"
+    ), f"За завданням функція має повертати рядок, а повертає {type(return_value).__name__}"
     assert (
         correct_converted_mac == return_value
-    ), "Функция возвращает неправильное значение"
+    ), "Функція повертає неправильне значення"
 

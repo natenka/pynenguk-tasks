@@ -8,7 +8,7 @@ from pyneng_common_functions import check_function_exists, check_function_params
 
 def test_function_created():
     """
-    Проверка, что функция создана
+    Тестуємо, що функцію створено
     """
     check_function_exists(task_9_5a, "generate_trunk_config")
 
@@ -26,7 +26,7 @@ def test_function_params():
 
 def test_function_return_value():
     """
-    Проверка работы функции
+    Перевірка роботи функції
     """
     trunk_vlans_mapping = {
         "FastEthernet0/1": [10, 20, 30],
@@ -62,7 +62,7 @@ def test_function_return_value():
     assert return_value != None, "Функция ничего не возвращает"
     assert (
         type(return_value) == dict
-    ), f"По заданию функция должна возвращать словарь, а возвращает {type(return_value).__name__}"
+    ), f"За завданням функція має повертати словник, а повертає {type(return_value).__name__}"
     assert (
         correct_return_value == return_value
-    ), "Функция возвращает неправильное значение"
+    ), "Функція повертає неправильне значення"

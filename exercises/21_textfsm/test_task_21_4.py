@@ -10,14 +10,14 @@ from pyneng_common_functions import check_function_exists
 
 def test_functions_created():
     """
-    Проверка, что функция создана
+    Тестуємо, що функцію створено
     """
     check_function_exists(task_21_4, "send_and_parse_show_command")
 
 
 def test_function_return_value(r1_test_connection, first_router_from_devices_yaml):
     """
-    Проверка работы функции
+    Перевірка роботи функції
     """
     with open("templates/sh_ip_int_br.template") as f:
         re_table = textfsm.TextFSM(f)
@@ -33,17 +33,17 @@ def test_function_return_value(r1_test_connection, first_router_from_devices_yam
     assert return_value != None, "Функция ничего не возвращает"
     assert (
         type(return_value) == list
-    ), f"По заданию функция должна возвращать список, а возвращает {type(return_value).__name__}"
+    ), f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"
     assert (
         correct_return_value == return_value
-    ), "Функция возвращает неправильное значение"
+    ), "Функція повертає неправильне значення"
 
 
 def test_function_return_value_different_args(
     r1_test_connection, first_router_from_devices_yaml
 ):
     """
-    Проверка работы функции с другими аргументами
+    Перевірка роботи функції с другими аргументами
     """
     with open("templates/sh_version.template") as f:
         re_table = textfsm.TextFSM(f)
@@ -59,7 +59,7 @@ def test_function_return_value_different_args(
     assert return_value != None, "Функция ничего не возвращает"
     assert (
         type(return_value) == list
-    ), f"По заданию функция должна возвращать список, а возвращает {type(return_value).__name__}"
+    ), f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"
     assert (
         correct_return_value == return_value
-    ), "Функция возвращает неправильное значение"
+    ), "Функція повертає неправильне значення"

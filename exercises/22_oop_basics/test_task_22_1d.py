@@ -29,7 +29,7 @@ def test_topology_normalization(topology_with_dupl_links, normalized_topology_ex
     return_value = task_22_1d.Topology(topology_with_dupl_links)
     assert (
         type(return_value.topology) == dict
-    ), f"По заданию в переменной topology должен быть словарь, а не {type(return_value.topology).__name__}"
+    ), f"За завданням у змінній topology должен быть словарь, а не {type(return_value.topology).__name__}"
     assert len(correct_topology) == len(
         return_value.topology
     ), "После создания экземпляра, в переменной topology должна находиться топология без дублей"

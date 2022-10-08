@@ -9,7 +9,7 @@ from pyneng_common_functions import check_function_exists
 
 def test_function_created():
     """
-    Проверка, что функция создана
+    Тестуємо, що функцію створено
     """
     check_function_exists(task_9_2, "check_ip")
 
@@ -27,7 +27,7 @@ def test_task_correct_ip(ip_address):
     assert (
         type(return_value) == bool
     ), f"По заданию функция должна возвращать True или False, а возвращает {type(return_value).__name__}"
-    assert True == return_value, "Функция возвращает неправильное значение"
+    assert True == return_value, "Функція повертає неправильне значення"
 
 
 @pytest.mark.parametrize(
@@ -40,4 +40,4 @@ def test_task_wrong_ip(ip_address):
     assert (
         type(return_value) == bool
     ), f"По заданию функция должна возвращать True или False, а возвращает {type(return_value).__name__}"
-    assert False == return_value, "Функция возвращает неправильное значение"
+    assert False == return_value, "Функція повертає неправильне значення"

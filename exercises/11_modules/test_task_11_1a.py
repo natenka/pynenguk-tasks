@@ -15,7 +15,7 @@ from pyneng_common_functions import check_function_exists
 
 def test_function_created():
     """
-    Проверка, что функция создана
+    Тестуємо, що функцію створено
     """
     check_function_exists(task_11_1a, "convert_mac_list")
 
@@ -35,18 +35,18 @@ def test_function_created():
 )
 def test_function_return_value_correct_mac(mac_list, correct_converted_mac_list):
     """
-    Проверка работы функции
+    Перевірка роботи функції
     """
 
     return_value = task_11_1a.convert_mac_list(mac_list)
     assert return_value != None, "Функция ничего не возвращает"
     assert (
         type(return_value) == list
-    ), f"По заданию функция должна возвращать список, а возвращает {type(return_value).__name__}"
+    ), f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"
     assert (
         correct_converted_mac_list == return_value
     ), (
-        f"Функция возвращает неправильное значение.\nЕсли функции передается "
+        f"Функція повертає неправильне значення.\nЕсли функции передается "
         f"как аргумент список {mac_list},\nрезультат должен быть {correct_converted_mac_list}"
     )
 
@@ -62,7 +62,7 @@ def test_function_return_value_correct_mac(mac_list, correct_converted_mac_list)
 )
 def test_function_return_value_wrong_mac_strict_true(wrong_mac_list):
     """
-    Проверка работы функции с неправильными MAC-адресам
+    Перевірка роботи функції с неправильными MAC-адресам
     """
     with pytest.raises(ValueError) as excinfo:
         return_value = task_11_1a.convert_mac_list(wrong_mac_list, strict=True)
@@ -85,12 +85,12 @@ def test_function_return_value_wrong_mac_strict_false(
     mac_list, correct_converted_mac_list
 ):
     """
-    Проверка работы функции
+    Перевірка роботи функції
     """
     return_value = task_11_1a.convert_mac_list(mac_list, strict=False)
     assert (
         correct_converted_mac_list == return_value
     ), (
-        f"Функция возвращает неправильное значение.\nЕсли функции передается "
+        f"Функція повертає неправильне значення.\nЕсли функции передается "
         f"как аргумент список {mac_list},\nрезультат должен быть {correct_converted_mac_list}"
     )

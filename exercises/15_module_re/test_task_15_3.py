@@ -8,14 +8,14 @@ from pyneng_common_functions import check_function_exists
 
 def test_function_created():
     """
-    Проверка, что функция создана
+    Тестуємо, що функцію створено
     """
     check_function_exists(task_15_3, "convert_ios_nat_to_asa")
 
 
 def test_function_return_value(tmpdir):
     """
-    Проверка работы функции
+    Перевірка роботи функції
     """
     correct_asa_nat_config = (
         "object network LOCAL_10.66.0.13\n"

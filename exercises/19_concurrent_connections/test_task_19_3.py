@@ -21,7 +21,7 @@ with open("devices.yaml") as f:
 
 def test_functions_created():
     """
-    Проверка, что функция создана
+    Тестуємо, що функцію створено
     """
     check_function_exists(task_19_3, "send_command_to_devices")
 
@@ -42,7 +42,7 @@ def test_function_return_value_from_single_device(
     command_dict,
 ):
     """
-    Проверка работы функции
+    Перевірка роботи функції
     """
     device_ip = device["host"]
     command = command_dict[device_ip]
@@ -71,7 +71,7 @@ def test_function_return_value_from_all_devices(
     three_routers_from_devices_yaml, r1_r2_r3_test_connection, tmpdir
 ):
     """
-    Проверка работы функции
+    Перевірка роботи функції
     """
     routers_ip = [router["host"] for router in three_routers_from_devices_yaml]
     commands = ["sh ip int br", "show ip int bri | exc unass", "show int desc"]

@@ -16,7 +16,7 @@ def test_functions_created():
 
 def test_parse_sh_version_return_value():
     """
-    Проверка работы функции
+    Перевірка роботи функції
     """
     with open("sh_version_r1.txt") as f:
         sh_version_r1 = f.read()
@@ -41,17 +41,17 @@ def test_parse_sh_version_return_value():
     ), f"По заданию функция должна возвращать кортеж, а возвращает {type(return_value_r1).__name__}"
     assert (
         correct_return_value_r1 == return_value_r1
-    ), "Функция возвращает неправильное значение для вывода r1"
+    ), "Функція повертає неправильне значення для вывода r1"
 
     return_value_r2 = task_17_2.parse_sh_version(sh_version_r2)
     assert (
         correct_return_value_r2 == return_value_r2
-    ), "Функция возвращает неправильное значение для вывода r2"
+    ), "Функція повертає неправильне значення для вывода r2"
 
 
 def test_write_to_csv_return_value(tmpdir):
     """
-    Проверка работы функции
+    Перевірка роботи функції
     """
     correct_return_value = sorted(
         [
@@ -86,4 +86,4 @@ def test_write_to_csv_return_value(tmpdir):
     ), f"По заданию функция должна возвращать None, а возвращает {type(return_value).__name__}"
     assert correct_return_value == sorted(
         csv_content
-    ), "Функция возвращает неправильное значение"
+    ), "Функція повертає неправильне значення"
