@@ -24,7 +24,7 @@ def test_task_10_5_5_0(capsys, monkeypatch):
     assert (
         out
     ), "Нічого не виведено стандартний потік виведення. Потрібно не лише отримати потрібний результат, але й вивести його на стандартний потік виведення за допомогою print"
-    assert correct_stdout == stdout, "Выведено неправильное значение"
+    assert correct_stdout == stdout, "Виведено невірне значення"
 
 
 def test_task_10_1_1_192(capsys, monkeypatch):
@@ -47,4 +47,4 @@ def test_task_10_1_1_192(capsys, monkeypatch):
     assert (
         out
     ), "Нічого не виведено стандартний потік виведення. Потрібно не лише отримати потрібний результат, але й вивести його на стандартний потік виведення за допомогою print"
-    assert correct_stdout == stdout, "Выведено неправильное значение"
+    assert correct_stdout == stdout, "Виведено невірне значення"

@@ -19,4 +19,4 @@ def test_task_sw1(capsys, monkeypatch, index, correct_word):
     )
     assert (
         correct_word in out.strip()
-    ), "На стандартный поток вывода выводится неправильный вывод"
+    ), "На стандартний потік виведення виводиться неправильний вивід"
