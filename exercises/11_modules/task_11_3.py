@@ -31,7 +31,7 @@ R6           Fa 0/2          143           R S I           2811       Fa 0/0
 должна работать и на других файлах (тест проверяет работу функции на выводе из
 sh_cdp_n_sw1.txt и sh_cdp_n_r3.txt).
 
-Пример работы функции
+Приклад роботи функції
 In [3]: with open("sh_cdp_n_sw1.txt") as f:
    ...:     pprint(parse_cdp_neighbors(f.read()))
    ...:

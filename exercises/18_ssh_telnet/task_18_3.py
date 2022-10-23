@@ -36,7 +36,7 @@ TypeError: send_commands() takes 1 positional argument but 2 were given
 * со списком команд commands
 * командой command
 
-Пример работы функции:
+Приклад роботи функції:
 
 In [14]: send_commands(r1, show='sh clock')
 Out[14]: '*17:06:12.278 UTC Wed Mar 13 2019'
