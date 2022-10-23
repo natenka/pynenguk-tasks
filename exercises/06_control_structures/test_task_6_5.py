@@ -47,12 +47,12 @@ def test_task_random_5_input_3_8_5(capsys, monkeypatch):
     import task_6_5
 
     correct_stdout = (
-        "\nВведіть число: 3\n"
-        "Задумане число більше\n"
-        "Введіть число: 8\n"
-        "Задумане число менше\n"
-        "Введіть число: 5\n"
-        "Правильно!\n"
+        "\nEnter number: 3\n"
+        "Your guess is too low\n"
+        "Enter number: 8\n"
+        "Your guess is too high\n"
+        "Enter number: 5\n"
+        "Correct!\n"
     )
     out, err = capsys.readouterr()
     out = out.strip().lower()
@@ -74,10 +74,10 @@ def test_task_random_8_input_7_8(capsys, monkeypatch):
     import task_6_5
 
     correct_stdout = (
-        "\nВведіть число: 7\n"
-        "Задумане число більше\n"
-        "Введіть число: 8\n"
-        "Правильно!\n"
+        "\nEnter number: 7\n"
+        "Your guess is too low\n"
+        "Enter number: 8\n"
+        "Correct!\n"
     )
     out, err = capsys.readouterr()
     out = out.strip().lower()
@@ -99,17 +99,17 @@ def test_task_random_4_input_1_1_1_1_1(capsys, monkeypatch):
     import task_6_5
 
     correct_stdout = (
-        "\nВведіть число: 1\n"
-        "Задумане число більше\n"
-        "\nВведіть число: 1\n"
-        "Задумане число більше\n"
-        "\nВведіть число: 1\n"
-        "Задумане число більше\n"
-        "\nВведіть число: 1\n"
-        "Задумане число більше\n"
-        "\nВведіть число: 1\n"
-        "Задумане число більше\n"
-        "Число не угадано после 5 попыток\n"
+        "\nEnter number: 1\n"
+        "Your guess is too low\n"
+        "\nEnter number: 1\n"
+        "Your guess is too low\n"
+        "\nEnter number: 1\n"
+        "Your guess is too low\n"
+        "\nEnter number: 1\n"
+        "Your guess is too low\n"
+        "\nEnter number: 1\n"
+        "Your guess is too low\n"
+        "Number not guessed after 5 tries\n"
     )
     out, err = capsys.readouterr()
     assert out, "Нічого не виведено стандартний потік виведення. Потрібно не лише отримати потрібний результат, але й вивести його на стандартний потік виведення за допомогою print"
