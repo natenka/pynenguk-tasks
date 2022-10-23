@@ -58,7 +58,7 @@ def test_task_sw1_wrong_param(capsys, monkeypatch):
         )
 
     out, err = capsys.readouterr()
-    correct_stdout = "параметра нет"
+    correct_stdout = "no such parameter"
     assert (
         out
     ), "Нічого не виведено стандартний потік виведення. Потрібно не лише отримати потрібний результат, але й вивести його на стандартний потік виведення за допомогою print"
