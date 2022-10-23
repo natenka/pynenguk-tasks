@@ -2,20 +2,20 @@
 """
 Завдання 4.9
 
-В задании создан список words
+У завданні створено список words
 words = [
     'Guido', 'van', 'Rossum', 'began', 'working', 'on',
     'Python', 'in', 'the', 'late', '1980s',
 ]
 
-Надо вывести на экран строку, которая содержит каждое слово из списка words,
-слова должны быть разделены пробелом.
+Потрібно вивести на екран рядок, який містить кожне слово зі списку words,
+слова мають бути розділені пробілом.
 
-Пример работы задания:
-$ python task_4_9.py
-Guido van Rossum began working on Python in the late 1980s
+Приклад роботи завдання:
+$ python task_4_9a.py
+Guido Rossum working Python the 1980s
 
-Ограничение: нельзя изменять список words.
+Обмеження: не можна редагувати список words.
 """
 words = [
     'Guido', 'van', 'Rossum', 'began', 'working', 'on',
