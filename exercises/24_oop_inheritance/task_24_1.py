@@ -1,7 +1,7 @@
 # -*- coding: utf-8 -*-
 
 """
-Задание 24.1
+Завдання 24.1
 
 Создать класс CiscoSSH, который наследует класс BaseSSH из файла base_connect_class.py.
 

@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Задание 17.3
+Завдання 17.3
 
 Создать функцию parse_sh_cdp_neighbors, которая обрабатывает
 вывод команды show cdp neighbors.

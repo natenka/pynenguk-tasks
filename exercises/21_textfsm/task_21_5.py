@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Задание 21.5
+Завдання 21.5
 
 Создать функцию send_and_parse_command_parallel.
 

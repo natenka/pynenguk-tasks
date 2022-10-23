@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Задание 6.4
+Завдання 6.4
 
 Список files содержит имена файлов:
 ["cfg_1.txt", "cfg_4.txt", "cfg_8.txt", "cfg_9.txt", "cfg_12.txt", "cfg_15.txt"]
