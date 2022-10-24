@@ -69,4 +69,4 @@ def test_function_return_value(tmpdir):
     assert return_value == None, "Функція повинна повертати None"
     assert (
         correct_asa_nat_config.strip() == file_content
-    ), "Неправильная конфигурация для ASA"
+    ), "Неправильна конфігурація для ASA"

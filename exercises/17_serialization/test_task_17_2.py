@@ -8,7 +8,7 @@ from pyneng_common_functions import check_function_exists, read_all_csv_content_
 
 def test_functions_created():
     """
-    Проверка, что функции созданы
+    Перевірка, що функції створені
     """
     check_function_exists(task_17_2, "parse_sh_version")
     check_function_exists(task_17_2, "write_inventory_to_csv")
@@ -41,12 +41,12 @@ def test_parse_sh_version_return_value():
     ), f"За завданням функція має повертати кортеж, а повертає {type(return_value_r1).__name__}"
     assert (
         correct_return_value_r1 == return_value_r1
-    ), "Функція повертає неправильне значення для вывода r1"
+    ), "Функція повертає неправильне значення для виводу r1"
 
     return_value_r2 = task_17_2.parse_sh_version(sh_version_r2)
     assert (
         correct_return_value_r2 == return_value_r2
-    ), "Функція повертає неправильне значення для вывода r2"
+    ), "Функція повертає неправильне значення для виводу r2"
 
 
 def test_write_to_csv_return_value(tmpdir):

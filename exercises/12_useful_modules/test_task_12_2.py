@@ -32,7 +32,7 @@ def test_function_return_value():
 
     return_value = task_12_2.convert_ranges_to_ip_list(list_of_ips_and_ranges)
     assert return_value != None, "Функція нічого не повертає"
-    assert type(return_value) == list, "Функция должна возвращать список"
+    assert type(return_value) == list, "Функція має повертати список"
     assert sorted(correct_return_value) == sorted(
         return_value
     ), "Функція повертає неправильне значення"
@@ -40,7 +40,7 @@ def test_function_return_value():
 
 def test_function_return_value_different_args():
     """
-    Перевірка роботи функції на других адресах
+    Перевірка роботи функції на інших адресах
     """
     list_of_ips_and_ranges = ["10.1.1.1", "10.4.10.10-13", "192.168.1.12-192.168.1.15"]
     correct_return_value = [

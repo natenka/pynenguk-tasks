@@ -30,7 +30,7 @@ def test_function_return_value():
         }
     )
 
-    assert os.path.exists("topology.yaml"), "Файл topology.yaml не существует"
+    assert os.path.exists("topology.yaml"), "Файл topology.yaml не існує"
     return_value = task_17_3b.transform_topology("topology.yaml")
     assert return_value != None, "Функція нічого не повертає"
     assert (
@@ -38,7 +38,7 @@ def test_function_return_value():
     ), f"За завданням функція має повертати словник, а повертає {type(return_value).__name__}"
     assert len(correct_return_value) == len(
         return_value
-    ), "В словаре, который описывает топологию есть дублирующиеся линки"
+    ), "У словнику, який описує топологію є лінки, що дублюються"
     assert correct_return_value == unify_topology_dict(
         return_value
     ), "Функція повертає неправильне значення"

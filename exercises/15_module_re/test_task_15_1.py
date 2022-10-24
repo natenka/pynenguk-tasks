@@ -28,8 +28,6 @@ def test_function_return_value():
     assert (
         type(return_value) == list
     ), f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"
-    # Списки сортируются чтобы не было ошибки, если адреса записаны в списке в другом порядке
-    # В этом задании порядок кортежей в списке не важен
     assert sorted(correct_return_value) == sorted(
         return_value
     ), "Функція повертає неправильне значення"
@@ -37,7 +35,7 @@ def test_function_return_value():
 
 def test_function_return_value_different_args():
     """
-    Перевірка роботи функції с другими аргументами
+    Перевірка роботи функції з іншими аргументами
     """
     correct_return_value = [
         ("10.3.3.3", "255.255.255.255"),

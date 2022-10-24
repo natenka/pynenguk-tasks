@@ -41,7 +41,7 @@ def test_function_return_value():
 
 def test_function_return_value_different_args():
     """
-    Перевірка роботи функції на другом выводе
+    Перевірка роботи функції
     """
     with open("sh_cdp_n_sw1.txt") as f:
         sh_cdp_n_sw1 = f.read()

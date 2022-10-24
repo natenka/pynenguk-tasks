@@ -35,7 +35,7 @@ def test_function_return_value():
 
 def test_function_return_value_different_args():
     """
-    Перевірка роботи функції с другими аргументами
+    Перевірка роботи функції з іншими аргументами
     """
     correct_return_value = {
         "Loopback0": ("10.3.3.3", "255.255.255.255"),
