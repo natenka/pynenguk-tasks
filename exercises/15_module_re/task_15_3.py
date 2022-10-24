@@ -2,22 +2,21 @@
 """
 Завдання 15.3
 
-Создать функцию convert_ios_nat_to_asa, которая конвертирует правила NAT
-из синтаксиса cisco IOS в cisco ASA.
+Створити функцію convert_ios_nat_to_asa, яка конвертує правила NAT із
+синтаксису cisco IOS в cisco ASA.
 
-Функция ожидает такие аргументы:
-- имя файла, в котором находится правила NAT Cisco IOS
-- имя файла, в который надо записать полученные правила NAT для ASA
+Функція чекає на такі аргументи:
+* ім'я файлу, в якому міститься правила NAT Cisco IOS
+* ім'я файлу, в який потрібно записати отримані правила NAT для ASA
 
 Функція нічого не повертає.
+Перевірити функцію на файлі cisco_nat_config.txt.
 
-Проверить функцию на файле cisco_nat_config.txt.
-
-Пример правил NAT cisco IOS
+Приклад правил NAT cisco IOS
 ip nat inside source static tcp 10.1.2.84 22 interface GigabitEthernet0/1 20022
 ip nat inside source static tcp 10.1.9.5 22 interface GigabitEthernet0/1 20023
 
-И соответствующие правила NAT для ASA:
+І відповідні правила NAT для ASA:
 object network LOCAL_10.1.2.84
  host 10.1.2.84
  nat (inside,outside) static interface service tcp 22 20022
@@ -25,10 +24,11 @@ object network LOCAL_10.1.9.5
  host 10.1.9.5
  nat (inside,outside) static interface service tcp 22 20023
 
-В файле с правилами для ASA:
-- не должно быть пустых строк между правилами
-- перед строками "object network" не должны быть пробелы
-- перед остальными строками должен быть один пробел
+У файлі з правилами для ASA:
+* не повинно бути порожніх рядків між правилами
+* перед рядками "object network" не повинні бути прогалини
+* перед рештою рядків має бути одна пропуск
 
-Во всех правилах для ASA интерфейсы будут одинаковыми (inside,outside).
+У всіх правилах для ASA інтерфейси будуть однаковими (inside, outside).
+
 """
