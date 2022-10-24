@@ -26,7 +26,7 @@ def monkey_input_sw1(prompt):
 
 def test_task_r2_correct_param(capsys, monkeypatch):
     """
-    Перевірка роботи завдання при вводе r2
+    Перевірка роботи завдання при введенні r2
     """
     monkeypatch.setattr("builtins.input", monkey_input_r2)
     import task_5_3c
@@ -44,7 +44,7 @@ def test_task_r2_correct_param(capsys, monkeypatch):
 
 def test_task_sw1_wrong_param(capsys, monkeypatch):
     """
-    Перевірка роботи завдання при вводе sw1
+    Перевірка роботи завдання при введенні sw1
     """
     monkeypatch.setattr("builtins.input", monkey_input_sw1)
     if sys.modules.get("task_5_3c"):
@@ -53,8 +53,8 @@ def test_task_sw1_wrong_param(capsys, monkeypatch):
         import task_5_3c
     except KeyError:
         pytest.fail(
-            "В этом задании должна обрабатываться ситуация, "
-            "когда параметр указан неправильный. Не должна возникать ошибка KeyError"
+            "У цьому завданні має бути оброблена ситуація, коли параметр"
+            "вказаний неправильний. Не повинна виникати помилка KeyError"
         )
 
     out, err = capsys.readouterr()

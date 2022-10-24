@@ -15,7 +15,6 @@ def test_task_cfg_trunk_sw2(monkeypatch, tmpdir):
         "FastEthernet0/4": ["400", "500", "600"],
     }
 
-    # переменные созданные в задании:
     task_vars = [var for var in dir(task_7_4) if not var.startswith("_")]
 
     assert (
@@ -26,7 +25,7 @@ def test_task_cfg_trunk_sw2(monkeypatch, tmpdir):
     ), f"За завданням у змінній trunk_dict має бути словник, а в ній {type(task_7_4.result).__name__}"
     assert (
         correct_result == task_7_4.trunk_dict
-    ), f"В переменной trunk_dict должен быть словарь {correct_result}"
+    ), f"У змінній trunk_dict має бути словник {correct_result}"
 
 
 def test_task_cfg_trunk_sw3(monkeypatch, tmpdir):
@@ -44,7 +43,6 @@ def test_task_cfg_trunk_sw3(monkeypatch, tmpdir):
         "FastEthernet0/6": ["40", "50", "60"],
     }
 
-    # переменные созданные в задании:
     task_vars = [var for var in dir(task_7_4) if not var.startswith("_")]
 
     assert (
@@ -55,4 +53,4 @@ def test_task_cfg_trunk_sw3(monkeypatch, tmpdir):
     ), f"За завданням у змінній trunk_dict має бути словник, а в ній {type(task_7_4.result).__name__}"
     assert (
         correct_result == task_7_4.trunk_dict
-    ), f"В переменной trunk_dict должен быть словарь {correct_result}"
+    ), f"У змінній trunk_dict має бути словник {correct_result}"

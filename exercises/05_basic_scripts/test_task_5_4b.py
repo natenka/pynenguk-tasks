@@ -8,7 +8,7 @@ from pyneng_common_functions import unified_columns_output
 
 def test_task_10_5_5_1_24(capsys, monkeypatch):
     """
-    Перевірка роботи завдання при вводе 10.5.5.1/24
+    Перевірка роботи завдання при введенні 10.5.5.1/24
     """
     monkeypatch.setattr("builtins.input", lambda x=None: "10.5.5.1 255.255.255.0")
     import task_5_4b
@@ -33,7 +33,7 @@ def test_task_10_5_5_1_24(capsys, monkeypatch):
 
 def test_task_10_1_1_193_28(capsys, monkeypatch):
     """
-    Перевірка роботи завдання при вводе 10.1.1.193/28
+    Перевірка роботи завдання при введенні 10.1.1.193/28
     """
     monkeypatch.setattr("builtins.input", lambda x=None: "10.1.1.193 255.255.255.240")
     if sys.modules.get("task_5_4b"):
@@ -60,7 +60,7 @@ def test_task_10_1_1_193_28(capsys, monkeypatch):
 
 def test_task_172_16_100_237_29(capsys, monkeypatch):
     """
-    Перевірка роботи завдання при вводе 172.16.100.237/29
+    Перевірка роботи завдання при введенні 172.16.100.237/29
     """
     monkeypatch.setattr("builtins.input", lambda x=None: "172.16.100.237 255.255.255.248")
     if sys.modules.get("task_5_4b"):

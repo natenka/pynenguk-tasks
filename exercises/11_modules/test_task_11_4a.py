@@ -19,7 +19,7 @@ def test_function_created():
 
 def test_function_params():
     """
-    Проверка имен и количества параметров
+    Перевірка імен та кількості параметрів
     """
     check_function_params(
         function=task_11_4a.unique_network_map,
@@ -61,7 +61,7 @@ def test_function_return_value():
     ), f"За завданням функція має повертати словник, а повертає {type(return_value).__name__}"
     assert len(correct_return_value) == len(
         return_value
-    ), "В словаре, который описывает топологию есть дублирующиеся линки"
+    ), "У словнику, який описує топологію є лінки, що дублюються"
     unified_return_value = unify_topology_dict(return_value)
     assert (
         correct_return_value == unified_return_value
@@ -92,7 +92,7 @@ def test_function_return_value_different_args():
     ), f"За завданням функція має повертати словник, а повертає {type(return_value).__name__}"
     assert len(correct_return_value) == len(
         return_value
-    ), "В словаре, который описывает топологию есть дублирующиеся линки"
+    ), "У словнику, який описує топологію є лінки, що дублюються"
     unified_return_value = unify_topology_dict(return_value)
     assert (
         correct_return_value == unified_return_value

@@ -30,7 +30,7 @@ def monkey_input_trunk(prompt):
 
 def test_task_access(capsys, monkeypatch):
     """
-    Перевірка роботи завдання при вводе access
+    Перевірка роботи завдання при введенні access
     """
     monkeypatch.setattr("builtins.input", monkey_input_access)
     import task_5_5
@@ -55,7 +55,7 @@ def test_task_access(capsys, monkeypatch):
 
 def test_task_trunk(capsys, monkeypatch):
     """
-    Перевірка роботи завдання при вводе trunk
+    Перевірка роботи завдання при введенні trunk
     """
     monkeypatch.setattr("builtins.input", monkey_input_trunk)
     if sys.modules.get("task_5_5"):

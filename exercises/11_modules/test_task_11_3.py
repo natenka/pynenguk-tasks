@@ -15,7 +15,7 @@ def test_function_created():
 
 def test_function_params():
     """
-    Проверка имен и количества параметров
+    Перевірка імен та кількості параметрів
     """
     check_function_params(
         function=task_11_3.parse_cdp_neighbors,
@@ -57,7 +57,7 @@ def test_function_return_value():
 
 def test_function_return_value_different_args():
     """
-    Перевірка роботи функції на другом выводе
+    Перевірка роботи функції
     """
     sh_cdp_n_r3 = (
         "R3>show cdp neighbors\n"

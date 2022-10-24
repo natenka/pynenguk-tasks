@@ -31,7 +31,6 @@ def test_task_cfg_trunk_sw2(monkeypatch, tmpdir):
         "FastEthernet0/6": ["switchport mode access", "switchport access vlan 20"],
     }
 
-    # переменные созданные в задании:
     task_vars = [var for var in dir(task_7_5) if not var.startswith("_")]
 
     assert (
@@ -42,7 +41,7 @@ def test_task_cfg_trunk_sw2(monkeypatch, tmpdir):
     ), f"За завданням у змінній interface_dict має бути словник, а в ній {type(task_7_5.result).__name__}"
     assert (
         correct_result == task_7_5.interface_dict
-    ), f"В переменной interface_dict должен быть словарь \n{pformat(correct_result)}"
+    ), f"У змінній interface_dict має бути словник \n{pformat(correct_result)}"
 
 
 def test_task_cfg_trunk_sw3(monkeypatch, tmpdir):
@@ -77,7 +76,6 @@ def test_task_cfg_trunk_sw3(monkeypatch, tmpdir):
         "FastEthernet0/8": ["switchport mode access"],
     }
 
-    # переменные созданные в задании:
     task_vars = [var for var in dir(task_7_5) if not var.startswith("_")]
 
     assert (
@@ -88,4 +86,4 @@ def test_task_cfg_trunk_sw3(monkeypatch, tmpdir):
     ), f"За завданням у змінній interface_dict має бути словник, а в ній {type(task_7_5.result).__name__}"
     assert (
         correct_result == task_7_5.interface_dict
-    ), f"В переменной interface_dict должен быть словарь \n{pformat(correct_result)}"
+    ), f"У змінній interface_dict має бути словник \n{pformat(correct_result)}"

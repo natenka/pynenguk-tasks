@@ -6,7 +6,7 @@ import pytest
 @pytest.mark.parametrize("index,correct_word", [("0", "guido"), ("5", "on"), ("6", "python")])
 def test_task_sw1(capsys, monkeypatch, index, correct_word):
     """
-    Перевірка роботи завдання при вводе sw1
+    Перевірка роботи завдання при введенні sw1
     """
     monkeypatch.setattr("builtins.input", lambda x=None: index)
     if sys.modules.get("task_5_1"):

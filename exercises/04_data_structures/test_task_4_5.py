@@ -27,7 +27,6 @@ def test_task_variables():
     """
     import task_4_5
 
-    # переменные созданные в задании:
     task_vars = [var for var in dir(task_4_5) if not var.startswith("_")]
 
     correct_result = ["1", "3", "8"]

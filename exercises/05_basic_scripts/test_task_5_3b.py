@@ -13,14 +13,12 @@ def monkey_input_r2(prompt):
     if monkey_input_r2.total_calls == 1:
         return "r2"
     elif monkey_input_r2.total_calls == 2:
-        # при запросе параметры должны указываться доступные значения для
-        # устройства. Для r2: "location, vendor, model, ios, ip"
         if re.search(r"location.+vendor.+model.+ios.+ip", prompt):
             return "ip"
         else:
             pytest.fail(
-                "В запросе параметра не указаны доступные значения для устройства. "
-                "Для r2 это такие значения "
+				"У запиті параметра не вказано доступні значення для пристрою. "
+                "Для r2 це такі значення"
                 "(location, vendor, model, ios, ip)"
             )
 
@@ -35,15 +33,15 @@ def monkey_input_sw1(prompt):
             return "ios"
         else:
             pytest.fail(
-                "В запросе параметра не указаны доступные значения для устройства. "
-                "Для sw1 это такие значения "
+				"У запиті параметра не вказано доступні значення для пристрою. "
+                "Для sw1 це такі значення"
                 "(location, vendor, model, ios, ip, vlans, routing)"
             )
 
 
 def test_task_r2(capsys, monkeypatch):
     """
-    Перевірка роботи завдання при вводе r2
+    Перевірка роботи завдання при введенні r2
     """
     monkeypatch.setattr("builtins.input", monkey_input_r2)
     import task_5_3b
@@ -61,7 +59,7 @@ def test_task_r2(capsys, monkeypatch):
 
 def test_task_sw1(capsys, monkeypatch):
     """
-    Перевірка роботи завдання при вводе sw1
+    Перевірка роботи завдання при введенні sw1
     """
     monkeypatch.setattr("builtins.input", monkey_input_sw1)
     if sys.modules.get("task_5_3b"):

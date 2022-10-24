@@ -23,7 +23,7 @@ def monkey_input_retry_3(prompt):
     elif monkey_input_retry_3.total_calls == 3:
         return "a"
     else:
-        pytest.fail("При max_retry=3 адрес должен запрашиваться только три раза")
+        pytest.fail("При max_retry=3 адреса повинна запитуватись лише три рази")
 
 
 def test_function_created():

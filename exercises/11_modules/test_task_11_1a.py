@@ -46,8 +46,8 @@ def test_function_return_value_correct_mac(mac_list, correct_converted_mac_list)
     assert (
         correct_converted_mac_list == return_value
     ), (
-        f"Функція повертає неправильне значення.\nЕсли функции передается "
-        f"как аргумент список {mac_list},\nрезультат должен быть {correct_converted_mac_list}"
+        f"Функція повертає неправильне значення.\nЯкщо функції передається "
+        f"як аргумент список {mac_list},\nрезультат має бути {correct_converted_mac_list}"
     )
 
 
@@ -91,6 +91,6 @@ def test_function_return_value_wrong_mac_strict_false(
     assert (
         correct_converted_mac_list == return_value
     ), (
-        f"Функція повертає неправильне значення.\nЕсли функции передается "
-        f"как аргумент список {mac_list},\nрезультат должен быть {correct_converted_mac_list}"
+        f"Функція повертає неправильне значення.\nЯкщо функції передається "
+        f"як аргумент список {mac_list},\nрезультат має бути {correct_converted_mac_list}"
     )

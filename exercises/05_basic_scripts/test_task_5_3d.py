@@ -26,7 +26,7 @@ def monkey_input_sw1(prompt):
 
 def test_task_r2_ip(capsys, monkeypatch):
     """
-    Перевірка роботи завдання при вводе r2
+    Перевірка роботи завдання при введенні r2
     """
     monkeypatch.setattr("builtins.input", monkey_input_r2)
     import task_5_3d
@@ -44,7 +44,7 @@ def test_task_r2_ip(capsys, monkeypatch):
 
 def test_task_sw1_IOS(capsys, monkeypatch):
     """
-    Перевірка роботи завдання при вводе sw1
+    Перевірка роботи завдання при введенні sw1
     """
     monkeypatch.setattr("builtins.input", monkey_input_sw1)
     if sys.modules.get("task_5_3d"):

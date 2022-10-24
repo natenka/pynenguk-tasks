@@ -4,7 +4,7 @@ import sys
 
 def test_task_r2(capsys, monkeypatch):
     """
-    Перевірка роботи завдання при вводе r2
+    Перевірка роботи завдання при введенні r2
     """
     monkeypatch.setattr("builtins.input", lambda x=None: "r2")
     import task_5_3
@@ -28,7 +28,7 @@ def test_task_r2(capsys, monkeypatch):
 
 def test_task_sw1(capsys, monkeypatch):
     """
-    Перевірка роботи завдання при вводе sw1
+    Перевірка роботи завдання при введенні sw1
     """
     monkeypatch.setattr("builtins.input", lambda x=None: "sw1")
     if sys.modules.get("task_5_3"):

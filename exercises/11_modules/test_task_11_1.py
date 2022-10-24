@@ -59,7 +59,7 @@ def test_function_return_value_correct_mac(mac, correct_converted_mac):
 )
 def test_function_return_value_wrong_mac(wrong_mac):
     """
-    Перевірка роботи функції с неправильными MAC-адресам
+    Перевірка роботи функції
     """
     with pytest.raises(ValueError) as excinfo:
         return_value = task_11_1.convert_mac(wrong_mac)

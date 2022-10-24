@@ -13,7 +13,7 @@ import pytest
 )
 def test_task_sw1(capsys, monkeypatch, sep, correct_output):
     """
-    Перевірка роботи завдання при вводе sw1
+    Перевірка роботи завдання при введенні sw1
     """
     monkeypatch.setattr("builtins.input", lambda x=None: sep)
     if sys.modules.get("task_5_2"):

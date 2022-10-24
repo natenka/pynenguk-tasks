@@ -18,7 +18,7 @@ def test_function_created():
 
 def test_function_params():
     """
-    Проверка имен и количества параметров
+    Перевірка імен та кількості параметрів
     """
     check_function_params(
         function=task_11_4.create_network_map, param_count=1, param_names=["filenames"]
