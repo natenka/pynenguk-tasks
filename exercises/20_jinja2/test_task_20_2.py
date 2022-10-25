@@ -38,9 +38,9 @@ def test_function_return_value():
     template = "templates/cisco_router_base.txt"
     data = {"hostname": "R1"}
     return_value = render_jinja_template(template, data)
-    assert service_section in return_value, "В итоговой конфигурации нет команд service"
-    assert alias_section in return_value, "В итоговой конфигурации нет команд alias"
+    assert service_section in return_value, "У підсумковій конфігурації немає команд service"
+    assert alias_section in return_value, "У підсумковій конфігурації немає команд alias"
     assert (
         eem_section in return_value
-    ), "В итоговой конфигурации нет настройки event manager"
-    assert data["hostname"] in return_value, "В итоговой конфигурации нет hostname"
+    ), "У підсумковій конфігурації немає настройки event manager"
+    assert data["hostname"] in return_value, "У підсумковій конфігурації немає hostname"

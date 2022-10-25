@@ -103,7 +103,7 @@ def test_function_return_value_continue_yes(
     )
 
     assert return_value != None, "Функція нічого не повертає"
-    assert type(return_value) == tuple, "Функция должна возвращать кортеж"
+    assert type(return_value) == tuple, "Функція має повертати кортеж"
     assert 2 == len(return_value) and all(
         type(item) == dict for item in return_value
     ), "Функція має повертати кортеж із двома словниками"
@@ -111,10 +111,10 @@ def test_function_return_value_continue_yes(
     return_good, return_bad = return_value
     assert (
         correct_good.keys() == return_good.keys()
-    ), "Функція повертає неправильне значення для словаря с командами без ошибок"
+    ), "Функція повертає неправильне значення для словника з командами без помилок"
     assert (
         correct_bad.keys() == return_bad.keys()
-    ), "Функція повертає неправильне значення для словаря с командами с ошибками"
+    ), "Функція повертає неправильне значення для словника з командами з помилками"
 
 
 @pytest.mark.parametrize(
@@ -128,8 +128,6 @@ def test_function_return_value_continue_yes(
 def test_function_return_value_continue_no(
     first_router_from_devices_yaml, capsys, monkeypatch, c_map, commands_1, commands_2
 ):
-    # проверяем сообщения об ошибках, при условии,
-    # что после первой команды с ошибкой, была сделана остановка
     monkeypatch.setattr("builtins.input", lambda x=None: "n")
     commands = commands_1 + commands_2
 
@@ -138,7 +136,7 @@ def test_function_return_value_continue_no(
     )
 
     assert return_value != None, "Функція нічого не повертає"
-    assert type(return_value) == tuple, "Функция должна возвращать кортеж"
+    assert type(return_value) == tuple, "Функція має повертати кортеж"
     assert 2 == len(return_value) and all(
         type(item) == dict for item in return_value
     ), "Функція має повертати кортеж із двома словниками"

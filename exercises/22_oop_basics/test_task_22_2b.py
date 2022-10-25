@@ -10,9 +10,6 @@ from pyneng_common_functions import (
 
 
 def test_class_created():
-    """
-    Проверка, что класс создан
-    """
     check_class_exists(task_22_2b, "CiscoTelnet")
 
 
@@ -24,7 +21,7 @@ def test_send_config_commands_list(first_router_from_devices_yaml):
     return_value = r1.send_config_commands(cfg_comands)
     assert (
         cfg_comands[0] in return_value and cfg_comands[1] in return_value
-    ), "Метод send_config_commands возвращает неправильное значение"
+    ), "Метод send_config_commands повертає неправильне значення"
 
 
 def test_send_config_command_str(first_router_from_devices_yaml):
@@ -35,7 +32,7 @@ def test_send_config_command_str(first_router_from_devices_yaml):
     return_value = r1.send_config_commands(cfg_comand)
     assert (
         cfg_comand in return_value
-    ), "Метод send_config_commands возвращает неправильное значение"
+    ), "Метод send_config_commands повертає неправильне значення"
 
 
 def test_send_config_commands_different_command(first_router_from_devices_yaml):
@@ -46,7 +43,7 @@ def test_send_config_commands_different_command(first_router_from_devices_yaml):
     return_value = r1.send_config_commands(cfg_comand)
     assert (
         cfg_comand in return_value
-    ), "Метод send_config_commands возвращает неправильное значение"
+    ), "Метод send_config_commands повертає неправильне значення"
 
     cfg_comands = [
         "alias configure sh do sh",
@@ -55,4 +52,4 @@ def test_send_config_commands_different_command(first_router_from_devices_yaml):
     return_value = r1.send_config_commands(cfg_comands)
     assert (
         cfg_comands[0] in return_value and cfg_comands[1] in return_value
-    ), "Метод send_config_commands возвращает неправильное значение"
+    ), "Метод send_config_commands повертає неправильне значення"

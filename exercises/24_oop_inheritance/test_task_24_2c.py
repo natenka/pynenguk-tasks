@@ -16,7 +16,7 @@ def test_class_inheritance(first_router_from_devices_yaml):
     ssh.disconnect()
     assert isinstance(
         ssh, CiscoIosSSH
-    ), "Класс MyNetmiko должен наследовать CiscoIosSSH"
+    ), "Клас MyNetmiko має успадкувати від CiscoIosSSH"
     check_attr_or_method(ssh, method="send_command")
 
 

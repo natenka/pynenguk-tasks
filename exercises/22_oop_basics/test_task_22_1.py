@@ -11,20 +11,15 @@ from pyneng_common_functions import (
 
 
 def test_class_created():
-    """
-    Проверка, что класс создан
-    """
     check_class_exists(task_22_1, "Topology")
 
 
 def test_attr_topology(topology_with_dupl_links):
-    """Проверяем, что в объекте Topology есть атрибут topology"""
     return_value = task_22_1.Topology(topology_with_dupl_links)
     check_attr_or_method(return_value, attr="topology")
 
 
 def test_topology_normalization():
-    """Проверка удаления дублей в топологии"""
     topology_with_dupl_links = {
         ("R1", "Eth0/0"): ("SW1", "Eth0/1"),
         ("R2", "Eth0/0"): ("SW1", "Eth0/2"),

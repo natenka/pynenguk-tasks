@@ -66,7 +66,7 @@ def test_function_return_value_from_single_device(
 
     assert (
         correct_output == dest_file_content
-    ), f"В итоговом файле нет вывода с {device_ip}"
+    ), f"У підсумковому файлі немає виводу з {device_ip}"
 
 
 def test_function_return_value_from_all_devices(

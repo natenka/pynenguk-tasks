@@ -65,9 +65,6 @@ def test_function_return_value():
 
 
 def test_function_return_value_different_args():
-    """
-    Перевірка роботи функції с другими аргументами
-    """
     correct_return_value = [
         {
             "hostname": "R1_LONDON",

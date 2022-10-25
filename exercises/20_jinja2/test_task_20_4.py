@@ -10,7 +10,7 @@ from pyneng_common_functions import strip_empty_lines
 def test_templates_exists():
     assert os.path.exists(
         "templates/add_vlan_to_switch.txt"
-    ), "Шаблон templates/add_vlan_to_switch.txt не существует"
+    ), "Шаблон templates/add_vlan_to_switch.txt не існує"
 
 
 def test_function_return_value():
@@ -34,10 +34,10 @@ def test_function_return_value():
 
     assert (
         correct_value_vlan in return_value
-    ), "В итоговой конфигурации не создан VLAN и/или не назначено имя VLAN"
+    ), "У підсумковій конфігурації не створено VLAN та/або не призначено ім'я VLAN"
     assert (
         correct_value_access in return_value
-    ), "В итоговой конфигурации неправильная настройка access"
+    ), "У підсумковій конфігурації неправильне налаштування access"
     assert (
         correct_value_trunk1 in return_value and correct_value_trunk2 in return_value
-    ), "В итоговой конфигурации неправильная настройка trunk"
+    ), "У підсумковій конфігурації неправильне налаштування trunk"

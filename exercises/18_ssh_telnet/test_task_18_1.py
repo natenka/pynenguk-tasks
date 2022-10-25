@@ -14,12 +14,6 @@ def test_functions_created():
 
 
 def test_function_return_value(r1_test_connection, first_router_from_devices_yaml):
-    """
-    Тест проверяет работу функции send_show_command
-    first_router_from_devices_yaml - это первое устройство из файла devices.yaml
-    r1_test_connection - это сессия SSH с первым устройством из файла devices.yaml
-                         Используется для проверки вывода
-    """
     correct_return_value = strip_empty_lines(
         r1_test_connection.send_command("sh ip int br")
     )

@@ -16,7 +16,7 @@ def test_class_inheritance(first_router_from_devices_yaml):
     ssh = task_24_2d.MyNetmiko(**first_router_from_devices_yaml)
     assert isinstance(
         ssh, CiscoIosSSH
-    ), "Класс MyNetmiko должен наследовать CiscoIosSSH"
+    ), "Клас MyNetmiko має успадкувати від CiscoIosSSH"
     check_attr_or_method(ssh, method="send_config_set")
     ssh.disconnect()
 
@@ -36,7 +36,7 @@ def test_errors_ignore_false(first_router_from_devices_yaml, command, error):
     ssh.disconnect()
     assert error in str(
         excinfo
-    ), "Метод send_config_commands должен генерировать исключение, когда ignore_errors=False"
+    ), "Метод send_config_commands повинен генерувати виключення, коли команда ignore_errors=False"
 
 
 @pytest.mark.parametrize(
@@ -53,4 +53,4 @@ def test_errors_ignore_true(first_router_from_devices_yaml, command, error):
     ssh.disconnect()
     assert (
         error in return_value
-    ), "Метод send_config_commands должен возвращать вывод с ошибкой, когда ignore_errors=True"
+    ), "Метод send_config_commands повинен повернути висновок з помилкою, коли ignore_errors=True"

@@ -32,7 +32,7 @@ def test_function_return_value():
     assert 2 == len(return_value), "Функція має повертати кортеж із двома списками"
     assert all(
         type(item) == list for item in return_value
-    ), "Функция должна возвращать кортеж со списками внутри"
+    ), "Функція повинна повертати кортеж зі списками усередині"
 
     return_reachable, return_unreachable = return_value
     return_reachable, return_unreachable = sorted(return_reachable), sorted(

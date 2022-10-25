@@ -11,19 +11,16 @@ def test_class_created():
 
 
 def test_attr_topology(topology_with_dupl_links):
-    """Проверяем, что в объекте Topology есть атрибут topology"""
     top_with_data = task_23_3.Topology(topology_with_dupl_links)
     check_attr_or_method(top_with_data, attr="topology")
 
 
 def test_topology_normalization(topology_with_dupl_links, normalized_topology_example):
-    """Проверка удаления дублей в топологии"""
     top_with_data = task_23_3.Topology(topology_with_dupl_links)
     assert len(top_with_data.topology) == len(normalized_topology_example)
 
 
 def test_method__add__(normalized_topology_example):
-    """Проверка наличия метода __add__ и его работы"""
     top1 = task_23_3.Topology(normalized_topology_example)
     top1_size_before_add = len(top1.topology)
     top2 = task_23_3.Topology(
@@ -35,11 +32,11 @@ def test_method__add__(normalized_topology_example):
     top3 = top1 + top2
     assert isinstance(
         top3, task_23_3.Topology
-    ), "Метод __add__ должен возвращать новый экземпляр класса Topology"
+    ), "Метод __add__ має повернути новий екземпляр класу Topology"
     assert len(top3.topology) == 8
     assert (
         len(top1.topology) == top1_size_before_add
-    ), "После сложения изменился размер первой топологии. Метод __add__ не должен менять исходные топологии"
+    ), "Після додавання змінився розмір першої топології. Метод __add__ не повинен змінювати вихідні топології"
     assert (
         len(top2.topology) == top2_size_before_add
-    ), "После сложения изменился размер второй топологии. Метод __add__ не должен менять исходные топологии"
+    ), "Після додавання змінився розмір першої топології. Метод __add__ не повинен змінювати вихідні топології"

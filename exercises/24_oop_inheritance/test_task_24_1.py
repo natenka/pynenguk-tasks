@@ -13,7 +13,7 @@ def test_class_created():
 
 def test_class_inheritance(first_router_from_devices_yaml):
     ssh = task_24_1.CiscoSSH(**first_router_from_devices_yaml)
-    assert isinstance(ssh, BaseSSH), "Класс CiscoSSH должен наследовать BaseSSH"
+    assert isinstance(ssh, BaseSSH), "Клас CiscoSSH має успадкувати від BaseSSH"
     ssh.ssh.disconnect()
     check_attr_or_method(ssh, method="send_show_command")
     check_attr_or_method(ssh, method="send_cfg_commands")
@@ -25,4 +25,4 @@ def test_enable(first_router_from_devices_yaml):
     ssh.ssh.disconnect()
     assert (
         "hostname" in output
-    ), "При создании экземпляра класса должно создаваться подключение и переход в режим enable"
+    ), "При створенні екземпляра класу має створюватися підключення та перехід у режим enable"

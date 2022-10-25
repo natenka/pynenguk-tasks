@@ -10,10 +10,10 @@ from pyneng_common_functions import strip_empty_lines
 def test_templates_exists():
     assert os.path.exists(
         "templates/gre_ipsec_vpn_1.txt"
-    ), "Шаблон templates/gre_ipsec_vpn_1.txt не существует"
+    ), "Шаблон templates/gre_ipsec_vpn_1.txt не існує"
     assert os.path.exists(
         "templates/gre_ipsec_vpn_2.txt"
-    ), "Шаблон templates/gre_ipsec_vpn_2.txt не существует"
+    ), "Шаблон templates/gre_ipsec_vpn_2.txt не існує"
 
 
 def test_function_return_value():
@@ -48,7 +48,7 @@ def test_function_return_value():
 
     assert (
         correct_value_1 in return_cfg1
-    ), "В итоговой конфигурации неправильно указаны настройки Tunnel для первой стороны"
+    ), "У підсумковій конфігурації неправильно вказано налаштування Tunnel для першої сторони"
     assert (
         correct_value_2 in return_cfg2
-    ), "В итоговой конфигурации неправильно указаны настройки Tunnel для второй стороны"
+    ), "У підсумковій конфігурації неправильно вказано налаштування Tunnel для другої сторони"

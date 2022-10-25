@@ -18,19 +18,12 @@ def test_functions_created():
 
 
 def test_function_params(r1_test_connection, first_router_from_devices_yaml):
-    """
-    Проверка параметров
-    """
     show_command = "sh ip int br"
     cfg_commands = ["logging buffered 20010"]
     with pytest.raises(TypeError) as excinfo:
-        # если аргументы show/config передаются не как ключевые,
-        # должно генерироваться исключение TypeError
         task_18_3.send_commands(first_router_from_devices_yaml, show_command)
 
     with pytest.raises(ValueError) as excinfo:
-        # Если передаются оба аргумента и show и config,
-        # должно генерироваться исключение ValueError
         task_18_3.send_commands(
             first_router_from_devices_yaml, show=show_command, config=cfg_commands
         )
@@ -64,7 +57,7 @@ def test_function_return_value(r1_test_connection, first_router_from_devices_yam
     ), f"За завданням функція має повертати рядок, а повертає {type(return_value).__name__}"
     assert (
         correct_return_value_show == return_value_show
-    ), "Функція повертає неправильне значення при передаче команды show"
+    ), "Функція повертає неправильне значення при передачі команди show"
     assert (
         correct_return_value_cfg == return_value_cfg
-    ), "Функція повертає неправильне значення при передаче конфигурационных команд"
+    ), "Функція повертає неправильне значення під час передачі конфігураційних команд"

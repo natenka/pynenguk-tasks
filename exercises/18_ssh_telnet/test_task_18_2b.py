@@ -63,7 +63,7 @@ def test_function_return_value(capsys, first_router_from_devices_yaml):
 
     # проверяем возвращаемое значение
     assert return_value != None, "Функція нічого не повертає"
-    assert type(return_value) == tuple, "Функция должна возвращать кортеж"
+    assert type(return_value) == tuple, "Функція має повертати кортеж"
     assert 2 == len(return_value) and all(
         type(item) == dict for item in return_value
     ), "Функція має повертати кортеж із двома словниками"
@@ -71,10 +71,10 @@ def test_function_return_value(capsys, first_router_from_devices_yaml):
     return_good, return_bad = return_value
     assert (
         correct_good.keys() == return_good.keys()
-    ), "Функція повертає неправильне значення для словаря с командами без ошибок"
+    ), "Функція повертає неправильне значення для словника з командами без помилок"
     assert (
         correct_bad.keys() == return_bad.keys()
-    ), "Функція повертає неправильне значення для словаря с командами с ошибками"
+    ), "Функція повертає неправильне значення для словника з командами з помилками"
 
 
 @pytest.mark.parametrize(
@@ -90,13 +90,8 @@ def test_function_stdout(error, command, capsys, first_router_from_devices_yaml)
         first_router_from_devices_yaml, [command], log=False
     )
 
-    # Проверяем вывод информации об ошибках в stdout
-    # во входящих данных три команды с ошибками
-    # при каждой ошибке, должна выводиться информация:
-    # ошибка, IP устройства, команда
-    # в тесте проверяется наличие этих полей
     stdout, err = capsys.readouterr()
     ip = first_router_from_devices_yaml["host"]
-    assert error in stdout, "В сообщении об ошибке нет самой ошибки"
-    assert command in stdout, "В сообщении об ошибке нет выполняемой команды"
-    assert ip in stdout, "В сообщении об ошибке нет IP-адреса устройства"
+    assert error in stdout, "У повідомленні про помилку немає самої помилки"
+    assert command in stdout, "У повідомленні про помилку немає команди, що виконується"
+    assert ip in stdout, "У повідомленні про помилку немає IP-адреси пристрою"

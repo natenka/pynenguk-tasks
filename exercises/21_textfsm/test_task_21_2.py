@@ -12,7 +12,7 @@ def test_templates_exists():
     """
     assert os.path.exists(
         "templates/sh_ip_dhcp_snooping.template"
-    ), "Шаблон templates/sh_ip_dhcp_snooping.template не существует"
+    ), "Шаблон templates/sh_ip_dhcp_snooping.template не існує"
 
 
 def test_template():
@@ -33,4 +33,4 @@ def test_template():
 
     assert (
         correct_return_value == return_value
-    ), "Шаблон templates/sh_ip_dhcp_snooping.template неправильно парсит данные"
+    ), "Шаблон templates/sh_ip_dhcp_snooping.template неправильно парсить дані"

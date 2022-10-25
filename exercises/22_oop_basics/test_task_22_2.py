@@ -11,9 +11,6 @@ from pyneng_common_functions import (
 
 
 def test_class_created():
-    """
-    Проверка, что класс создан
-    """
     check_class_exists(task_22_2, "CiscoTelnet")
 
 
@@ -28,7 +25,7 @@ def test_send_show_command(first_router_from_devices_yaml, r1_test_telnet_connec
     return_value = strip_empty_lines(r1.send_show_command("sh ip int br"))
     assert (
         correct_return_value in return_value
-    ), "Метод send_show_command возвращает неправильное значение"
+    ), "Метод send_show_command повертає неправильне значення"
 
 
 def test_send_show_command_different_command(
@@ -42,4 +39,4 @@ def test_send_show_command_different_command(
     return_value = strip_empty_lines(r1.send_show_command("sh ip int | i address"))
     assert (
         correct_return_value in return_value
-    ), "Метод send_show_command возвращает неправильное значение"
+    ), "Метод send_show_command повертає неправильне значення"

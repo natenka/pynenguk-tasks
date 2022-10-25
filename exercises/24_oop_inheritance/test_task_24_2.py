@@ -15,7 +15,7 @@ def test_class_inheritance(first_router_from_devices_yaml):
     ssh = task_24_2.MyNetmiko(**first_router_from_devices_yaml)
     assert isinstance(
         ssh, CiscoIosSSH
-    ), "Класс MyNetmiko должен наследовать CiscoIosSSH"
+    ), "Клас MyNetmiko має успадкувати від CiscoIosSSH"
     ssh.disconnect()
     check_attr_or_method(ssh, method="send_command")
     check_attr_or_method(ssh, method="send_config_set")
@@ -27,4 +27,4 @@ def test_enable(first_router_from_devices_yaml):
     ssh.disconnect()
     assert (
         "hostname" in output
-    ), "При создании экземпляра класса должно создаваться подключение и переход в режим enable"
+    ), "При створенні екземпляра класу має створюватися підключення та перехід у режим enable"
