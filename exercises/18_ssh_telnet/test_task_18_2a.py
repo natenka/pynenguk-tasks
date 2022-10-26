@@ -36,7 +36,7 @@ def test_function_return_value(
         correct_return_value
     ), "Функція повертає неправильне значення"
 
-    correct_stdout = f"подключаюсь к {r1_test_connection.host}"
+    correct_stdout = f"connecting to {r1_test_connection.host}"
     stdout, err = capsys.readouterr()
     assert stdout != "", "Повідомлення про помилку не виведено на stdout"
     assert correct_stdout in stdout.lower(), "Виведено неправильне повідомлення про помилку"

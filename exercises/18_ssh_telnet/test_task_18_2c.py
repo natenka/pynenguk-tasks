@@ -71,19 +71,12 @@ def test_functions_created():
 def test_function_stdout(
     error, command, first_router_from_devices_yaml, capsys, monkeypatch
 ):
-    # проверяем сообщения об ошибках, при условии,
-    # что было выбрано продолжать выполнять вcе команды
     monkeypatch.setattr("builtins.input", lambda x=None: "y")
 
     return_value = task_18_2c.send_config_commands(
         first_router_from_devices_yaml, [command], log=False
     )
 
-    # Проверяем вывод информации об ошибках в stdout
-    # во входящих данных три команды с ошибками
-    # при каждой ошибке, должна выводиться информация:
-    # ошибка, IP устройства, команда
-    # в тесте проверяется наличие этих полей
     stdout, err = capsys.readouterr()
     ip = first_router_from_devices_yaml["host"]
     assert error in stdout, "В сообщении об ошибке нет самой ошибки"
@@ -94,8 +87,6 @@ def test_function_stdout(
 def test_function_return_value_continue_yes(
     first_router_from_devices_yaml, capsys, monkeypatch
 ):
-    # проверяем возвращаемое значение, при условии,
-    # что было выбрано продолжать выполнять вcе команды
     monkeypatch.setattr("builtins.input", lambda x=None: "y")
 
     return_value = task_18_2c.send_config_commands(
