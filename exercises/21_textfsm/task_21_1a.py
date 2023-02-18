@@ -18,7 +18,8 @@
 
 Приклад роботи функції (ключи в словарях отсортированы из-за pprint)
 In [2]: with open("output/sh_ip_int_br.txt") as f:
-   ...:     pprint(parse_output_to_dict("templates/sh_ip_int_br.template", f.read()), width=100)
+   ...:     result = parse_output_to_dict("templates/sh_ip_int_br.template", f.read())
+   ...:     pprint(result, width=100)
    ...:
 [{'address': '15.0.15.1', 'intf': 'FastEthernet0/0', 'protocol': 'up', 'status': 'up'},
  {'address': '10.0.12.1', 'intf': 'FastEthernet0/1', 'protocol': 'up', 'status': 'up'},
