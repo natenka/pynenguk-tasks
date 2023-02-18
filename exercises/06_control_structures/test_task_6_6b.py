@@ -69,12 +69,12 @@ def monkey_input_ip(ip_add):
 @pytest.mark.parametrize(
     "ip_add,ip_type",
     [
-        ("10.1.1", "неправильный ip-адрес"),
-        ("10.a.2.a", "неправильный ip-адрес"),
-        ("10.1.1.1.1", "неправильный ip-адрес"),
-        ("10.1.1.", "неправильный ip-адрес"),
-        ("300.1.1.1", "неправильный ip-адрес"),
-        ("30,1.1.1.1", "неправильный ip-адрес"),
+        ("10.1.1", "wrong ip address"),
+        ("10.a.2.a", "wrong ip address"),
+        ("10.1.1.1.1", "wrong ip address"),
+        ("10.1.1.", "wrong ip address"),
+        ("300.1.1.1", "wrong ip address"),
+        ("30,1.1.1.1", "wrong ip address"),
     ],
 )
 def test_task_wrong_first_ip_correct_second(capsys, monkeypatch, ip_add, ip_type):
