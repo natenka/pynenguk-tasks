@@ -13,8 +13,11 @@
 * Якщо команда верхнього рівня не має підкоманд, то значення буде порожнім
   списком
 
-Функція повинна мати один параметр config_filename, який очікує як аргумент
-ім'я конфігураційного файлу.
+У функції мають бути такі параметри:
+* config_filename - очікує як аргумент ім'я конфігураційного файлу
+* ignore_lines - чекає як аргумент список рядків. Якщо в рядку файлу
+  знаходиться одне зі слів у списку ignore_lines, потрібно ігнорувати рядок,
+  тобто не додавати в словник.
 
 Перевірити роботу функції на прикладі файлу config_sw1.txt
 
@@ -23,7 +26,9 @@
 
 
 Приклад роботи функції:
-In [3]: pprint(convert_config_to_dict("config_r2_short.txt"), sort_dicts=False)
+In [3]: cfg_dict1 = convert_config_to_dict("config_r2_short.txt", ignore)
+
+In [4]: pprint(cfg_dict1, sort_dicts=False)
 {'version 15.2': [],
  'no service timestamps debug uptime': [],
  'no service timestamps log uptime': [],
@@ -42,7 +47,9 @@ In [3]: pprint(convert_config_to_dict("config_r2_short.txt"), sort_dicts=False)
  'line aux 0': [],
  'line vty 0 4': ['login', 'transport input all']}
 
-In [4]: pprint(convert_config_to_dict("config_sw1.txt"), sort_dicts=False)
+In [5]: cfg_dict2 = convert_config_to_dict("config_sw1.txt", ignore)
+
+In [6]: pprint(cfg_dict2, sort_dicts=False)
 {'version 15.0': [],
  'service timestamps debug datetime msec': [],
  'service timestamps log datetime msec': [],

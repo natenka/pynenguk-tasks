@@ -23,17 +23,17 @@ convert_mac згенерувала виключення ValueError), залеж�
 
 Приклад роботи функції:
 
-In [9]: convert_mac_list(["1a1b.2c2d.3e3f", "111122223333", "11-11-22-22-33-33"], strict=False)
+In [9]: convert_mac_list(["1a1b.2c2d.3e3f", "111122223333", "1111-2222-3333"], strict=False)
 Out[9]: ['1a:1b:2c:2d:3e:3f', '11:11:22:22:33:33', '11:11:22:22:33:33']
 
-In [10]: convert_mac_list(["1a1b.2c2d.3e3f", "1111WWWW3333", "11-11-22-22-33-33"], strict=False)
+In [10]: convert_mac_list(["1a1b.2c2d.3e3f", "1111WWWW3333", "1111-2222-3333"], strict=False)
 Out[10]: ['1a:1b:2c:2d:3e:3f', '11:11:22:22:33:33']
 
-In [11]: convert_mac_list(["1a1b.2c2d.3e3f", "1111WWWW3333", "11-11-22-22-33-33"], strict=True)
+In [11]: convert_mac_list(["1a1b.2c2d.3e3f", "1111WWWW3333", "1111-2222-3333"], strict=True)
 ---------------------------------------------------------------------------
 ValueError                                Traceback (most recent call last)
 Input In [11], in <cell line: 1>()
-----> 1 convert_mac_list(["1a1b.2c2d.3e3f", "1111WWWW3333", "11-11-22-22-33-33"], strict=True)
+----> 1 convert_mac_list(["1a1b.2c2d.3e3f", "1111WWWW3333", "1111-2222-3333"], strict=True)
 ...
 ValueError: '1111WWWW3333' does not appear to be a MAC address
 """
