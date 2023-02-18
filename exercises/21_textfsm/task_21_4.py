@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Завдання 21.4
+Задание 21.4
 
 Создать функцию send_and_parse_show_command.
 
