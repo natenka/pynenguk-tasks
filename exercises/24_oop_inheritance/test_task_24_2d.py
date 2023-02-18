@@ -53,4 +53,4 @@ def test_errors_ignore_true(first_router_from_devices_yaml, command, error):
     ssh.disconnect()
     assert (
         error in return_value
-    ), "Метод send_config_commands повинен повернути висновок з помилкою, коли ignore_errors=True"
+    ), "Метод send_config_commands повинен повернути вивід з помилкою, коли ignore_errors=True"
