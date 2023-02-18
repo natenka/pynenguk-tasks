@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Завдання 20.2
+Задание 20.2
 
 Создать шаблон templates/cisco_router_base.txt.
 

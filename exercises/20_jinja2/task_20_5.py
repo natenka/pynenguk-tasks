@@ -1,6 +1,6 @@
 # -*- coding: utf-8 -*-
 """
-Завдання 20.5
+Задание 20.5
 
 Создать шаблоны templates/gre_ipsec_vpn_1.txt и templates/gre_ipsec_vpn_2.txt,
 которые генерируют конфигурацию IPsec over GRE между двумя маршрутизаторами.
