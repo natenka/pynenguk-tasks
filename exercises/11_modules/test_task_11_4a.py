@@ -70,7 +70,7 @@ def test_function_return_value():
 
 def test_function_return_value_different_args():
     """
-    Перевірка роботи функції на другом выводе
+    Перевірка роботи функції
     """
     input_value = {
         ("R3", "Eth0/1"): ("R4", "Eth0/0"),

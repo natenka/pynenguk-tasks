@@ -47,17 +47,17 @@ def apply_styles(graph, styles):
 
 def draw_topology(topology_dict, output_filename="img/topology"):
     """
-    topology_dict - словарь с описанием топологии
+    topology_dict - словник с описом топології
 
-    Этот словарь
+    Цей словник
         {('R4', 'Fa0/1'): ('R5', 'Fa0/1'),
          ('R4', 'Fa0/2'): ('R6', 'Fa0/0')}
 
-    соответствует топологии:
+    відповідає топології:
     [ R5 ]-Fa0/1 --- Fa0/1-[ R4 ]-Fa0/2---Fa0/0-[ R6 ]
 
-    Функция генерирует топологию, в формате svg.
-    И записывает файл topology.svg в каталог img.
+    Функція генерує топологію у форматі svg.
+    І записує файл topology.svg у каталог img.
     """
     nodes = set(
         [item[0] for item in list(topology_dict.keys()) + list(topology_dict.values())]

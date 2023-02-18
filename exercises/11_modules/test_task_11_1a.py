@@ -62,7 +62,7 @@ def test_function_return_value_correct_mac(mac_list, correct_converted_mac_list)
 )
 def test_function_return_value_wrong_mac_strict_true(wrong_mac_list):
     """
-    Перевірка роботи функції с неправильными MAC-адресам
+    Перевірка роботи функції с неправильними MAC-адресами
     """
     with pytest.raises(ValueError) as excinfo:
         return_value = task_11_1a.convert_mac_list(wrong_mac_list, strict=True)
