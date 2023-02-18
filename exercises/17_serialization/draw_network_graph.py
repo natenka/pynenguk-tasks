@@ -15,7 +15,7 @@ styles = {
         "label": "Network Map",
         "fontsize": "16",
         "fontcolor": "white",
-        "bgcolor": "#3F3F3F",
+        "bgcolor": "#333333",
         "rankdir": "BT",
     },
     "nodes": {
@@ -45,34 +45,34 @@ def apply_styles(graph, styles):
     return graph
 
 
-def draw_topology(topology_dict, out_filename="img/topology", style_dict=styles):
+def draw_topology(topology_dict, output_filename="img/topology"):
     """
-    topology_dict - словарь с описанием топологии
+    topology_dict - словник с описом топології
 
-    Пример словаря topology_dict:
-        {('R4', 'Eth0/1'): ('R5', 'Eth0/1'),
-         ('R4', 'Eth0/2'): ('R6', 'Eth0/0')}
+    Цей словник
+        {('R4', 'Fa0/1'): ('R5', 'Fa0/1'),
+         ('R4', 'Fa0/2'): ('R6', 'Fa0/0')}
 
-    соответствует топологии:
-    [ R5 ]-Eth0/1 --- Eth0/1-[ R4 ]-Eth0/2---Eth0/0-[ R6 ]
+    відповідає топології:
+    [ R5 ]-Fa0/1 --- Fa0/1-[ R4 ]-Fa0/2---Fa0/0-[ R6 ]
 
-    Функция генерирует топологию, в формате svg.
-    И записывает файл topology.svg в каталог img.
+    Функція генерує топологію у форматі svg.
+    І записує файл topology.svg у каталог img.
     """
     nodes = set(
         [item[0] for item in list(topology_dict.keys()) + list(topology_dict.values())]
     )
 
-    graph = gv.Graph(format="svg")
+    g1 = gv.Graph(format="svg")
 
     for node in nodes:
-        graph.node(node)
+        g1.node(node)
 
     for key, value in topology_dict.items():
         head, t_label = key
         tail, h_label = value
-        graph.edge(head, tail, headlabel=h_label, taillabel=t_label, label=" " * 12)
+        g1.edge(head, tail, headlabel=h_label, taillabel=t_label, label=" " * 12)
 
-    graph = apply_styles(graph, style_dict)
-    filename = graph.render(filename=out_filename)
-    print("Topology saved in", filename)
+    g1 = apply_styles(g1, styles)
+    filename = g1.render(filename=output_filename)
+    print("Graph saved in", filename)
