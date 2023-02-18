@@ -79,9 +79,9 @@ def test_function_stdout(
 
     stdout, err = capsys.readouterr()
     ip = first_router_from_devices_yaml["host"]
-    assert error in stdout, "В сообщении об ошибке нет самой ошибки"
-    assert command in stdout, "В сообщении об ошибке нет выполняемой команды"
-    assert ip in stdout, "В сообщении об ошибке нет IP-адреса устройства"
+    assert error in stdout, "У повідомленні про помилку немає самої помилки"
+    assert command in stdout, "У повідомленні про помилку немає команди"
+    assert ip in stdout, "У повідомленні про помилку немає IP-адреси прострою"
 
 
 def test_function_return_value_continue_yes(
