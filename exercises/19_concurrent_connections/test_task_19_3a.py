@@ -90,7 +90,6 @@ def test_function_return_value_from_all_devices(
 
     dest_file_content = dest_filename.read().strip()
 
-    # проверяем, что вывод с каждого устройства есть в файле
     assert (
         out1.strip() in dest_file_content
     ), "У підсумковому файлі немає виводу з першого пристрою"

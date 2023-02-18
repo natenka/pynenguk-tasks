@@ -53,7 +53,6 @@ def test_function_return_value_show(
 
     dest_file_content = dest_filename.read().strip()
 
-    # проверяем, что вывод с каждого устройства есть в файле
     assert (
         out1.strip() in dest_file_content
     ), "У підсумковому файлі немає виводу з першого пристрою"
@@ -80,7 +79,6 @@ def test_function_return_value_config(
 
     dest_file_content = dest_filename.read().strip()
 
-    # проверяем, что вывод с каждого устройства есть в файле
     assert (
         out1.strip() in dest_file_content
     ), "У підсумковому файлі немає виводу з першого пристрою"
