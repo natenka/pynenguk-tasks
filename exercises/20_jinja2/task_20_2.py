@@ -2,18 +2,19 @@
 """
 Завдання 20.2
 
-Создать шаблон templates/cisco_router_base.txt.
+Створити шаблон templates/cisco_router_base.txt.
 
-В шаблон templates/cisco_router_base.txt должно быть включено содержимое шаблонов:
+У шаблон templates/cisco_router_base.txt має бути включений вміст шаблонів:
 * templates/cisco_base.txt
 * templates/alias.txt
 * templates/eem_int_desc.txt
 
-При этом, нельзя копировать текст шаблонов.
+При цьому не можна копіювати текст шаблонів за допомогою Python чи вручну, це
+завдання на синтаксис шаблонів Jinja2.
 
-Проверьте шаблон templates/cisco_router_base.txt, с помощью
-функции generate_config из задания 20.1. Не копируйте код функции generate_config.
+Перевірте шаблон templates/cisco_router_base.txt за допомогою функції
+generate_config із завдання 20.1. Не копіюйте код функції generate_config.
 
-В качестве данных, используйте информацию из файла data_files/router_info.yml
+Як дані, використовуйте інформацію з файлу data_files/router_info.yml
 
 """
