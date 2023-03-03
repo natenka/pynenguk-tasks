@@ -8,7 +8,7 @@ $ python task_08.py
 .pyw
 .pyz
 
-Надо изменить код так, чтобы при запуске кода был такой вывод
+Потрібно змінити код таким чином, щоб під час виконання коду був такий вивід
 $ python task_08.py
 script.py
 script.pyi
@@ -17,8 +17,8 @@ script.pyd
 script.pyw
 script.pyz
 
-При этом добавление слова script должно выполняться именно через переменную
-filename и нельзя менять список python_extensions.
+При цьому додавання слова script має виконуватись саме через змінну filename і
+не можна змінювати список python_extensions.
 """
 filename = "script"
 python_extensions = ['.py', '.pyi', '.pyc', '.pyd', '.pyw', '.pyz']
