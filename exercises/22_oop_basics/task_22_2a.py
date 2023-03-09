@@ -18,7 +18,7 @@
 Пример создания экземпляра класса:
 
 In [1]: r1_params = {
-   ...:     'ip': '192.168.139.1',
+   ...:     'host': '192.168.139.1',
    ...:     'username': 'cisco',
    ...:     'password': 'cisco',
    ...:     'secret': 'cisco'}
@@ -28,7 +28,7 @@ In [2]: from task_22_2a import CiscoTelnet
 In [3]: r1 = CiscoTelnet(**r1_params)
 
 Использование метода send_show_command:
-In [4]: r1.send_show_command("sh ip int br", parse=True)
+In [4]: r1.send_show_command("sh host int br", parse=True)
 Out[4]:
 [{'intf': 'Ethernet0/0',
   'address': '192.168.139.1',
@@ -43,8 +43,8 @@ Out[4]:
   'status': 'up',
   'protocol': 'up'}]
 
-In [5]: r1.send_show_command("sh ip int br", parse=False)
-Out[5]: 'sh ip int br\r\nInterface                  IP-Address      OK? Method Status
+In [5]: r1.send_show_command("sh host int br", parse=False)
+Out[5]: 'sh host int br\r\nInterface                  host-Address      OK? Method Status
 Protocol\r\nEthernet0/0                192.168.139.1   YES NVRAM  up
 up      \r\nEthernet0/1                192.168.200.1   YES NVRAM  up...'
 

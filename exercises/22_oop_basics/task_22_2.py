@@ -27,7 +27,7 @@
 In [2]: from task_22_2 import CiscoTelnet
 
 In [3]: r1_params = {
-   ...:     'ip': '192.168.139.1',
+   ...:     'host': '192.168.139.1',
    ...:     'username': 'cisco',
    ...:     'password': 'cisco',
    ...:     'secret': 'cisco'}
