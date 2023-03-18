@@ -3,15 +3,13 @@
 """
 Завдання 22.2b
 
-Скопировать класс CiscoTelnet из задания 22.2a и добавить метод send_config_commands.
+Копіювати клас CiscoTelnet із завдання 22.2a та додати метод send_config_commands.
 
+Метод send_config_commands повинен вміти надсилати одну команду
+конфігураційного режиму та список команд. Метод повинен повертати вивід
+аналогічний методу send_config_set у Netmiko (приклад виведення нижче).
 
-Метод send_config_commands должен уметь отправлять одну команду конфигурационного
-режима и список команд.
-Метод должен возвращать вывод аналогичный методу send_config_set у netmiko
-(пример вывода ниже).
-
-Пример создания экземпляра класса:
+Приклад створення екземпляра класу:
 In [1]: from task_22_2b import CiscoTelnet
 
 In [2]: r1_params = {
@@ -22,7 +20,7 @@ In [2]: r1_params = {
 
 In [3]: r1 = CiscoTelnet(**r1_params)
 
-Использование метода send_config_commands:
+Використання методу send_config_commands:
 
 In [5]: r1.send_config_commands('logging 10.1.1.1')
 Out[5]: 'conf t\r\nEnter configuration commands, one per line.  End with CNTL/Z.\r\nR1(config)#logging 10.1.1.1\r\nR1(config)#end\r\nR1#'

@@ -3,19 +3,19 @@
 """
 Завдання 22.2a
 
-Скопировать класс CiscoTelnet из задания 22.2 и изменить
-метод send_show_command добавив три параметра:
+Копіювати клас CiscoTelnet із завдання 22.2 та змінити метод send_show_command
+додавши три параметри:
 
-* parse - контролирует то, будет возвращаться обычный вывод команды или список словарей,
-  полученный после обработки с помощью TextFSM.
-  При parse=True должен возвращаться список словарей, а parse=False обычный вывод.
-  Значение по умолчанию - True.
-* templates - путь к каталогу с шаблонами. Значение по умолчанию - "templates"
-* index - имя файла, где хранится соответствие между командами и шаблонами.
-  Значение по умолчанию - "index"
+* parse - контролює те, чи повертатиметься звичайний вивід команди або
+  список словників, отриманий після обробки за допомогою TextFSM.
+  * parse=True - повинен повертатися список словників
+  * parse=False - звичайний вивід. Значення за замовчуванням - True
+* templates - шлях до каталогу із шаблонами. Значення за замовчуванням - "templates"
+* index - ім'я файлу, де зберігається відповідність між командами та шаблонами.
+  Значення за замовчуванням - "index"
 
 
-Пример создания экземпляра класса:
+Приклад створення екземпляра класу:
 
 In [1]: r1_params = {
    ...:     'host': '192.168.139.1',
@@ -27,19 +27,19 @@ In [2]: from task_22_2a import CiscoTelnet
 
 In [3]: r1 = CiscoTelnet(**r1_params)
 
-Использование метода send_show_command:
+Використання методу send_show_command:
 In [4]: r1.send_show_command("sh host int br", parse=True)
 Out[4]:
-[{'intf': 'Ethernet0/0',
-  'address': '192.168.139.1',
+[{'address': '192.168.139.1',
+  'intf': 'Ethernet0/0',
   'status': 'up',
   'protocol': 'up'},
- {'intf': 'Ethernet0/1',
-  'address': '192.168.200.1',
+ {'address': '192.168.200.1',
+  'intf': 'Ethernet0/1',
   'status': 'up',
   'protocol': 'up'},
- {'intf': 'Ethernet0/2',
-  'address': '192.168.130.1',
+ {'address': '192.168.130.1',
+  'intf': 'Ethernet0/2',
   'status': 'up',
   'protocol': 'up'}]
 
@@ -47,6 +47,5 @@ In [5]: r1.send_show_command("sh host int br", parse=False)
 Out[5]: 'sh host int br\r\nInterface                  host-Address      OK? Method Status
 Protocol\r\nEthernet0/0                192.168.139.1   YES NVRAM  up
 up      \r\nEthernet0/1                192.168.200.1   YES NVRAM  up...'
-
 
 """
