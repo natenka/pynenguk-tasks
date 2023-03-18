@@ -3,16 +3,16 @@
 """
 Завдання 24.2
 
-Создать класс MyNetmiko, который наследует класс CiscoIosSSH из netmiko.
+Створити клас MyNetmiko, який успадковує клас CiscoIosSSH з Netmiko.
 
-Переписать метод __init__ в классе MyNetmiko таким образом, чтобы после подключения
-по SSH выполнялся переход в режим enable.
+Переписати метод __init__ у класі MyNetmiko таким чином, щоб після підключення SSH
+виконувався перехід у режим enable.
 
-Для этого в методе __init__ должен сначала вызываться метод __init__ класса CiscoIosSSH,
-а затем выполнятся переход в режим enable.
+Для цього в методі __init__ повинен спочатку викликатися метод __init__ класу
+CiscoIosSSH, а потім зроблений перехід в режим enable.
 
-Проверить, что в классе MyNetmiko доступны методы send_command и send_config_set
-(они наследуются автоматически, это только для проверки).
+Перевірити, що в MyNetmiko класі доступні методи send_command і send_config_set
+(вони успадковуються автоматично, це тільки для перевірки).
 
 In [2]: from task_24_2 import MyNetmiko
 
@@ -22,16 +22,16 @@ In [4]: r1.send_command('sh ip int br')
 Out[4]: 'Interface                  IP-Address      OK? Method Status                Protocol\nEthernet0/0                192.168.139.1   YES NVRAM  up                    up      \nEthernet0/1                192.168.200.1   YES NVRAM  up                    up      \nEthernet0/2                190.16.200.1    YES NVRAM  up                    up      \nEthernet0/3                192.168.230.1   YES NVRAM  up                    up      \nEthernet0/3.139            10.139.0.1      YES NVRAM  up                    up      \nEthernet0/3.200            10.200.0.1      YES NVRAM  up                    up      \nEthernet0/3.300            10.30.0.1       YES NVRAM  up                    up      '
 
 
-Тесты в этом разделе проверяют подключение на устройствах в файле devices.yaml.
-Если параметры подключения к вашим устройствам отличаются, надо изменить
-параметры в файле devices.yaml.
+У цьому розділі тести перевіряють підключення на пристроях у файлі
+devices.yaml. Якщо параметри підключення до пристроїв відрізняються, потрібно
+змінити параметри у файлі devices.yaml.
 """
 from netmiko.cisco.cisco_ios import CiscoIosSSH
 
 
 device_params = {
     "device_type": "cisco_ios",
-    "ip": "192.168.139.1",
+    "host": "192.168.139.1",
     "username": "cisco",
     "password": "cisco",
     "secret": "cisco",
