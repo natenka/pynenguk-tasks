@@ -2,39 +2,41 @@
 """
 Завдання 21.5
 
-Создать функцию send_and_parse_command_parallel.
+Створити функцію send_and_parse_command_parallel.
 
-Функция send_and_parse_command_parallel должна запускать в
-параллельных потоках функцию send_and_parse_show_command из задания 21.4.
+Функція send_and_parse_command_parallel повинна запускати у паралельних потоках
+функцію send_and_parse_show_command із завдання 21.4.
 
-Параметры функции send_and_parse_command_parallel:
-* devices - список словарей с параметрами подключения к устройствам
+Параметри функції send_and_parse_command_parallel:
+
+* devices - список словників з параметрами підключення до пристроїв
 * command - команда
-* templates_path - путь к каталогу с шаблонами TextFSM
-* limit - максимальное количество параллельных потоков (по умолчанию 3)
+* templates_path - шлях до каталогу із шаблонами TextFSM
+* limit – максимальна кількість паралельних потоків (за замовчуванням 3)
 
-Функция должна возвращать словарь:
-* ключи - IP-адрес устройства с которого получен вывод
-* значения - список словарей (вывод который возвращает функция send_and_parse_show_command)
+Функція повинна повертати словник:
 
-Пример словаря:
-{'192.168.100.1': [{'address': '192.168.100.1',
-                    'intf': 'Ethernet0/0',
-                    'protocol': 'up',
-                    'status': 'up'},
-                   {'address': '192.168.200.1',
-                    'intf': 'Ethernet0/1',
-                    'protocol': 'up',
-                    'status': 'up'}],
- '192.168.100.2': [{'address': '192.168.100.2',
-                    'intf': 'Ethernet0/0',
-                    'protocol': 'up',
-                    'status': 'up'},
-                   {'address': '10.100.23.2',
-                    'intf': 'Ethernet0/1',
-                    'protocol': 'up',
-                    'status': 'up'}]}
+* ключі - IP-адреса пристрою з якого отримано вивід
+* значення - список словників (вивід, який повертає функція send_and_parse_show_command)
 
-Проверить работу функции на примере вывода команды sh ip int br
-и устройствах из devices.yaml.
+Приклад словника:
+{'192.168.100.1': [{'intf': 'Ethernet0/0',
+                    'address': '192.168.100.1',
+                    'status': 'up',
+                    'protocol': 'up'},
+                   {'intf': 'Ethernet0/1',
+                    'address': '192.168.200.1',
+                    'status': 'up',
+                    'protocol': 'up'}],
+ '192.168.100.2': [{'intf': 'Ethernet0/0',
+                    'address': '192.168.100.2',
+                    'status': 'up',
+                    'protocol': 'up'},
+                   {'intf': 'Ethernet0/1',
+                    'address': '10.100.23.2',
+                    'status': 'up',
+                    'protocol': 'up'}]}
+
+Перевірити роботу функції на прикладі виведення команди sh ip int br та
+пристроях з devices.yaml.
 """

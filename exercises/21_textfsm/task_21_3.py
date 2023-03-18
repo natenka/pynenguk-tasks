@@ -2,38 +2,42 @@
 """
 Завдання 21.3
 
-Создать функцию parse_command_dynamic.
+Створити функцію parse_command_dynamic.
 
-Параметры функции:
-* command_output - вывод команды (строка)
-* attributes_dict - словарь атрибутов, в котором находятся такие пары ключ-значение:
- * 'Command': команда
- * 'Vendor': вендор
-* index_file - имя файла, где хранится соответствие между командами и шаблонами.
-  Значение по умолчанию - "index"
-* templ_path - каталог, где хранятся шаблоны. Значение по умолчанию - "templates"
+Параметри функції:
 
-Функция должна возвращать список словарей с результатами обработки
-вывода команды (как в задании 21.1a):
-* ключи - имена переменных в шаблоне TextFSM
-* значения - части вывода, которые соответствуют переменным
+* command_output - вивід команди (рядок)
+* attributes_dict - словник атрибутів, у якому знаходяться такі пари ключ-значення:
+  * 'Command': команда
+  * 'Vendor': вендор
+* index_file - ім'я файлу, де зберігається відповідність між командами та
+  шаблонами. Значення за замовчуванням - "index"
+* templ_path – каталог, де зберігаються шаблони. Значення за замовчуванням - "templates"
 
-Проверить работу функции на примере вывода команды sh ip int br и sh version.
+Функція повинна повертати список словників із результатами обробки виводу
+команди (як у завданні 21.1a):
 
-Пример вызова функции для sh ip int br
+* ключі - імена змінних у шаблоні TextFSM
+* значення - частини виводу, які відповідають змінним
+
+Перевірити роботу функції з виведенням команди sh ip int br і sh version.
+
+Приклад виклику функції sh ip int br
 
 In [8]: attributes = {"Command": "show ip int br", "Vendor": "cisco_ios"}
    ...: with open("output/sh_ip_int_br.txt") as f:
-   ...:     pprint(parse_command_dynamic(f.read(), attributes), width=120)
+   ...:     output = f.read()
+   ...: result = parse_command_dynamic(output, attributes)
+   ...: pprint(result, width=120, sort_dicts=False)
    ...:
-[{'address': '15.0.15.1', 'intf': 'FastEthernet0/0', 'protocol': 'up', 'status': 'up'},
- {'address': '10.0.12.1', 'intf': 'FastEthernet0/1', 'protocol': 'up', 'status': 'up'},
- {'address': '10.0.13.1', 'intf': 'FastEthernet0/2', 'protocol': 'up', 'status': 'up'},
- {'address': 'unassigned', 'intf': 'FastEthernet0/3', 'protocol': 'up', 'status': 'up'},
- {'address': '10.1.1.1', 'intf': 'Loopback0', 'protocol': 'up', 'status': 'up'},
- {'address': '100.0.0.1', 'intf': 'Loopback100', 'protocol': 'up', 'status': 'up'}]
+[{'intf': 'FastEthernet0/0', 'address': '15.0.15.1', 'status': 'up', 'protocol': 'up'},
+ {'intf': 'FastEthernet0/1', 'address': '10.0.12.1', 'status': 'up', 'protocol': 'up'},
+ {'intf': 'FastEthernet0/2', 'address': '10.0.13.1', 'status': 'up', 'protocol': 'up'},
+ {'intf': 'FastEthernet0/3', 'address': 'unassigned', 'status': 'up', 'protocol': 'up'},
+ {'intf': 'Loopback0', 'address': '10.1.1.1', 'status': 'up', 'protocol': 'up'},
+ {'intf': 'Loopback100', 'address': '100.0.0.1', 'status': 'up', 'protocol': 'up'}]
 
-Пример вызова функции для sh version
+Приклад виклику функції з sh version
 
 In [9]: attributes = {'Command': 'sh version', 'Vendor': 'cisco_ios'}
    ...: with open("output/sh_version.txt") as f:

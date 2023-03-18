@@ -2,39 +2,40 @@
 """
 Завдання 21.4
 
-Создать функцию send_and_parse_show_command.
+Створити функцію send_and_parse_show_command.
 
-Параметры функции:
-* device_dict - словарь с параметрами подключения к одному устройству
-* command - команда, которую надо выполнить
-* templates_path - путь к каталогу с шаблонами TextFSM
-* index - имя индекс файла, значение по умолчанию "index"
+Параметри функції:
 
-Функция должна подключаться к одному устройству, отправлять команду show
-с помощью netmiko, а затем парсить вывод команды с помощью TextFSM.
+* device_dict - словник із параметрами підключення до одного пристрою
+* command – команда, яку треба виконати
+* templates_path - шлях до каталогу із шаблонами TextFSM
+* index - ім'я індекс файлу, значення за замовчуванням "index"
 
-Функция должна возвращать список словарей с результатами обработки
-вывода команды (как в задании 21.1a):
-* ключи - имена переменных в шаблоне TextFSM
-* значения - части вывода, которые соответствуют переменным
+Функція повинна підключатися до одного пристрою, відправляти команду show за
+допомогою Netmiko, а потім парсити вивід команди за допомогою TextFSM.
 
-Проверить работу функции на примере вывода команды sh ip int br
-и устройствах из devices.yaml.
+Функція повинна повертати список словників із результатами обробки виводу
+команди (як у завданні 21.1a):
 
-Пример вызова функции
+* ключі - імена змінних у шаблоні TextFSM
+* значення - частини виводу, які відповідають змінним
+
+Перевірити роботу функції на прикладі вивід команди sh ip int br та пристроях з devices.yaml.
+
+Приклад роботи функції:
 In [17]: result = send_and_parse_show_command(
     ...:     devices[1], "sh ip int br", templates_path=full_pth
     ...: )
-    ...: pprint(result, width=120)
+    ...: pprint(result, width=120, sort_dicts=False)
     ...:
-[{'address': '192.168.100.2', 'intf': 'Ethernet0/0', 'protocol': 'up', 'status': 'up'},
- {'address': '10.100.23.2', 'intf': 'Ethernet0/1', 'protocol': 'up', 'status': 'up'},
- {'address': 'unassigned', 'intf': 'Ethernet0/2', 'protocol': 'down', 'status': 'administratively down'},
- {'address': 'unassigned', 'intf': 'Ethernet0/3', 'protocol': 'down', 'status': 'administratively down'},
- {'address': '10.2.2.2', 'intf': 'Loopback0', 'protocol': 'up', 'status': 'up'},
- {'address': 'unassigned', 'intf': 'Loopback9', 'protocol': 'up', 'status': 'up'},
- {'address': 'unassigned', 'intf': 'Loopback19', 'protocol': 'up', 'status': 'up'},
- {'address': '10.100.100.2', 'intf': 'Loopback100', 'protocol': 'up', 'status': 'up'},
- {'address': '10.255.1.2', 'intf': 'Tunnel2', 'protocol': 'down', 'status': 'up'}]
+[{'intf': 'Ethernet0/0', 'address': '192.168.100.2', 'status': 'up', 'protocol': 'up'},
+ {'intf': 'Ethernet0/1', 'address': '10.100.23.2', 'status': 'up', 'protocol': 'up'},
+ {'intf': 'Ethernet0/2', 'address': 'unassigned', 'status': 'administratively down', 'protocol': 'down'},
+ {'intf': 'Ethernet0/3', 'address': 'unassigned', 'status': 'administratively down', 'protocol': 'down'},
+ {'intf': 'Loopback0', 'address': '10.2.2.2', 'status': 'up', 'protocol': 'up'},
+ {'intf': 'Loopback9', 'address': 'unassigned', 'status': 'up', 'protocol': 'up'},
+ {'intf': 'Loopback19', 'address': 'unassigned', 'status': 'up', 'protocol': 'up'},
+ {'intf': 'Loopback100', 'address': '10.100.100.2', 'status': 'up', 'protocol': 'up'},
+ {'intf': 'Tunnel2', 'address': '10.255.1.2', 'status': 'up', 'protocol': 'down'}]
 
 """
