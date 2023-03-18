@@ -54,47 +54,6 @@ parse_dhcp_snooping_functions.py и просто выведите аргумен
 В примерах показывается вариант, когда в базе данных есть поля active и last_active,
 но можно также использовать вариант без этих полей.
 
-$ python parse_dhcp_snooping.py get -h
-usage: parse_dhcp_snooping.py get [-h] [--db DB_FILE]
-                                  [-k {mac,ip,vlan,interface,switch}]
-                                  [-v VALUE] [-a]
-
-optional arguments:
-  -h, --help            show this help message and exit
-  --db DB_FILE          имя БД
-  -k {mac,ip,vlan,interface,switch}
-                        параметр для поиска записей
-  -v VALUE              значение параметра
-  -a                    показать все содержимое БД
-
-
-$ python parse_dhcp_snooping.py add -h
-usage: parse_dhcp_snooping.py add [-h] [--db DB_FILE] [-s]
-                                  filename [filename ...]
-
-positional arguments:
-  filename      файл(ы), которые надо добавить
-
-optional arguments:
-  -h, --help    show this help message and exit
-  --db DB_FILE  имя БД
-  -s            если флаг установлен, добавлять данные коммутаторов, иначе -
-                DHCP записи
-
-
-$ python parse_dhcp_snooping.py add -h
-usage: parse_dhcp_snooping.py add [-h] [--db DB_FILE] [-s]
-                                  filename [filename ...]
-
-positional arguments:
-  filename      файл(ы), которые надо добавить
-
-optional arguments:
-  -h, --help    show this help message and exit
-  --db DB_FILE  имя БД
-  -s            если флаг установлен, добавлять данные коммутаторов, иначе
-                добавлять DHCP записи
-
 
 $ python parse_dhcp_snooping.py get -h
 usage: parse_dhcp_snooping.py get [-h] [--db DB_FILE]
@@ -103,32 +62,46 @@ usage: parse_dhcp_snooping.py get [-h] [--db DB_FILE]
 
 optional arguments:
   -h, --help            show this help message and exit
-  --db DB_FILE          имя БД
+  --db DB_FILE          database name
   -k {mac,ip,vlan,interface,switch}
-                        параметр для поиска записей
-  -v VALUE              значение параметра
-  -a                    показать все содержимое БД
+                        parameter for searching records
+  -v VALUE              parameter value
+  -a                    show all database content
+
+
+$ python parse_dhcp_snooping.py add -h
+usage: parse_dhcp_snooping.py add [-h] [--db DB_FILE] [-s]
+                                  filename [filename ...]
+
+positional arguments:
+  filename      file(s) to add
+
+optional arguments:
+  -h, --help    show this help message and exit
+  --db DB_FILE  database name
+  -s            if the flag is set, add switch data, otherwise add DHCP
+                records
 
 
 $ python parse_dhcp_snooping.py create_db
-Создаю БД dhcp_snooping.db со схемой dhcp_snooping_schema.sql
-Создаю базу данных...
+Creating a dhcp_snooping.db database with dhcp_snooping_schema.sql schema
+Creating database...
 
 
 $ python parse_dhcp_snooping.py add sw[1-3]_dhcp_snooping.txt
-Читаю информацию из файлов
+Adding information from files
 sw1_dhcp_snooping.txt, sw2_dhcp_snooping.txt, sw3_dhcp_snooping.txt
 
-Добавляю данные по DHCP записях в dhcp_snooping.db
+Adding data on DHCP records to dhcp_snooping.db
 
 
 $ python parse_dhcp_snooping.py add -s switches.yml
-Добавляю данные о коммутаторах
+Adding switch data
 
 $ python parse_dhcp_snooping.py get
-В таблице dhcp такие записи:
+The dhcp table has the following entries:
 
-Активные записи:
+Active entries:
 
 -----------------  ---------------  --  ----------------  ---  -  -------------------
 00:09:BB:3D:D6:58  10.1.10.2        10  FastEthernet0/1   sw1  1  2019-03-08 16:47:52
@@ -145,10 +118,10 @@ $ python parse_dhcp_snooping.py get
 
 
 $ python parse_dhcp_snooping.py get -k vlan -v 10
-Данные из БД: dhcp_snooping.db
-Информация об устройствах с такими параметрами: vlan 10
+Data from the database: dhcp_snooping.db
+Information about devices with the following parameters: vlan 10
 
-Активные записи:
+Active entries:
 
 -----------------  ----------  --  ---------------  ---  -  -------------------
 00:09:BB:3D:D6:58  10.1.10.2   10  FastEthernet0/1  sw1  1  2019-03-08 16:47:52
@@ -162,5 +135,4 @@ usage: parse_dhcp_snooping.py get [-h] [--db DB_FILE]
                                   [-k {mac,ip,vlan,interface,switch}]
                                   [-v VALUE] [-a]
 parse_dhcp_snooping.py get: error: argument -k: invalid choice: 'vln' (choose from 'mac', 'ip', 'vlan', 'interface', 'switch')
-
 """
