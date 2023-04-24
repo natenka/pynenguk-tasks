@@ -21,4 +21,5 @@ ip nat inside source list acl interface gigabitethernet0/1 overload
 """
 
 nat = "ip nat inside source list ACL interface FastEthernet0/1 overload"
-print(nat)
+new_nat = "".join(nat).replace("FastEthernet", "GigabitEthernet").lower()
+print(new_nat)

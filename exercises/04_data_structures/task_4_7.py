@@ -17,3 +17,5 @@ print.
 """
 
 mac = "AAAA:BBBB:CCCC"
+new_mac = int(mac.replace(":", ""), 16)
+print(f"{new_mac:0>8b}")

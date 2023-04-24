@@ -13,3 +13,5 @@ XXXX.XXXX.XXXX (замінити : на .) Отриманий новий ряд�
 """
 
 mac = "AAAA:BBBB:CCCC"
+new_mac = mac.replace(":", ".")
+print(new_mac)
