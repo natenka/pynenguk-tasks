@@ -22,4 +22,9 @@ $ python task_09.py
 numbers = [10, 20, 30, 40]
 print("=" * 30)
 for num in numbers:
-    print(num)
+    if num < numbers[-1]:
+        print(num)
+        print("*" * 30)
+    else:
+        print(numbers[-1])
+        print("=" * 30)

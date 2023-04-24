@@ -23,3 +23,12 @@
 """
 
 ip = "192.168.3.1"
+
+for i in ip.split("."):
+    print(int(i), end=" " * 10)
+
+print()
+
+for i in ip.split("."):
+    # print("{:b}".format(int(i)), end=" " * 2)
+    print(f"{int(i):0>08b}", end=" " * 2)
