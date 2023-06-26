@@ -22,6 +22,14 @@ Enter parameter name (location, vendor, model, ios, ip, vlans, routing): ip
 Обмеження: не можна змінювати словник london_co.
 
 Це завдання можна зробити без використання умов if.
+
+Важливий момент: для того щоб тест пройшов, текст запиту треба писати саме в
+input, а не в print. Тобто так:
+device = input("Enter device name: ")
+
+а не так:
+print("Enter device name: ")
+device = input()
 """
 
 london_co = {
