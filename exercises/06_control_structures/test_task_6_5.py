@@ -61,7 +61,7 @@ def test_task_random_5_input_3_8_5(capsys, monkeypatch):
         "отримати потрібний результат, але й вивести його на стандартний потік "
         "виведення за допомогою print"
     )
-    assert "больше" in out and "меньше" in out and "правильно" in out, (
+    assert "high" in out and "low" in out and "correct" in out, (
         f"При задуманому числі 5 та введення користувача 3, 8, 5, на стандартному "
         f"потоці виводу повинен бути такий вивід {correct_stdout}"
     )
@@ -90,7 +90,7 @@ def test_task_random_8_input_7_8(capsys, monkeypatch):
         "отримати потрібний результат, але й вивести його на стандартний потік "
         "виведення за допомогою print"
     )
-    assert "больше" in out and "правильно" in out, (
+    assert "low" in out and "correct" in out, (
         f"При задуманому числі 8 та введення користувача 7, 8 на стандартному "
         f"потоці виводу повинен бути такий вивід {correct_stdout}"
     )
@@ -125,7 +125,7 @@ def test_task_random_4_input_1_1_1_1_1(capsys, monkeypatch):
         "отримати потрібний результат, але й вивести його на стандартний потік "
         "виведення за допомогою print"
     )
-    assert out.lower().count("больше") == 5 and "не угадано" in out.lower(), (
+    assert out.lower().count("low") == 5 and "not guessed" in out.lower(), (
         f"При задуманому числі 8 та введення користувача 1, 1, 1, 1, 1 на стандартному "
         f"потоці виводу повинен бути такий вивід {correct_stdout}"
     )
