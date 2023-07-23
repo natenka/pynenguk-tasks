@@ -16,3 +16,11 @@
   стовпцями для поділу октетів між собою)
 
 """
+
+ip_addr = input()
+template = """
+{0:<10}{1:<10}{2:<10}{3:<10}
+{0:08b}  {1:08b}  {2:08b}  {3:08b}
+"""
+otket = ip_addr.split(".")
+print(template.format(int(otket[0]), int(otket[1]), int(otket[2]), int(otket[3])))
