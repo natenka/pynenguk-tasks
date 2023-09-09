@@ -53,11 +53,15 @@ def test_function_return_value():
         "switchport trunk allowed vlan 17",
     ]
 
-    return_value = task_9_5.generate_trunk_config(trunk_vlans_mapping, template_trunk_mode)
+    return_value = task_9_5.generate_trunk_config(
+        trunk_vlans_mapping, template_trunk_mode
+    )
     if return_value is None:
         pytest.fail("Функція нічого не повертає")
     if not isinstance(return_value, list):
-        pytest.fail(f"За завданням функція має повертати список, а повертає {type(return_value).__name__}")
+        pytest.fail(
+            f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"
+        )
     assert correct_return_value == return_value, "Функція повертає неправильне значення"
 
 
@@ -82,9 +86,13 @@ def test_function_return_value_different_args():
         "switchport trunk allowed vlan 101,130",
     ]
 
-    return_value = task_9_5.generate_trunk_config(trunk_vlans_mapping, template_trunk_mode)
+    return_value = task_9_5.generate_trunk_config(
+        trunk_vlans_mapping, template_trunk_mode
+    )
     if return_value is None:
         pytest.fail("Функція нічого не повертає")
     if not isinstance(return_value, list):
-        pytest.fail(f"За завданням функція має повертати список, а повертає {type(return_value).__name__}")
+        pytest.fail(
+            f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"
+        )
     assert correct_return_value == return_value, "Функція повертає неправильне значення"

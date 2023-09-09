@@ -11,7 +11,9 @@ def test_task_stdout(capsys):
         "отримати потрібний результат, але й вивести його на стандартний потік "
         "виведення за допомогою print"
     )
-    assert correct_stdout == out.strip(), "На стандартний потік виведення виводиться неправильний вивід"
+    assert (
+        correct_stdout == out.strip()
+    ), "На стандартний потік виведення виводиться неправильний вивід"
 
 
 def test_task_variables():
@@ -27,5 +29,9 @@ def test_task_variables():
 
     assert "result" in task_vars, "Список має бути записаний у змінну result"
     if not isinstance(task_6_3.result, list):
-        pytest.fail(f"За завданням у змінній result має бути список, а в ній {type(task_6_3.result).__name__}")
-    assert correct_result == task_6_3.result, f"У змінній result має бути список {correct_result}"
+        pytest.fail(
+            f"За завданням у змінній result має бути список, а в ній {type(task_6_3.result).__name__}"
+        )
+    assert (
+        correct_result == task_6_3.result
+    ), f"У змінній result має бути список {correct_result}"

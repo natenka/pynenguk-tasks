@@ -3,7 +3,9 @@ import sys
 import pytest
 
 
-@pytest.mark.parametrize("index,correct_word", [("0", "guido"), ("5", "on"), ("6", "python")])
+@pytest.mark.parametrize(
+    "index,correct_word", [("0", "guido"), ("5", "on"), ("6", "python")]
+)
 def test_task_sw1(capsys, monkeypatch, index, correct_word):
     """
     Перевірка роботи завдання при введенні sw1
@@ -17,4 +19,6 @@ def test_task_sw1(capsys, monkeypatch, index, correct_word):
     assert (
         out
     ), "Нічого не виведено стандартний потік виведення. Потрібно не лише отримати потрібний результат, але й вивести його на стандартний потік виведення за допомогою print"
-    assert correct_word in out.strip(), "На стандартний потік виведення виводиться неправильний вивід"
+    assert (
+        correct_word in out.strip()
+    ), "На стандартний потік виведення виводиться неправильний вивід"

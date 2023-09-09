@@ -34,8 +34,12 @@ def test_function_return_value():
     if return_value is None:
         pytest.fail("Функція нічого не повертає")
     if not isinstance(return_value, list):
-        pytest.fail(f"За завданням функція має повертати список, а повертає {type(return_value).__name__}")
-    assert sorted(correct_return_value) == sorted(return_value), "Функція повертає неправильне значення"
+        pytest.fail(
+            f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"
+        )
+    assert sorted(correct_return_value) == sorted(
+        return_value
+    ), "Функція повертає неправильне значення"
 
 
 def test_function_return_value_different_args():
@@ -59,5 +63,9 @@ def test_function_return_value_different_args():
     if return_value is None:
         pytest.fail("Функція нічого не повертає")
     if not isinstance(return_value, list):
-        pytest.fail(f"За завданням функція має повертати список, а повертає {type(return_value).__name__}")
-    assert sorted(correct_return_value) == sorted(return_value), "Функція повертає неправильне значення"
+        pytest.fail(
+            f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"
+        )
+    assert sorted(correct_return_value) == sorted(
+        return_value
+    ), "Функція повертає неправильне значення"

@@ -48,5 +48,9 @@ def test_function_return_value():
     if return_value is None:
         pytest.fail("Функція нічого не повертає")
     if not isinstance(return_value, str):
-        pytest.fail(f"За завданням функція має повертати рядок, а повертає {type(return_value).__name__}")
-    assert strip_empty_lines(correct_return_value) == strip_empty_lines(return_value), "Функція повертає неправильне значення"
+        pytest.fail(
+            f"За завданням функція має повертати рядок, а повертає {type(return_value).__name__}"
+        )
+    assert strip_empty_lines(correct_return_value) == strip_empty_lines(
+        return_value
+    ), "Функція повертає неправильне значення"

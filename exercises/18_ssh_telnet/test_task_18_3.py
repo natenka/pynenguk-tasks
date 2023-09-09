@@ -24,7 +24,9 @@ def test_function_params(r1_test_connection, first_router_from_devices_yaml):
         task_18_3.send_commands(first_router_from_devices_yaml, show_command)
 
     with pytest.raises(ValueError) as excinfo:
-        task_18_3.send_commands(first_router_from_devices_yaml, show=show_command, config=cfg_commands)
+        task_18_3.send_commands(
+            first_router_from_devices_yaml, show=show_command, config=cfg_commands
+        )
 
 
 def test_function_return_value(r1_test_connection, first_router_from_devices_yaml):
@@ -37,11 +39,25 @@ def test_function_return_value(r1_test_connection, first_router_from_devices_yam
         "logging buffered 20010",
         "no logging console",
     ]
-    correct_return_value_show = strip_empty_lines(r1_test_connection.send_command(show_command))
-    correct_return_value_cfg = strip_empty_lines(r1_test_connection.send_config_set(cfg_commands))
-    return_value_show = strip_empty_lines(task_18_3.send_commands(first_router_from_devices_yaml, show=show_command))
-    return_value_cfg = strip_empty_lines(task_18_3.send_commands(first_router_from_devices_yaml, config=cfg_commands))
+    correct_return_value_show = strip_empty_lines(
+        r1_test_connection.send_command(show_command)
+    )
+    correct_return_value_cfg = strip_empty_lines(
+        r1_test_connection.send_config_set(cfg_commands)
+    )
+    return_value_show = strip_empty_lines(
+        task_18_3.send_commands(first_router_from_devices_yaml, show=show_command)
+    )
+    return_value_cfg = strip_empty_lines(
+        task_18_3.send_commands(first_router_from_devices_yaml, config=cfg_commands)
+    )
     assert return_value_show != None, "Функція нічого не повертає"
-    assert type(return_value_show) == str, f"За завданням функція має повертати рядок, а повертає {type(return_value).__name__}"
-    assert correct_return_value_show == return_value_show, "Функція повертає неправильне значення при передачі команди show"
-    assert correct_return_value_cfg == return_value_cfg, "Функція повертає неправильне значення під час передачі конфігураційних команд"
+    assert (
+        type(return_value_show) == str
+    ), f"За завданням функція має повертати рядок, а повертає {type(return_value).__name__}"
+    assert (
+        correct_return_value_show == return_value_show
+    ), "Функція повертає неправильне значення при передачі команди show"
+    assert (
+        correct_return_value_cfg == return_value_cfg
+    ), "Функція повертає неправильне значення під час передачі конфігураційних команд"

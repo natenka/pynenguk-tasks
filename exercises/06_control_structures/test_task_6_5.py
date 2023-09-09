@@ -18,7 +18,10 @@ def monkey_input_number_5(prompt):
     elif monkey_input_number_5.total_calls == 3:
         return "5"
     else:
-        pytest.fail("Запит чисел у користувача повинен зупинитися після того, як було" "введено вірне число")
+        pytest.fail(
+            "Запит чисел у користувача повинен зупинитися після того, як було"
+            "введено вірне число"
+        )
 
 
 @count_calls
@@ -29,7 +32,10 @@ def monkey_input_number_8(prompt):
     elif monkey_input_number_8.total_calls == 2:
         return "8"
     else:
-        pytest.fail("Запит чисел у користувача повинен зупинитися після того, як було" "введено вірне число")
+        pytest.fail(
+            "Запит чисел у користувача повинен зупинитися після того, як було"
+            "введено вірне число"
+        )
 
 
 def test_task_random_5_input_3_8_5(capsys, monkeypatch):
@@ -41,7 +47,12 @@ def test_task_random_5_input_3_8_5(capsys, monkeypatch):
     import task_6_5
 
     correct_stdout = (
-        "\nEnter number: 3\n" "Your guess is too low\n" "Enter number: 8\n" "Your guess is too high\n" "Enter number: 5\n" "Correct!\n"
+        "\nEnter number: 3\n"
+        "Your guess is too low\n"
+        "Enter number: 8\n"
+        "Your guess is too high\n"
+        "Enter number: 5\n"
+        "Correct!\n"
     )
     out, err = capsys.readouterr()
     out = out.strip().lower()
@@ -66,7 +77,9 @@ def test_task_random_8_input_7_8(capsys, monkeypatch):
         reload(sys.modules["task_6_5"])
     import task_6_5
 
-    correct_stdout = "\nEnter number: 7\n" "Your guess is too low\n" "Enter number: 8\n" "Correct!\n"
+    correct_stdout = (
+        "\nEnter number: 7\n" "Your guess is too low\n" "Enter number: 8\n" "Correct!\n"
+    )
     out, err = capsys.readouterr()
     out = out.strip().lower()
     assert out, (
@@ -75,7 +88,8 @@ def test_task_random_8_input_7_8(capsys, monkeypatch):
         "виведення за допомогою print"
     )
     assert "low" in out and "correct" in out, (
-        f"При задуманому числі 8 та введення користувача 7, 8 на стандартному " f"потоці виводу повинен бути такий вивід {correct_stdout}"
+        f"При задуманому числі 8 та введення користувача 7, 8 на стандартному "
+        f"потоці виводу повинен бути такий вивід {correct_stdout}"
     )
 
 

@@ -20,9 +20,13 @@ def test_attr_topology():
 
 def test_str_method():
     return_ip = task_23_1a.IPAddress("10.5.5.5/24")
-    assert str(return_ip) == "IP address 10.5.5.5/24", "Метод __str__ повинен повертати 'IP address 10.5.5.5/24'"
+    assert (
+        str(return_ip) == "IP address 10.5.5.5/24"
+    ), "Метод __str__ повинен повертати 'IP address 10.5.5.5/24'"
 
 
 def test_repr_method():
     return_ip = task_23_1a.IPAddress("10.5.5.5/24")
-    assert repr(return_ip).replace('"', "'") == "IPAddress('10.5.5.5/24')", "Метод __repr__ повинен повертати IPAddress('10.5.5.5/24')"
+    assert (
+        repr(return_ip).replace('"', "'") == "IPAddress('10.5.5.5/24')"
+    ), "Метод __repr__ повинен повертати IPAddress('10.5.5.5/24')"

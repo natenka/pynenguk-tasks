@@ -15,7 +15,9 @@ def test_task_10_5_5_0(capsys, monkeypatch):
 
     out, err = capsys.readouterr()
     stdout = unified_columns_output(out.strip())
-    correct_stdout = unified_columns_output("10        5         5         0\n" "00001010  00000101  00000101  00000000\n\n")
+    correct_stdout = unified_columns_output(
+        "10        5         5         0\n" "00001010  00000101  00000101  00000000\n\n"
+    )
 
     assert (
         out
@@ -34,7 +36,10 @@ def test_task_10_1_1_192(capsys, monkeypatch):
 
     out, err = capsys.readouterr()
     stdout = unified_columns_output(out.strip())
-    correct_stdout = unified_columns_output("10        1         1         192\n" "00001010  00000001  00000001  11000000\n\n")
+    correct_stdout = unified_columns_output(
+        "10        1         1         192\n"
+        "00001010  00000001  00000001  11000000\n\n"
+    )
 
     assert (
         out

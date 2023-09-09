@@ -62,7 +62,9 @@ def test_task_172_16_100_237_29(capsys, monkeypatch):
     """
     Перевірка роботи завдання при введенні 172.16.100.237/29
     """
-    monkeypatch.setattr("builtins.input", lambda x=None: "172.16.100.237 255.255.255.248")
+    monkeypatch.setattr(
+        "builtins.input", lambda x=None: "172.16.100.237 255.255.255.248"
+    )
     if sys.modules.get("task_5_4b"):
         reload(sys.modules["task_5_4b"])
     import task_5_4b

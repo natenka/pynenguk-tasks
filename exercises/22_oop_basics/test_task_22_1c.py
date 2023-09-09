@@ -31,7 +31,9 @@ def test_topology_normalization(topology_with_dupl_links, normalized_topology_ex
     ), "Після створення екземпляра, у змінній topology повинна бути топологія без дублів"
 
 
-def test_method_delete_node_created(topology_with_dupl_links, normalized_topology_example):
+def test_method_delete_node_created(
+    topology_with_dupl_links, normalized_topology_example
+):
     return_value = task_22_1c.Topology(normalized_topology_example)
     check_attr_or_method(return_value, method="delete_node")
 
@@ -43,10 +45,16 @@ def test_method_delete_node(normalized_topology_example, capsys):
     delete_node_result = return_value.delete_node(node)
     assert None == delete_node_result, "Метод delete_node не повинен нічого повертати"
 
-    ports_with_node = [src for src, dst in return_value.topology.items() if node in src or node in dst]
+    ports_with_node = [
+        src for src, dst in return_value.topology.items() if node in src or node in dst
+    ]
     assert 0 == len(ports_with_node), "З'єднання з хостом SW1 не видалено"
-    assert 3 == len(return_value.topology), "У топології повинні залишитися лише три з'єднання"
+    assert 3 == len(
+        return_value.topology
+    ), "У топології повинні залишитися лише три з'єднання"
 
     return_value.delete_node(node)
     out, err = capsys.readouterr()
-    assert "There is no such device" in out, "При видаленні неіснуючого пристрою не було виведено повідомлення 'There is no such device'"
+    assert (
+        "There is no such device" in out
+    ), "При видаленні неіснуючого пристрою не було виведено повідомлення 'There is no such device'"

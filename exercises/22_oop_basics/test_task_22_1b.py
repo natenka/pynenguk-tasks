@@ -31,7 +31,9 @@ def test_topology_normalization(topology_with_dupl_links, normalized_topology_ex
     ), "Після створення екземпляра, у змінній topology повинна бути топологія без дублів"
 
 
-def test_method_delete_link_created(topology_with_dupl_links, normalized_topology_example):
+def test_method_delete_link_created(
+    topology_with_dupl_links, normalized_topology_example
+):
     norm_top = task_22_1b.Topology(normalized_topology_example)
     check_attr_or_method(norm_top, method="delete_link")
 
@@ -49,4 +51,6 @@ def test_method_delete_link(normalized_topology_example, capsys):
     norm_top.delete_link(("R8", "Eth0/2"), ("R9", "Eth0/1"))
     out, err = capsys.readouterr()
     link_msg = "There is no such link"
-    assert link_msg in out, "При видаленні неіснуючого з'єднання не було виведено повідомлення ''There is no such link'"
+    assert (
+        link_msg in out
+    ), "При видаленні неіснуючого з'єднання не було виведено повідомлення ''There is no such link'"

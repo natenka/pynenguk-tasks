@@ -37,7 +37,9 @@ def test_task_r2_correct_param(capsys, monkeypatch):
     assert (
         out
     ), "Нічого не виведено стандартний потік виведення. Потрібно не лише отримати потрібний результат, але й вивести його на стандартний потік виведення за допомогою print"
-    assert correct_stdout in out.strip(), "На стандартний потік виведення виводиться неправильний вивід"
+    assert (
+        correct_stdout in out.strip()
+    ), "На стандартний потік виведення виводиться неправильний вивід"
 
 
 def test_task_sw1_wrong_param(capsys, monkeypatch):
@@ -51,7 +53,8 @@ def test_task_sw1_wrong_param(capsys, monkeypatch):
         import task_5_3c
     except KeyError:
         pytest.fail(
-            "У цьому завданні має бути оброблена ситуація, коли параметр" "вказаний неправильний. Не повинна виникати помилка KeyError"
+            "У цьому завданні має бути оброблена ситуація, коли параметр"
+            "вказаний неправильний. Не повинна виникати помилка KeyError"
         )
 
     out, err = capsys.readouterr()
@@ -59,4 +62,6 @@ def test_task_sw1_wrong_param(capsys, monkeypatch):
     assert (
         out
     ), "Нічого не виведено стандартний потік виведення. Потрібно не лише отримати потрібний результат, але й вивести його на стандартний потік виведення за допомогою print"
-    assert correct_stdout in out.strip(), "На стандартний потік виведення виводиться неправильний вивід"
+    assert (
+        correct_stdout in out.strip()
+    ), "На стандартний потік виведення виводиться неправильний вивід"

@@ -56,11 +56,15 @@ def test_function_return_value():
         ],
     }
 
-    return_value = task_9_5a.generate_trunk_config(trunk_vlans_mapping, template_trunk_mode)
+    return_value = task_9_5a.generate_trunk_config(
+        trunk_vlans_mapping, template_trunk_mode
+    )
     if return_value is None:
         pytest.fail("Функція нічого не повертає")
     if return_value is None:
         pytest.fail("Функція нічого не повертає")
     if not isinstance(return_value, dict):
-        pytest.fail(f"За завданням функція має повертати словник, а повертає {type(return_value).__name__}")
+        pytest.fail(
+            f"За завданням функція має повертати словник, а повертає {type(return_value).__name__}"
+        )
     assert correct_return_value == return_value, "Функція повертає неправильне значення"

@@ -7,7 +7,9 @@ from pyneng_common_functions import render_jinja_template
 
 
 def test_templates_exists():
-    assert os.path.exists("templates/cisco_router_base.txt"), "Шаблон templates/cisco_router_base.txt не существует"
+    assert os.path.exists(
+        "templates/cisco_router_base.txt"
+    ), "Шаблон templates/cisco_router_base.txt не существует"
 
 
 def test_function_return_value():
@@ -36,7 +38,13 @@ def test_function_return_value():
     template = "templates/cisco_router_base.txt"
     data = {"hostname": "R1"}
     return_value = render_jinja_template(template, data)
-    assert service_section in return_value, "У підсумковій конфігурації немає команд service"
-    assert alias_section in return_value, "У підсумковій конфігурації немає команд alias"
-    assert eem_section in return_value, "У підсумковій конфігурації немає настройки event manager"
+    assert (
+        service_section in return_value
+    ), "У підсумковій конфігурації немає команд service"
+    assert (
+        alias_section in return_value
+    ), "У підсумковій конфігурації немає команд alias"
+    assert (
+        eem_section in return_value
+    ), "У підсумковій конфігурації немає настройки event manager"
     assert data["hostname"] in return_value, "У підсумковій конфігурації немає hostname"

@@ -46,8 +46,12 @@ def test_function_return_value():
     if return_value is None:
         pytest.fail("Функція нічого не повертає")
     if not isinstance(return_value, tuple):
-        pytest.fail(f"За завданням функція має повертати кортеж, а повертає {type(return_value).__name__}")
-    assert 2 == len(return_value) and all(type(item) == dict for item in return_value), "Функція має повертати кортеж із двома словниками"
+        pytest.fail(
+            f"За завданням функція має повертати кортеж, а повертає {type(return_value).__name__}"
+        )
+    assert 2 == len(return_value) and all(
+        type(item) == dict for item in return_value
+    ), "Функція має повертати кортеж із двома словниками"
 
     access, trunk = return_value
     assert correct_return_value == return_value, "Функція повертає неправильне значення"

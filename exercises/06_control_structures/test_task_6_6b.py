@@ -30,7 +30,9 @@ def test_task_correct_ip(capsys, monkeypatch, ip_add, ip_type):
         "отримати потрібний результат, але й вивести його на стандартний потік "
         "виведення за допомогою print"
     )
-    assert correct_stdout == out.strip(), "На стандартний потік виведення виводиться неправильний вивід"
+    assert (
+        correct_stdout == out.strip()
+    ), "На стандартний потік виведення виводиться неправильний вивід"
 
 
 def count_calls(func):
@@ -56,7 +58,10 @@ def monkey_input_ip(ip_add):
         elif inner.total_calls == 2:
             return "10.1.1.1"
         else:
-            pytest.fail("Код зациклився. Запит адреси у користувача повинен зупинитися " "після введення правильної адреси.")
+            pytest.fail(
+                "Код зациклився. Запит адреси у користувача повинен зупинитися "
+                "після введення правильної адреси."
+            )
 
     return inner
 
@@ -88,4 +93,6 @@ def test_task_wrong_first_ip_correct_second(capsys, monkeypatch, ip_add, ip_type
         "отримати потрібний результат, але й вивести його на стандартний потік "
         "виведення за допомогою print"
     )
-    assert correct_stdout == out.strip().lower(), "На стандартний потік виведення виводиться неправильний вивід"
+    assert (
+        correct_stdout == out.strip().lower()
+    ), "На стандартний потік виведення виводиться неправильний вивід"

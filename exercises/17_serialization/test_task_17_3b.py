@@ -35,6 +35,12 @@ def test_function_return_value():
     if return_value is None:
         pytest.fail("Функція нічого не повертає")
     if not isinstance(return_value, dict):
-        pytest.fail(f"За завданням функція має повертати словник, а повертає {type(return_value).__name__}")
-    assert len(correct_return_value) == len(return_value), "У словнику, який описує топологію є лінки, що дублюються"
-    assert correct_return_value == unify_topology_dict(return_value), "Функція повертає неправильне значення"
+        pytest.fail(
+            f"За завданням функція має повертати словник, а повертає {type(return_value).__name__}"
+        )
+    assert len(correct_return_value) == len(
+        return_value
+    ), "У словнику, який описує топологію є лінки, що дублюються"
+    assert correct_return_value == unify_topology_dict(
+        return_value
+    ), "Функція повертає неправильне значення"

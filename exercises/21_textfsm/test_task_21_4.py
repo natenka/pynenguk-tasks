@@ -26,16 +26,22 @@ def test_function_return_value(r1_test_connection, first_router_from_devices_yam
     correct_return_value = [dict(zip(re_table.header, line)) for line in result]
 
     full_pth = os.path.join(os.getcwd(), "templates")
-    return_value = task_21_4.send_and_parse_show_command(first_router_from_devices_yaml, "sh ip int br", templates_path=full_pth)
+    return_value = task_21_4.send_and_parse_show_command(
+        first_router_from_devices_yaml, "sh ip int br", templates_path=full_pth
+    )
 
     if return_value is None:
         pytest.fail("Функція нічого не повертає")
     if not isinstance(return_value, list):
-        pytest.fail(f"За завданням функція має повертати список, а повертає {type(return_value).__name__}")
+        pytest.fail(
+            f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"
+        )
     assert correct_return_value == return_value, "Функція повертає неправильне значення"
 
 
-def test_function_return_value_different_args(r1_test_connection, first_router_from_devices_yaml):
+def test_function_return_value_different_args(
+    r1_test_connection, first_router_from_devices_yaml
+):
     """
     Перевірка роботи функції с другими аргументами
     """
@@ -46,10 +52,14 @@ def test_function_return_value_different_args(r1_test_connection, first_router_f
     correct_return_value = [dict(zip(re_table.header, line)) for line in result]
 
     full_pth = os.path.join(os.getcwd(), "templates")
-    return_value = task_21_4.send_and_parse_show_command(first_router_from_devices_yaml, "sh version", templates_path=full_pth)
+    return_value = task_21_4.send_and_parse_show_command(
+        first_router_from_devices_yaml, "sh version", templates_path=full_pth
+    )
 
     if return_value is None:
         pytest.fail("Функція нічого не повертає")
     if not isinstance(return_value, list):
-        pytest.fail(f"За завданням функція має повертати список, а повертає {type(return_value).__name__}")
+        pytest.fail(
+            f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"
+        )
     assert correct_return_value == return_value, "Функція повертає неправильне значення"

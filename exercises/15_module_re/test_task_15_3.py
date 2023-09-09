@@ -62,7 +62,11 @@ def test_function_return_value(tmpdir):
         " nat (inside,outside) static interface service tcp 80 80\n"
     )
     dest_filename = tmpdir.mkdir("test_tasks").join("task_15_3.txt")
-    return_value = task_15_3.convert_ios_nat_to_asa("cisco_nat_config.txt", dest_filename)
+    return_value = task_15_3.convert_ios_nat_to_asa(
+        "cisco_nat_config.txt", dest_filename
+    )
     file_content = dest_filename.read().strip()
     assert return_value == None, "Функція повинна повертати None"
-    assert correct_asa_nat_config.strip() == file_content, "Неправильна конфігурація для ASA"
+    assert (
+        correct_asa_nat_config.strip() == file_content
+    ), "Неправильна конфігурація для ASA"

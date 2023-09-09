@@ -18,7 +18,9 @@ def monkey_input_access(prompt):
         if "vlan number" in prompt.lower():
             return "55"
         else:
-            pytest.fail("Для access портів запит вланів має бути таким:" "Enter VLAN number:")
+            pytest.fail(
+                "Для access портів запит вланів має бути таким:" "Enter VLAN number:"
+            )
 
 
 @count_calls
@@ -32,7 +34,10 @@ def monkey_input_trunk(prompt):
         if "allowed vlans" in prompt.lower():
             return "10,11,12"
         else:
-            pytest.fail("Для trunk портів запит вланів має бути таким:" "Enter the allowed VLANs:")
+            pytest.fail(
+                "Для trunk портів запит вланів має бути таким:"
+                "Enter the allowed VLANs:"
+            )
 
 
 def test_task_access(capsys, monkeypatch):
@@ -55,7 +60,9 @@ def test_task_access(capsys, monkeypatch):
     assert (
         out
     ), "Нічого не виведено стандартний потік виведення. Потрібно не лише отримати потрібний результат, але й вивести його на стандартний потік виведення за допомогою print"
-    assert correct_stdout == out.strip(), "На стандартний потік виведення виводиться неправильний вивід"
+    assert (
+        correct_stdout == out.strip()
+    ), "На стандартний потік виведення виводиться неправильний вивід"
 
 
 def test_task_trunk(capsys, monkeypatch):
@@ -69,9 +76,14 @@ def test_task_trunk(capsys, monkeypatch):
 
     out, err = capsys.readouterr()
     correct_stdout = (
-        "interface Gi0/2\n" "switchport trunk encapsulation dot1q\n" "switchport mode trunk\n" "switchport trunk allowed vlan 10,11,12"
+        "interface Gi0/2\n"
+        "switchport trunk encapsulation dot1q\n"
+        "switchport mode trunk\n"
+        "switchport trunk allowed vlan 10,11,12"
     )
     assert (
         out
     ), "Нічого не виведено стандартний потік виведення. Потрібно не лише отримати потрібний результат, але й вивести його на стандартний потік виведення за допомогою print"
-    assert correct_stdout == out.strip(), "На стандартний потік виведення виводиться неправильний вивід"
+    assert (
+        correct_stdout == out.strip()
+    ), "На стандартний потік виведення виводиться неправильний вивід"

@@ -48,7 +48,9 @@ def test_task_access(capsys, monkeypatch):
     assert (
         out
     ), "Нічого не виведено стандартний потік виведення. Потрібно не лише отримати потрібний результат, але й вивести його на стандартний потік виведення за допомогою print"
-    assert correct_stdout == out.strip(), "На стандартний потік виведення виводиться неправильний вивід"
+    assert (
+        correct_stdout == out.strip()
+    ), "На стандартний потік виведення виводиться неправильний вивід"
 
 
 def test_task_trunk(capsys, monkeypatch):
@@ -62,9 +64,14 @@ def test_task_trunk(capsys, monkeypatch):
 
     out, err = capsys.readouterr()
     correct_stdout = (
-        "interface Gi0/2\n" "switchport trunk encapsulation dot1q\n" "switchport mode trunk\n" "switchport trunk allowed vlan 10,11,12"
+        "interface Gi0/2\n"
+        "switchport trunk encapsulation dot1q\n"
+        "switchport mode trunk\n"
+        "switchport trunk allowed vlan 10,11,12"
     )
     assert (
         out
     ), "Нічого не виведено стандартний потік виведення. Потрібно не лише отримати потрібний результат, але й вивести його на стандартний потік виведення за допомогою print"
-    assert correct_stdout == out.strip(), "На стандартний потік виведення виводиться неправильний вивід"
+    assert (
+        correct_stdout == out.strip()
+    ), "На стандартний потік виведення виводиться неправильний вивід"
