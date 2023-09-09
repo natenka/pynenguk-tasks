@@ -40,4 +40,6 @@ def test_task_stdout(capsys):
         "отримати потрібний результат, але й вивести його на стандартний потік "
         "виведення за допомогою print"
     )
-    assert correct_stdout == out or correct_stdout_lambda == out, "На стандартний потік виведення виводиться неправильний рядок"
+    assert (
+        correct_stdout == out or correct_stdout_lambda == out
+    ), "На стандартний потік виведення виводиться неправильний рядок"

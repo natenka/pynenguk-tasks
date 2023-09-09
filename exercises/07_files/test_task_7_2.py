@@ -33,11 +33,15 @@ def test_task(capsys, monkeypatch):
         " switchport mode trunk\n"
         " spanning-tree portfast edge trunk\n"
     )
-    config_part = re.search(r"(Current configuration.*?)interface Ethernet1/0", out, re.DOTALL).group(1)
+    config_part = re.search(
+        r"(Current configuration.*?)interface Ethernet1/0", out, re.DOTALL
+    ).group(1)
 
     assert out, (
         "Нічого не виведено стандартний потік виведення. Потрібно не лише "
         "отримати потрібний результат, але й вивести його на стандартний потік "
         "виведення за допомогою print"
     )
-    assert correct_stdout == config_part, "На стандартний потік виведення виводиться неправильний вивід"
+    assert (
+        correct_stdout == config_part
+    ), "На стандартний потік виведення виводиться неправильний вивід"

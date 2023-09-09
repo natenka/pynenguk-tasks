@@ -50,4 +50,6 @@ def test_task(capsys):
         "отримати потрібний результат, але й вивести його на стандартний потік "
         "виведення за допомогою print"
     )
-    assert correct_stdout == unified_columns_output(out.strip()), "На стандартний потік виведення виводиться неправильний вивід"
+    assert correct_stdout == unified_columns_output(
+        out.strip()
+    ), "На стандартний потік виведення виводиться неправильний вивід"
