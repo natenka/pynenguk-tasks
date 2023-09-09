@@ -76,5 +76,6 @@ def test_function_return_value():
     return_value = task_9_7.convert_config_to_dict("config_sw1.txt", ignore_lines=ignore)
     if return_value is None:
         pytest.fail("Функція нічого не повертає")
-    assert dict == type(return_value), f"За завданням функція має повертати словник, а повертає {type(return_value).__name__}"
+    if not isinstance(return_value, dict):
+        pytest.fail(f"За завданням функція має повертати словник, а повертає {type(return_value).__name__}")
     assert correct_return_value == return_value, "Функція повертає неправильне значення"
