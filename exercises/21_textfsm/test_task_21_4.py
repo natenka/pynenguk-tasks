@@ -30,7 +30,8 @@ def test_function_return_value(r1_test_connection, first_router_from_devices_yam
 
     if return_value is None:
         pytest.fail("Функція нічого не повертає")
-    assert list == type(return_value), f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"
+    if not isinstance(return_value, list):
+        pytest.fail(f"За завданням функція має повертати список, а повертає {type(return_value).__name__}")
     assert correct_return_value == return_value, "Функція повертає неправильне значення"
 
 
@@ -49,5 +50,6 @@ def test_function_return_value_different_args(r1_test_connection, first_router_f
 
     if return_value is None:
         pytest.fail("Функція нічого не повертає")
-    assert list == type(return_value), f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"
+    if not isinstance(return_value, list):
+        pytest.fail(f"За завданням функція має повертати список, а повертає {type(return_value).__name__}")
     assert correct_return_value == return_value, "Функція повертає неправильне значення"

@@ -26,5 +26,6 @@ def test_task_variables():
     correct_result = "GUIdO vAn ROssUm bEgAn wOrkIng On PYthOn In thE lAtE 1980s"
 
     assert "result" in task_vars, "Підсумковий рядок повинен бути записаний у змінну result"
-    assert str == type(task_6_2.result), f"За завданням у змінній result має бути рядок, а ній {type(task_6_2.result).__name__}"
+    if not isinstance(task_6_2.result, str):
+        pytest.fail(f"За завданням у змінній result має бути рядок, а ній {type(task_6_2.result).__name__}")
     assert correct_result == task_6_2.result, f"У змінній result має бути рядок '{correct_result}'"

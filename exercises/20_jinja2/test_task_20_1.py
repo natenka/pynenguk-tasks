@@ -47,5 +47,6 @@ def test_function_return_value():
     return_value = task_20_1.generate_config(template, data)
     if return_value is None:
         pytest.fail("Функція нічого не повертає")
-    assert str == type(return_value), f"За завданням функція має повертати рядок, а повертає {type(return_value).__name__}"
+    if not isinstance(return_value, str):
+        pytest.fail(f"За завданням функція має повертати рядок, а повертає {type(return_value).__name__}")
     assert strip_empty_lines(correct_return_value) == strip_empty_lines(return_value), "Функція повертає неправильне значення"

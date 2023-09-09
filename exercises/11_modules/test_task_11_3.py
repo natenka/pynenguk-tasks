@@ -48,7 +48,8 @@ def test_function_return_value():
     return_value = task_11_3.parse_cdp_neighbors(sh_cdp_n_sw1)
     if return_value is None:
         pytest.fail("Функція нічого не повертає")
-    assert dict == type(return_value), f"За завданням функція має повертати словник, а повертає {type(return_value).__name__}"
+    if not isinstance(return_value, dict):
+        pytest.fail(f"За завданням функція має повертати словник, а повертає {type(return_value).__name__}")
     assert correct_return_value == return_value, "Функція повертає неправильне значення"
 
 
@@ -74,5 +75,6 @@ def test_function_return_value_different_args():
     return_value = task_11_3.parse_cdp_neighbors(sh_cdp_n_r3)
     if return_value is None:
         pytest.fail("Функція нічого не повертає")
-    assert dict == type(return_value), f"За завданням функція має повертати словник, а повертає {type(return_value).__name__}"
+    if not isinstance(return_value, dict):
+        pytest.fail(f"За завданням функція має повертати словник, а повертає {type(return_value).__name__}")
     assert correct_return_value == return_value, "Функція повертає неправильне значення"

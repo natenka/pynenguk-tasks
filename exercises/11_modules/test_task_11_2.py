@@ -37,7 +37,8 @@ def test_function_return_value(monkeypatch):
     return_value = task_11_2.prompt_user_ip(max_retry=5, ensure_unicast=False)
     if return_value is None:
         pytest.fail("Функція нічого не повертає")
-    assert str == type(return_value), f"За завданням функція має повертати рядок, а повертає {type(return_value).__name__}"
+    if not isinstance(return_value, str):
+        pytest.fail(f"За завданням функція має повертати рядок, а повертає {type(return_value).__name__}")
     assert correct_return_value == return_value, "Функція повертає неправильне значення"
 
 

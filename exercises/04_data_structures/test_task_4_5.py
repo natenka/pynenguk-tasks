@@ -25,5 +25,6 @@ def test_task_variables():
 
     correct_result = ["1", "3", "8"]
     assert "result" in task_vars, "Список має бути записаний у змінну result"
-    assert list == type(task_4_5.result), f"За завданням у змінній result має бути список, а в ній {type(task_4_5.result).__name__}"
+    if not isinstance(task_4_5.result, list):
+        pytest.fail(f"За завданням у змінній result має бути список, а в ній {type(task_4_5.result).__name__}")
     assert correct_result == task_4_5.result, f"У змінній result має бути список {correct_result}"
