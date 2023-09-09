@@ -1,4 +1,3 @@
-
 import pytest
 import task_18_2b
 import sys
@@ -57,25 +56,17 @@ def test_function_return_value(capsys, first_router_from_devices_yaml):
     correct_commands = ["logging buffered 20010", "ip http server"]
     test_commands = commands_with_errors + correct_commands
 
-    return_value = task_18_2b.send_config_commands(
-        first_router_from_devices_yaml, test_commands, log=False
-    )
+    return_value = task_18_2b.send_config_commands(first_router_from_devices_yaml, test_commands, log=False)
 
     # проверяем возвращаемое значение
     if return_value is None:
         pytest.fail("Функція нічого не повертає")
     assert type(return_value) == tuple, "Функція має повертати кортеж"
-    assert 2 == len(return_value) and all(
-        type(item) == dict for item in return_value
-    ), "Функція має повертати кортеж із двома словниками"
+    assert 2 == len(return_value) and all(type(item) == dict for item in return_value), "Функція має повертати кортеж із двома словниками"
     correct_good, correct_bad = correct_return_value
     return_good, return_bad = return_value
-    assert (
-        correct_good.keys() == return_good.keys()
-    ), "Функція повертає неправильне значення для словника з командами без помилок"
-    assert (
-        correct_bad.keys() == return_bad.keys()
-    ), "Функція повертає неправильне значення для словника з командами з помилками"
+    assert correct_good.keys() == return_good.keys(), "Функція повертає неправильне значення для словника з командами без помилок"
+    assert correct_bad.keys() == return_bad.keys(), "Функція повертає неправильне значення для словника з командами з помилками"
 
 
 @pytest.mark.parametrize(
@@ -87,9 +78,7 @@ def test_function_return_value(capsys, first_router_from_devices_yaml):
     ],
 )
 def test_function_stdout(error, command, capsys, first_router_from_devices_yaml):
-    return_value = task_18_2b.send_config_commands(
-        first_router_from_devices_yaml, [command], log=False
-    )
+    return_value = task_18_2b.send_config_commands(first_router_from_devices_yaml, [command], log=False)
 
     stdout, err = capsys.readouterr()
     ip = first_router_from_devices_yaml["host"]

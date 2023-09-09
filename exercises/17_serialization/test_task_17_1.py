@@ -39,17 +39,11 @@ def test_return_value(tmpdir):
         "sw3_dhcp_snooping.txt",
     ]
     dest_filename = tmpdir.mkdir("test_tasks").join("output.csv")
-    return_value = task_17_1.write_dhcp_snooping_to_csv(
-        sh_dhcp_snoop_files, dest_filename
-    )
+    return_value = task_17_1.write_dhcp_snooping_to_csv(sh_dhcp_snoop_files, dest_filename)
     csv_content = read_all_csv_content_as_list(dest_filename)
 
-    assert (
-        None == return_value
-    ), f"За завданням функція має повертати None, а повертає {type(return_value).__name__}"
-    assert correct_return_value == sorted(
-        csv_content
-    ), "Функція повертає неправильне значення"
+    assert None == return_value, f"За завданням функція має повертати None, а повертає {type(return_value).__name__}"
+    assert correct_return_value == sorted(csv_content), "Функція повертає неправильне значення"
 
 
 def test_function_return_value_different_args(tmpdir):
@@ -73,14 +67,8 @@ def test_function_return_value_different_args(tmpdir):
         "sw3_dhcp_snooping.txt",
     ]
     dest_filename = tmpdir.mkdir("test_tasks").join("output2.csv")
-    return_value = task_17_1.write_dhcp_snooping_to_csv(
-        sh_dhcp_snoop_files, dest_filename
-    )
+    return_value = task_17_1.write_dhcp_snooping_to_csv(sh_dhcp_snoop_files, dest_filename)
     csv_content = read_all_csv_content_as_list(dest_filename)
 
-    assert (
-        None == return_value
-    ), f"За завданням функція має повертати None, а повертає {type(return_value).__name__}"
-    assert correct_return_value == sorted(
-        csv_content
-    ), "Функція повертає неправильне значення"
+    assert None == return_value, f"За завданням функція має повертати None, а повертає {type(return_value).__name__}"
+    assert correct_return_value == sorted(csv_content), "Функція повертає неправильне значення"

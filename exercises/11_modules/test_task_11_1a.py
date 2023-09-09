@@ -1,9 +1,7 @@
 try:
     import task_11_1a
 except OSError:
-    pytest.fail(
-        "Для цього завдання функцію треба ОБОВ'ЯЗКОВО викликати у блоці if __name__ == '__main__':"
-    )
+    pytest.fail("Для цього завдання функцію треба ОБОВ'ЯЗКОВО викликати у блоці if __name__ == '__main__':")
 
 import pytest
 import sys
@@ -41,12 +39,8 @@ def test_function_return_value_correct_mac(mac_list, correct_converted_mac_list)
     return_value = task_11_1a.convert_mac_list(mac_list)
     if return_value is None:
         pytest.fail("Функція нічого не повертає")
-    assert (
-        list == type(return_value)
-    ), f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"
-    assert (
-        correct_converted_mac_list == return_value
-    ), (
+    assert list == type(return_value), f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"
+    assert correct_converted_mac_list == return_value, (
         f"Функція повертає неправильне значення.\nЯкщо функції передається "
         f"як аргумент список {mac_list},\nрезультат має бути {correct_converted_mac_list}"
     )
@@ -82,16 +76,12 @@ def test_function_return_value_wrong_mac_strict_true(wrong_mac_list):
         ),
     ],
 )
-def test_function_return_value_wrong_mac_strict_false(
-    mac_list, correct_converted_mac_list
-):
+def test_function_return_value_wrong_mac_strict_false(mac_list, correct_converted_mac_list):
     """
     Перевірка роботи функції
     """
     return_value = task_11_1a.convert_mac_list(mac_list, strict=False)
-    assert (
-        correct_converted_mac_list == return_value
-    ), (
+    assert correct_converted_mac_list == return_value, (
         f"Функція повертає неправильне значення.\nЯкщо функції передається "
         f"як аргумент список {mac_list},\nрезультат має бути {correct_converted_mac_list}"
     )

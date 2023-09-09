@@ -45,14 +45,8 @@ def test_function_return_value():
     return_value = task_9_6.get_int_vlan_map("config_sw1.txt")
     if return_value is None:
         pytest.fail("Функція нічого не повертає")
-    assert (
-        tuple == type(return_value)
-    ), f"За завданням функція має повертати кортеж, а повертає {type(return_value).__name__}"
-    assert 2 == len(return_value) and all(
-        type(item) == dict for item in return_value
-    ), "Функція має повертати кортеж із двома словниками"
+    assert tuple == type(return_value), f"За завданням функція має повертати кортеж, а повертає {type(return_value).__name__}"
+    assert 2 == len(return_value) and all(type(item) == dict for item in return_value), "Функція має повертати кортеж із двома словниками"
 
     access, trunk = return_value
-    assert (
-        correct_return_value == return_value
-    ), "Функція повертає неправильне значення"
+    assert correct_return_value == return_value, "Функція повертає неправильне значення"

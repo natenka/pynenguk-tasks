@@ -10,9 +10,7 @@ def test_templates_exists():
     """
     Тестуємо, що функцію створено
     """
-    assert os.path.exists(
-        "templates/sh_ip_dhcp_snooping.template"
-    ), "Шаблон templates/sh_ip_dhcp_snooping.template не існує"
+    assert os.path.exists("templates/sh_ip_dhcp_snooping.template"), "Шаблон templates/sh_ip_dhcp_snooping.template не існує"
 
 
 def test_template():
@@ -31,6 +29,4 @@ def test_template():
     template = "templates/sh_ip_dhcp_snooping.template"
     return_value = get_textfsm_output(template, sh_ip_dhcp_snoop)
 
-    assert (
-        correct_return_value == return_value
-    ), "Шаблон templates/sh_ip_dhcp_snooping.template неправильно парсить дані"
+    assert correct_return_value == return_value, "Шаблон templates/sh_ip_dhcp_snooping.template неправильно парсить дані"

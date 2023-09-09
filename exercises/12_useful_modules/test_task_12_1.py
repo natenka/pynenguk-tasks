@@ -31,6 +31,4 @@ def test_function_return_value():
     assert type(return_value) == tuple and all(
         type(item) == list for item in return_value
     ), "Функція має повертати кортеж із двома списками"
-    assert (
-        correct_return_value == return_value
-    ), "Функція повертає неправильне значення"
+    assert correct_return_value == return_value, "Функція повертає неправильне значення"

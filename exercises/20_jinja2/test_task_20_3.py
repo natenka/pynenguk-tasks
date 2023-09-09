@@ -10,9 +10,7 @@ from pyneng_common_functions import (
 
 
 def test_templates_exists():
-    assert os.path.exists(
-        "templates/ospf.txt"
-    ), "Шаблон templates/ospf.txt не существует"
+    assert os.path.exists("templates/ospf.txt"), "Шаблон templates/ospf.txt не существует"
 
 
 def test_function_return_value():

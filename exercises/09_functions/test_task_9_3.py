@@ -55,12 +55,8 @@ def test_function_return_value_ignore_list():
     return_value = task_9_3.clean_config("config_r2_short.txt", ignore_list)
     if return_value is None:
         pytest.fail("Функція нічого не повертає")
-    assert (
-        list == type(return_value)
-    ), f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"
-    assert (
-        correct_return_value == return_value
-    ), "Функція повертає неправильне значення"
+    assert list == type(return_value), f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"
+    assert correct_return_value == return_value, "Функція повертає неправильне значення"
 
 
 def test_function_return_value_different_ignore_lines_1():
@@ -85,17 +81,11 @@ def test_function_return_value_different_ignore_lines_1():
         " transport input all",
     ]
 
-    return_value = task_9_3.clean_config(
-        "config_r2_short.txt", ["ip", "service", "line"]
-    )
+    return_value = task_9_3.clean_config("config_r2_short.txt", ["ip", "service", "line"])
     if return_value is None:
         pytest.fail("Функція нічого не повертає")
-    assert (
-        list == type(return_value)
-    ), f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"
-    assert (
-        correct_return_value == return_value
-    ), "Функція повертає неправильне значення"
+    assert list == type(return_value), f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"
+    assert correct_return_value == return_value, "Функція повертає неправильне значення"
 
 
 def test_function_return_value_different_ignore_lines_2():
@@ -117,14 +107,8 @@ def test_function_return_value_different_ignore_lines_2():
         " transport input all",
     ]
 
-    return_value = task_9_3.clean_config(
-        "config_r2_short.txt", ["ip", "service", "line", "alias"]
-    )
+    return_value = task_9_3.clean_config("config_r2_short.txt", ["ip", "service", "line", "alias"])
     if return_value is None:
         pytest.fail("Функція нічого не повертає")
-    assert (
-        list == type(return_value)
-    ), f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"
-    assert (
-        correct_return_value == return_value
-    ), "Функція повертає неправильне значення"
+    assert list == type(return_value), f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"
+    assert correct_return_value == return_value, "Функція повертає неправильне значення"

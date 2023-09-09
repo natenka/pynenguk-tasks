@@ -57,12 +57,8 @@ def test_function_return_value():
     return_value = task_21_1a.parse_output_to_dict(template, sh_ip_int_br)
     if return_value is None:
         pytest.fail("Функція нічого не повертає")
-    assert (
-        list == type(return_value)
-    ), f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"
-    assert (
-        correct_return_value == return_value
-    ), "Функція повертає неправильне значення"
+    assert list == type(return_value), f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"
+    assert correct_return_value == return_value, "Функція повертає неправильне значення"
 
 
 def test_function_return_value_different_args():
@@ -83,9 +79,5 @@ def test_function_return_value_different_args():
     return_value = task_21_1a.parse_output_to_dict(template, sh_version)
     if return_value is None:
         pytest.fail("Функція нічого не повертає")
-    assert (
-        list == type(return_value)
-    ), f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"
-    assert (
-        correct_return_value == return_value
-    ), "Функція повертає неправильне значення"
+    assert list == type(return_value), f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"
+    assert correct_return_value == return_value, "Функція повертає неправильне значення"

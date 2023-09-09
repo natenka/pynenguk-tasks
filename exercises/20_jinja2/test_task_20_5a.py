@@ -6,7 +6,6 @@ import sys
 sys.path.append("..")
 
 
-
 def get_interface_cfg(cfg_output):
     interface_cfg = []
     for line in cfg_output.splitlines():
@@ -16,12 +15,8 @@ def get_interface_cfg(cfg_output):
 
 
 def test_templates_exists():
-    assert os.path.exists(
-        "templates/gre_ipsec_vpn_1.txt"
-    ), "Шаблон templates/gre_ipsec_vpn_1.txt не існує"
-    assert os.path.exists(
-        "templates/gre_ipsec_vpn_2.txt"
-    ), "Шаблон templates/gre_ipsec_vpn_2.txt не існує"
+    assert os.path.exists("templates/gre_ipsec_vpn_1.txt"), "Шаблон templates/gre_ipsec_vpn_1.txt не існує"
+    assert os.path.exists("templates/gre_ipsec_vpn_2.txt"), "Шаблон templates/gre_ipsec_vpn_2.txt не існує"
 
 
 def test_function_return_value(first_two_routers_from_devices_yaml):
@@ -54,15 +49,7 @@ def test_function_return_value(first_two_routers_from_devices_yaml):
     return_intf_cfg1 = get_interface_cfg(return_cfg1)
     return_intf_cfg2 = get_interface_cfg(return_cfg2)
 
-    assert (
-        type(return_value) == tuple
-    ), f"За завданням функція має повертати кортеж, а повертає {type(return_value).__name__}"
-    assert 2 == len(return_value) and all(
-        type(item) == str for item in return_value
-    ), "Функція має повертати кортеж із двома рядками"
-    assert (
-        correct_intf_1 in return_intf_cfg1
-    ), "У підсумковій конфігурації неправильно вказано налаштування Tunnel для першої сторони"
-    assert (
-        correct_intf_2 in return_intf_cfg2
-    ), "У підсумковій конфігурації неправильно вказано налаштування Tunnel для другої сторони"
+    assert type(return_value) == tuple, f"За завданням функція має повертати кортеж, а повертає {type(return_value).__name__}"
+    assert 2 == len(return_value) and all(type(item) == str for item in return_value), "Функція має повертати кортеж із двома рядками"
+    assert correct_intf_1 in return_intf_cfg1, "У підсумковій конфігурації неправильно вказано налаштування Tunnel для першої сторони"
+    assert correct_intf_2 in return_intf_cfg2, "У підсумковій конфігурації неправильно вказано налаштування Tunnel для другої сторони"

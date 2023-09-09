@@ -36,17 +36,11 @@ def test_parse_sh_version_return_value():
 
     return_value_r1 = task_17_2.parse_sh_version(sh_version_r1)
     assert return_value_r1 != None, "Функція нічого не повертає"
-    assert (
-        type(return_value_r1) == tuple
-    ), f"За завданням функція має повертати кортеж, а повертає {type(return_value_r1).__name__}"
-    assert (
-        correct_return_value_r1 == return_value_r1
-    ), "Функція повертає неправильне значення для виводу r1"
+    assert type(return_value_r1) == tuple, f"За завданням функція має повертати кортеж, а повертає {type(return_value_r1).__name__}"
+    assert correct_return_value_r1 == return_value_r1, "Функція повертає неправильне значення для виводу r1"
 
     return_value_r2 = task_17_2.parse_sh_version(sh_version_r2)
-    assert (
-        correct_return_value_r2 == return_value_r2
-    ), "Функція повертає неправильне значення для виводу r2"
+    assert correct_return_value_r2 == return_value_r2, "Функція повертає неправильне значення для виводу r2"
 
 
 def test_write_to_csv_return_value(tmpdir):
@@ -81,9 +75,5 @@ def test_write_to_csv_return_value(tmpdir):
     return_value = task_17_2.write_inventory_to_csv(sh_version_files, dest_filename)
     csv_content = read_all_csv_content_as_list(dest_filename)
 
-    assert (
-        None == return_value
-    ), f"За завданням функція має повертати None, а повертає {type(return_value).__name__}"
-    assert correct_return_value == sorted(
-        csv_content
-    ), "Функція повертає неправильне значення"
+    assert None == return_value, f"За завданням функція має повертати None, а повертає {type(return_value).__name__}"
+    assert correct_return_value == sorted(csv_content), "Функція повертає неправильне значення"

@@ -23,6 +23,4 @@ def test_enable(first_router_from_devices_yaml):
     ssh = task_24_1.CiscoSSH(**first_router_from_devices_yaml)
     output = ssh.send_show_command("sh run | i hostname")
     ssh.ssh.disconnect()
-    assert (
-        "hostname" in output
-    ), "При створенні екземпляра класу має створюватися підключення та перехід у режим enable"
+    assert "hostname" in output, "При створенні екземпляра класу має створюватися підключення та перехід у режим enable"

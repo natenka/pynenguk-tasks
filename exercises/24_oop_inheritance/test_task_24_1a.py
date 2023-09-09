@@ -3,9 +3,7 @@ import pytest
 try:
     import task_24_1a
 except OSError:
-    pytest.fail(
-        "Для цього завдання функцію треба ОБОВ'ЯЗКОВО викликати у блоці if __name__ == '__main__':"
-    )
+    pytest.fail("Для цього завдання функцію треба ОБОВ'ЯЗКОВО викликати у блоці if __name__ == '__main__':")
 
 from base_connect_class import BaseSSH
 from netmiko.exceptions import SSHException

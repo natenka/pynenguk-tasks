@@ -33,9 +33,7 @@ def test_send_config_commands_correct_commands(first_router_from_devices_yaml, c
         ("Ambiguous command", "a"),
     ],
 )
-def test_send_config_commands_wrong_commands(
-    first_router_from_devices_yaml, capsys, error, command
-):
+def test_send_config_commands_wrong_commands(first_router_from_devices_yaml, capsys, error, command):
     r1 = task_22_2c.CiscoTelnet(**first_router_from_devices_yaml)
 
     return_value = r1.send_config_commands(command, strict=False)
@@ -44,6 +42,4 @@ def test_send_config_commands_wrong_commands(
 
     with pytest.raises(ValueError) as excinfo:
         return_value = r1.send_config_commands(command, strict=True)
-    assert error in str(
-        excinfo
-    ), "Метод send_config_commands має генерувати виняток, коли strict=True"
+    assert error in str(excinfo), "Метод send_config_commands має генерувати виняток, коли strict=True"

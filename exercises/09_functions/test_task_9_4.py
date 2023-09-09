@@ -61,17 +61,11 @@ def test_function_return_value():
         "spanning-tree bpduguard enable",
     ]
 
-    return_value = task_9_4.generate_access_config(
-        access_vlans_mapping, template_access_mode
-    )
+    return_value = task_9_4.generate_access_config(access_vlans_mapping, template_access_mode)
     if return_value is None:
         pytest.fail("Функція нічого не повертає")
-    assert (
-        list == type(return_value)
-    ), f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"
-    assert (
-        correct_return_value == return_value
-    ), "Функція повертає неправильне значення"
+    assert list == type(return_value), f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"
+    assert correct_return_value == return_value, "Функція повертає неправильне значення"
 
 
 def test_function_return_value_different_args():
@@ -95,14 +89,8 @@ def test_function_return_value_different_args():
         "switchport access vlan 121",
     ]
 
-    return_value = task_9_4.generate_access_config(
-        access_vlans_mapping, template_access_mode
-    )
+    return_value = task_9_4.generate_access_config(access_vlans_mapping, template_access_mode)
     if return_value is None:
         pytest.fail("Функція нічого не повертає")
-    assert (
-        list == type(return_value)
-    ), f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"
-    assert (
-        correct_return_value == return_value
-    ), "Функція повертає неправильне значення"
+    assert list == type(return_value), f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"
+    assert correct_return_value == return_value, "Функція повертає неправильне значення"

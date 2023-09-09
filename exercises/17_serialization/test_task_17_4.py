@@ -36,9 +36,5 @@ def test_return_value(tmpdir):
     return_value = task_17_4.write_last_log_to_csv(source_filename, dest_filename)
     csv_content = read_all_csv_content_as_list(dest_filename)
 
-    assert (
-        None == return_value
-    ), f"За завданням функція має повертати None, а повертає {type(return_value).__name__}"
-    assert correct_return_value == sorted(
-        csv_content
-    ), "Функція повертає неправильне значення"
+    assert None == return_value, f"За завданням функція має повертати None, а повертає {type(return_value).__name__}"
+    assert correct_return_value == sorted(csv_content), "Функція повертає неправильне значення"

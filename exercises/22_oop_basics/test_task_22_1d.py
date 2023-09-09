@@ -45,9 +45,7 @@ def test_method_add_link(normalized_topology_example, capsys):
         "R1",
         "Eth0/4",
     ) in return_value.topology, "Після додавання з'єднання через метод add_link воно має існувати в топології"
-    assert 7 == len(
-        return_value.topology
-    ), "Після додавання з'єднання кількість з'єднань повинна дорівнювати 7"
+    assert 7 == len(return_value.topology), "Після додавання з'єднання кількість з'єднань повинна дорівнювати 7"
 
     return_value.add_link(("R1", "Eth0/4"), ("R7", "Eth0/0"))
     out, err = capsys.readouterr()

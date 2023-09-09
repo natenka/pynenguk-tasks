@@ -1,5 +1,3 @@
-
-
 def test_task(monkeypatch, tmpdir):
     """
     Перевірка роботи завдання при вводе access
@@ -42,6 +40,4 @@ def test_task(monkeypatch, tmpdir):
         " transport input all"
     )
 
-    assert (
-        correct_file_content == dest_file_content
-    ), "На стандартний потік виведення виводиться неправильний вивід"
+    assert correct_file_content == dest_file_content, "На стандартний потік виведення виводиться неправильний вивід"

@@ -29,9 +29,7 @@ def test_task_correct_ip(capsys, monkeypatch, ip_add, ip_type):
         "отримати потрібний результат, але й вивести його на стандартний потік "
         "виведення за допомогою print"
     )
-    assert (
-        correct_stdout == out.strip()
-    ), "На стандартний потік виведення виводиться неправильний вивід"
+    assert correct_stdout == out.strip(), "На стандартний потік виведення виводиться неправильний вивід"
 
 
 @pytest.mark.parametrize(
@@ -62,6 +60,4 @@ def test_task_wrong_ip(capsys, monkeypatch, ip_add, ip_type):
         "отримати потрібний результат, але й вивести його на стандартний потік "
         "виведення за допомогою print"
     )
-    assert (
-        correct_stdout == out.strip().lower()
-    ), "На стандартний потік виведення виводиться неправильний вивід"
+    assert correct_stdout == out.strip().lower(), "На стандартний потік виведення виводиться неправильний вивід"

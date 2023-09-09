@@ -34,9 +34,7 @@ def test_function_return_value():
     if return_value is None:
         pytest.fail("Функція нічого не повертає")
     assert list == type(return_value), "Функція має повертати список"
-    assert sorted(correct_return_value) == sorted(
-        return_value
-    ), "Функція повертає неправильне значення"
+    assert sorted(correct_return_value) == sorted(return_value), "Функція повертає неправильне значення"
 
 
 def test_function_return_value_different_args():
@@ -59,9 +57,5 @@ def test_function_return_value_different_args():
     return_value = task_12_2.convert_ranges_to_ip_list(list_of_ips_and_ranges)
     if return_value is None:
         pytest.fail("Функція нічого не повертає")
-    assert (
-        list == type(return_value)
-    ), f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"
-    assert sorted(correct_return_value) == sorted(
-        return_value
-    ), "Функція повертає неправильне значення"
+    assert list == type(return_value), f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"
+    assert sorted(correct_return_value) == sorted(return_value), "Функція повертає неправильне значення"

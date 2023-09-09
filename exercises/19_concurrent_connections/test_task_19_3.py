@@ -47,9 +47,7 @@ def test_function_return_value_from_single_device(
     device_ip = device["host"]
     command = command_dict[device_ip]
     ssh = create_ssh_connect(device)
-    correct_output = strip_empty_lines(
-        f"{ssh.find_prompt()}{command}\n{ssh.send_command(command)}\n"
-    )
+    correct_output = strip_empty_lines(f"{ssh.find_prompt()}{command}\n{ssh.send_command(command)}\n")
     ssh.disconnect()
     dest_filename = tmpdir.mkdir("test_tasks").join("task_19_3.txt")
 
@@ -62,23 +60,16 @@ def test_function_return_value_from_single_device(
     assert None == return_value, "Функція повинна повертати None"
     dest_file_content = strip_empty_lines(dest_filename.read().strip())
 
-    assert (
-        correct_output == dest_file_content
-    ), f"У підсумковому файлі немає виводу з {device_ip}"
+    assert correct_output == dest_file_content, f"У підсумковому файлі немає виводу з {device_ip}"
 
 
-def test_function_return_value_from_all_devices(
-    three_routers_from_devices_yaml, r1_r2_r3_test_connection, tmpdir
-):
+def test_function_return_value_from_all_devices(three_routers_from_devices_yaml, r1_r2_r3_test_connection, tmpdir):
     """
     Перевірка роботи функції
     """
     routers_ip = [router["host"] for router in three_routers_from_devices_yaml]
     commands = ["sh ip int br", "show ip int bri | exc unass", "show int desc"]
-    out1, out2, out3 = [
-        r.send_command(command)
-        for r, command in zip(r1_r2_r3_test_connection, commands)
-    ]
+    out1, out2, out3 = [r.send_command(command) for r, command in zip(r1_r2_r3_test_connection, commands)]
     dest_filename = tmpdir.mkdir("test_tasks").join("task_19_3.txt")
 
     return_value = task_19_3.send_command_to_devices(
@@ -91,12 +82,6 @@ def test_function_return_value_from_all_devices(
 
     dest_file_content = dest_filename.read().strip()
 
-    assert (
-        out1.strip() in dest_file_content
-    ), "У підсумковому файлі немає виводу з першого пристрою"
-    assert (
-        out2.strip() in dest_file_content
-    ), "У підсумковому файлі немає виводу з другого пристрою"
-    assert (
-        out3.strip() in dest_file_content
-    ), "У підсумковому файлі немає виводу з третього пристрою"
+    assert out1.strip() in dest_file_content, "У підсумковому файлі немає виводу з першого пристрою"
+    assert out2.strip() in dest_file_content, "У підсумковому файлі немає виводу з другого пристрою"
+    assert out3.strip() in dest_file_content, "У підсумковому файлі немає виводу з третього пристрою"

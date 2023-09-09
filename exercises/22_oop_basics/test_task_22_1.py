@@ -50,6 +50,4 @@ def test_topology_normalization():
     assert len(correct_topology) == len(
         return_value.topology
     ), "Після створення екземпляра, у змінній topology повинна бути топологія без дублів"
-    assert (
-        correct_topology == return_topology
-    ), "Після створення екземпляра, у змінній topology повинна бути топологія без дублів"
+    assert correct_topology == return_topology, "Після створення екземпляра, у змінній topology повинна бути топологія без дублів"

@@ -1,9 +1,7 @@
 try:
     import task_11_1
 except OSError:
-    pytest.fail(
-        "Для цього завдання функцію треба ОБОВ'ЯЗКОВО викликати у блоці if __name__ == '__main__':"
-    )
+    pytest.fail("Для цього завдання функцію треба ОБОВ'ЯЗКОВО викликати у блоці if __name__ == '__main__':")
 
 import pytest
 import sys
@@ -39,12 +37,8 @@ def test_function_return_value_correct_mac(mac, correct_converted_mac):
     return_value = task_11_1.convert_mac(mac)
     if return_value is None:
         pytest.fail("Функція нічого не повертає")
-    assert (
-        str == type(return_value)
-    ), f"За завданням функція має повертати рядок, а повертає {type(return_value).__name__}"
-    assert (
-        correct_converted_mac == return_value
-    ), "Функція повертає неправильне значення"
+    assert str == type(return_value), f"За завданням функція має повертати рядок, а повертає {type(return_value).__name__}"
+    assert correct_converted_mac == return_value, "Функція повертає неправильне значення"
 
 
 @pytest.mark.parametrize(
@@ -62,4 +56,3 @@ def test_function_return_value_wrong_mac(wrong_mac):
     """
     with pytest.raises(ValueError) as excinfo:
         return_value = task_11_1.convert_mac(wrong_mac)
-

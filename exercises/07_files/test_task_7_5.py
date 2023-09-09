@@ -33,15 +33,11 @@ def test_task_cfg_trunk_sw2(monkeypatch, tmpdir):
 
     task_vars = [var for var in dir(task_7_5) if not var.startswith("_")]
 
-    assert (
-        "interface_dict" in task_vars
-    ), "Словник має бути записаний у змінну interface_dict"
-    assert (
-        dict == type(task_7_5.interface_dict)
+    assert "interface_dict" in task_vars, "Словник має бути записаний у змінну interface_dict"
+    assert dict == type(
+        task_7_5.interface_dict
     ), f"За завданням у змінній interface_dict має бути словник, а в ній {type(task_7_5.result).__name__}"
-    assert (
-        correct_result == task_7_5.interface_dict
-    ), f"У змінній interface_dict має бути словник \n{pformat(correct_result)}"
+    assert correct_result == task_7_5.interface_dict, f"У змінній interface_dict має бути словник \n{pformat(correct_result)}"
 
 
 def test_task_cfg_trunk_sw3(monkeypatch, tmpdir):
@@ -78,12 +74,8 @@ def test_task_cfg_trunk_sw3(monkeypatch, tmpdir):
 
     task_vars = [var for var in dir(task_7_5) if not var.startswith("_")]
 
-    assert (
-        "interface_dict" in task_vars
-    ), "Словник має бути записаний у змінну interface_dict"
-    assert (
-        dict == type(task_7_5.interface_dict)
+    assert "interface_dict" in task_vars, "Словник має бути записаний у змінну interface_dict"
+    assert dict == type(
+        task_7_5.interface_dict
     ), f"За завданням у змінній interface_dict має бути словник, а в ній {type(task_7_5.result).__name__}"
-    assert (
-        correct_result == task_7_5.interface_dict
-    ), f"У змінній interface_dict має бути словник \n{pformat(correct_result)}"
+    assert correct_result == task_7_5.interface_dict, f"У змінній interface_dict має бути словник \n{pformat(correct_result)}"

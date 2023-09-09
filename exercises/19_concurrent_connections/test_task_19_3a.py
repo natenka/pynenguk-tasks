@@ -64,14 +64,10 @@ def test_function_return_value_from_single_device(
     assert None == return_value, "Функція повинна повертати None"
     dest_file_content = strip_empty_lines(dest_filename.read().strip())
 
-    assert (
-        correct_output == dest_file_content
-    ), f"У підсумковому файлі немає виводу з {device_ip}"
+    assert correct_output == dest_file_content, f"У підсумковому файлі немає виводу з {device_ip}"
 
 
-def test_function_return_value_from_all_devices(
-    three_routers_from_devices_yaml, r1_r2_r3_test_connection, tmpdir
-):
+def test_function_return_value_from_all_devices(three_routers_from_devices_yaml, r1_r2_r3_test_connection, tmpdir):
     """
     Перевірка роботи функції
     """
@@ -90,12 +86,6 @@ def test_function_return_value_from_all_devices(
 
     dest_file_content = dest_filename.read().strip()
 
-    assert (
-        out1.strip() in dest_file_content
-    ), "У підсумковому файлі немає виводу з першого пристрою"
-    assert (
-        out2.strip() in dest_file_content
-    ), "У підсумковому файлі немає виводу з другого пристрою"
-    assert (
-        out3.strip() in dest_file_content
-    ), "У підсумковому файлі немає виводу з третього пристрою"
+    assert out1.strip() in dest_file_content, "У підсумковому файлі немає виводу з першого пристрою"
+    assert out2.strip() in dest_file_content, "У підсумковому файлі немає виводу з другого пристрою"
+    assert out3.strip() in dest_file_content, "У підсумковому файлі немає виводу з третього пристрою"
