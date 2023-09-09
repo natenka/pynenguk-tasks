@@ -43,11 +43,12 @@ def test_function_return_value():
     )
 
     return_value = task_9_6.get_int_vlan_map("config_sw1.txt")
-    assert return_value != None, "Функція нічого не повертає"
+    if return_value is None:
+        pytest.fail("Функція нічого не повертає")
     assert (
-        type(return_value) == tuple
+        tuple == type(return_value)
     ), f"За завданням функція має повертати кортеж, а повертає {type(return_value).__name__}"
-    assert len(return_value) == 2 and all(
+    assert 2 == len(return_value) and all(
         type(item) == dict for item in return_value
     ), "Функція має повертати кортеж із двома словниками"
 

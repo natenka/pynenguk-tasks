@@ -45,9 +45,10 @@ def test_function_return_value():
     return_value = task_11_4.create_network_map(
         ["sh_cdp_n_r2.txt", "sh_cdp_n_r1.txt", "sh_cdp_n_sw1.txt", "sh_cdp_n_r3.txt"]
     )
-    assert return_value != None, "Функція нічого не повертає"
+    if return_value is None:
+        pytest.fail("Функція нічого не повертає")
     assert (
-        type(return_value) == dict
+        dict == type(return_value)
     ), f"За завданням функція має повертати словник, а повертає {type(return_value).__name__}"
     assert (
         correct_return_value == return_value

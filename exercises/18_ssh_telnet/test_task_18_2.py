@@ -28,9 +28,10 @@ def test_function_return_value(r1_test_connection, first_router_from_devices_yam
     return_value = strip_empty_lines(
         task_18_2.send_config_commands(first_router_from_devices_yaml, test_commands)
     )
-    assert return_value != None, "Функція нічого не повертає"
+    if return_value is None:
+        pytest.fail("Функція нічого не повертає")
     assert (
-        type(return_value) == str
+        str == type(return_value)
     ), f"За завданням функція має повертати рядок, а повертає {type(return_value).__name__}"
     assert (
         correct_return_value == return_value
@@ -53,9 +54,10 @@ def test_function_return_value_different_args(
     return_value = strip_empty_lines(
         task_18_2.send_config_commands(first_router_from_devices_yaml, test_commands)
     )
-    assert return_value != None, "Функція нічого не повертає"
+    if return_value is None:
+        pytest.fail("Функція нічого не повертає")
     assert (
-        type(return_value) == str
+        str == type(return_value)
     ), f"За завданням функція має повертати рядок, а повертає {type(return_value).__name__}"
     assert (
         correct_return_value == return_value

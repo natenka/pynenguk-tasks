@@ -24,9 +24,10 @@ def test_function_return_value():
     ]
 
     return_value = task_15_1.get_ip_from_cfg("config_r1.txt")
-    assert return_value != None, "Функція нічого не повертає"
-    assert (
-        type(return_value) == list
+    if return_value is None:
+        pytest.fail("Функція нічого не повертає")
+    assert list == type(
+        return_value
     ), f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"
     assert sorted(correct_return_value) == sorted(
         return_value
@@ -43,9 +44,10 @@ def test_function_return_value_different_args():
     ]
 
     return_value = task_15_1.get_ip_from_cfg("config_r3.txt")
-    assert return_value != None, "Функція нічого не повертає"
-    assert (
-        type(return_value) == list
+    if return_value is None:
+        pytest.fail("Функція нічого не повертає")
+    assert list == type(
+        return_value
     ), f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"
     assert sorted(correct_return_value) == sorted(
         return_value

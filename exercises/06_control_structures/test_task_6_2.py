@@ -33,7 +33,7 @@ def test_task_variables():
         "result" in task_vars
     ), "Підсумковий рядок повинен бути записаний у змінну result"
     assert (
-        type(task_6_2.result) == str
+        str == type(task_6_2.result)
     ), f"За завданням у змінній result має бути рядок, а ній {type(task_6_2.result).__name__}"
     assert (
         correct_result == task_6_2.result

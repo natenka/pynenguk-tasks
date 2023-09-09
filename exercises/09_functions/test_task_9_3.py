@@ -53,9 +53,10 @@ def test_function_return_value_ignore_list():
 
     ignore_list = ["duplex", "alias exec", "Current configuration", "service"]
     return_value = task_9_3.clean_config("config_r2_short.txt", ignore_list)
-    assert return_value != None, "Функція нічого не повертає"
+    if return_value is None:
+        pytest.fail("Функція нічого не повертає")
     assert (
-        type(return_value) == list
+        list == type(return_value)
     ), f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"
     assert (
         correct_return_value == return_value
@@ -87,9 +88,10 @@ def test_function_return_value_different_ignore_lines_1():
     return_value = task_9_3.clean_config(
         "config_r2_short.txt", ["ip", "service", "line"]
     )
-    assert return_value != None, "Функція нічого не повертає"
+    if return_value is None:
+        pytest.fail("Функція нічого не повертає")
     assert (
-        type(return_value) == list
+        list == type(return_value)
     ), f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"
     assert (
         correct_return_value == return_value
@@ -118,9 +120,10 @@ def test_function_return_value_different_ignore_lines_2():
     return_value = task_9_3.clean_config(
         "config_r2_short.txt", ["ip", "service", "line", "alias"]
     )
-    assert return_value != None, "Функція нічого не повертає"
+    if return_value is None:
+        pytest.fail("Функція нічого не повертає")
     assert (
-        type(return_value) == list
+        list == type(return_value)
     ), f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"
     assert (
         correct_return_value == return_value

@@ -57,7 +57,7 @@ def test_function_return_value(first_two_routers_from_devices_yaml):
     assert (
         type(return_value) == tuple
     ), f"За завданням функція має повертати кортеж, а повертає {type(return_value).__name__}"
-    assert len(return_value) == 2 and all(
+    assert 2 == len(return_value) and all(
         type(item) == str for item in return_value
     ), "Функція має повертати кортеж із двома рядками"
     assert (

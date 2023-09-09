@@ -93,7 +93,8 @@ def test_function_return_value_continue_yes(
         first_router_from_devices_yaml, test_commands, log=False
     )
 
-    assert return_value != None, "Функція нічого не повертає"
+    if return_value is None:
+        pytest.fail("Функція нічого не повертає")
     assert type(return_value) == tuple, "Функція має повертати кортеж"
     assert 2 == len(return_value) and all(
         type(item) == dict for item in return_value
@@ -126,7 +127,8 @@ def test_function_return_value_continue_no(
         first_router_from_devices_yaml, commands, log=False
     )
 
-    assert return_value != None, "Функція нічого не повертає"
+    if return_value is None:
+        pytest.fail("Функція нічого не повертає")
     assert type(return_value) == tuple, "Функція має повертати кортеж"
     assert 2 == len(return_value) and all(
         type(item) == dict for item in return_value

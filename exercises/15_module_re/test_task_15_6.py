@@ -38,9 +38,10 @@ def test_function_created():
 )
 def test_function_return_value_correct_mac(mac, correct_converted_mac):
     return_value = task_15_6.convert_mac(mac)
-    assert return_value != None, "Функція нічого не повертає"
+    if return_value is None:
+        pytest.fail("Функція нічого не повертає")
     assert (
-        type(return_value) == str
+        str == type(return_value)
     ), f"За завданням функція має повертати рядок, а повертає {type(return_value).__name__}"
     assert (
         correct_converted_mac == return_value

@@ -25,9 +25,10 @@ def test_function_return_value():
         "Ethernet1/0",
     ]
     return_value = task_15_4.get_ints_without_description("config_r1.txt")
-    assert return_value != None, "Функція нічого не повертає"
+    if return_value is None:
+        pytest.fail("Функція нічого не повертає")
     assert (
-        type(return_value) == list
+        list == type(return_value)
     ), f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"
     assert sorted(correct_return_value) == sorted(
         return_value

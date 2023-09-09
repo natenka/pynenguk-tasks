@@ -55,9 +55,10 @@ def test_function_return_value():
     attributes = {"Command": "show ip int br", "Vendor": "cisco_ios"}
 
     return_value = task_21_3.parse_command_dynamic(sh_ip_int_br, attributes)
-    assert return_value != None, "Функція нічого не повертає"
+    if return_value is None:
+        pytest.fail("Функція нічого не повертає")
     assert (
-        type(return_value) == list
+        list == type(return_value)
     ), f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"
     assert (
         correct_return_value == return_value
@@ -76,9 +77,10 @@ def test_function_return_value_different_args():
     attributes = {"Command": "show version", "Vendor": "cisco_ios"}
 
     return_value = task_21_3.parse_command_dynamic(sh_version, attributes)
-    assert return_value != None, "Функція нічого не повертає"
+    if return_value is None:
+        pytest.fail("Функція нічого не повертає")
     assert (
-        type(return_value) == list
+        list == type(return_value)
     ), f"За завданням функція має повертати список, а повертає {type(return_value).__name__}"
     assert (
         correct_return_value == return_value
