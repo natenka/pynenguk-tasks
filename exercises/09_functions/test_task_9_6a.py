@@ -1,4 +1,5 @@
 import task_9_6a
+import pytest
 import sys
 
 sys.path.append("..")

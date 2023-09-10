@@ -1,3 +1,5 @@
+import pytest
+
 try:
     import task_15_6
 except OSError:
@@ -5,7 +7,6 @@ except OSError:
         "Для цього завдання функцію треба обов'язково викликати в блоці if __name__ == '__main__':"
     )
 
-import pytest
 import sys
 
 sys.path.append("..")

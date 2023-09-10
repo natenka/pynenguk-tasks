@@ -1,5 +1,6 @@
 from importlib import reload
 import sys
+import pytest
 
 
 def test_task_cfg_trunk_sw2(monkeypatch, tmpdir):

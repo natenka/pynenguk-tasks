@@ -1,3 +1,6 @@
+import pytest
+
+
 def test_task_stdout(capsys):
     """
     Перевірка роботи завдання
